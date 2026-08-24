@@ -1,7 +1,9 @@
 # Civic data pipeline
 
-This directory contains the dependency-free Node.js pipeline that creates the
-versioned Massachusetts source snapshots consumed by Civics.
+This directory contains the dependency-free Node.js pipeline that creates
+versioned Massachusetts source snapshots. These raw snapshots are the input to
+a future materialization step; the public prototype still renders the reviewed
+`src/data/seed.js` dataset directly.
 
 ## Sources
 
@@ -51,7 +53,8 @@ credential-bearing request URLs are never written to snapshots or logs.
 
 `.github/workflows/refresh-civic-data.yml` runs monthly and can also be started
 manually. It validates the snapshots, creates a uniquely named automation
-branch, and opens a pull request only when tracked data changed.
+branch, and opens a pull request whenever source freshness or canonical content
+changes.
 
 The workflow requires these repository secrets:
 
