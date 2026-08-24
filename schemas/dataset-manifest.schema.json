@@ -153,6 +153,7 @@
             "source",
             "evidence",
             "claim",
+            "finance",
             "jurisdiction",
             "party",
             "topic",
@@ -213,6 +214,9 @@
           "$ref": "#/$defs/nonnegativeInteger"
         },
         "claims": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "finance": {
           "$ref": "#/$defs/nonnegativeInteger"
         }
       },

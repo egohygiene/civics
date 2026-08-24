@@ -1,0 +1,424 @@
+{
+  "schemaVersion": "1.0.0",
+  "provider": "ocpf",
+  "dataset": "massachusetts-candidate-finance-ytd",
+  "scope": {
+    "country": "US",
+    "state": "MA",
+    "electionCycle": 2026,
+    "identityRegistryCheckedAt": "2026-08-24T00:00:00.000Z"
+  },
+  "source": {
+    "name": "Massachusetts Office of Campaign and Political Finance Public API",
+    "endpoint": "https://api.ocpf.us/filer/payload/{cpfId}",
+    "parameters": {
+      "cpfIds": [
+        15931,
+        13045,
+        19172,
+        17043,
+        19422,
+        14385,
+        15465,
+        19582,
+        17614,
+        15268,
+        15632,
+        15710,
+        19431,
+        18059,
+        18168,
+        13675,
+        17269,
+        10176
+      ]
+    }
+  },
+  "freshness": {
+    "checkedAt": "2026-08-24T13:30:00.000Z",
+    "contentChangedAt": "2026-08-24T13:30:00.000Z",
+    "sourceUpdatedAt": null
+  },
+  "contentHash": "sha256:dcce7b1c9efb8fcfc48de0e38c0e69b3ee1d2d24d156bf481b3f09ab50e61efc",
+  "recordCount": 18,
+  "records": [
+    {
+      "candidateId": "andrea-campbell",
+      "raceId": "attorney-general",
+      "cpfId": 15931,
+      "filerName": "Andrea Joy Campbell",
+      "committeeName": "Campbell Committee",
+      "office": "Attorney General",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036466",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 576755.15,
+        "disbursements": 556446.11,
+        "cashOnHand": 866409.45,
+        "startingBalance": 796095.41
+      },
+      "contentHash": "sha256:8463ae62e0faf1ff895137aa07d88054176ed8ec3b1078d50b452c7330b661c1"
+    },
+    {
+      "candidateId": "barry-finegold",
+      "raceId": "state-senate-second-essex-middlesex",
+      "cpfId": 13045,
+      "filerName": "Barry R. Finegold",
+      "committeeName": "Finegold Committee",
+      "office": "Senate, 2nd Essex & Middlesex",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036443",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 229191.78,
+        "disbursements": 58879.87,
+        "cashOnHand": 594377.49,
+        "startingBalance": 422344.34
+      },
+      "contentHash": "sha256:c11a48943f4393a9a985487429f3554aff23059d2d9b5443357689169f7e3cf7"
+    },
+    {
+      "candidateId": "brian-shortsleeve",
+      "raceId": "governor",
+      "cpfId": 19172,
+      "filerName": "Brian Shortsleeve",
+      "committeeName": "Shortsleeve Committee",
+      "office": "Governor",
+      "party": "Republican",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036782",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 1642055.8,
+        "disbursements": 1725146.74,
+        "cashOnHand": 526805.6,
+        "startingBalance": 608718.79
+      },
+      "contentHash": "sha256:ca2784c6fe09ec6a18fd02fe723527bfa1e54a0dbe0234fc5fa2024085787b97"
+    },
+    {
+      "candidateId": "david-robertson",
+      "raceId": "state-house-nineteenth-middlesex",
+      "cpfId": 17043,
+      "filerName": "David A. Robertson",
+      "committeeName": "Robertson Committee",
+      "office": "House, 19th Middlesex",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1035732",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 500,
+        "disbursements": 749,
+        "cashOnHand": 1572.21,
+        "startingBalance": 1821.21
+      },
+      "contentHash": "sha256:d166b2d26817c54128f850ef1ff1e828adc777ff4c61df9d3bd90541e2a8ab7d"
+    },
+    {
+      "candidateId": "david-solet",
+      "raceId": "northern-district-attorney",
+      "cpfId": 19422,
+      "filerName": "David M. Solet",
+      "committeeName": "Solet Committee",
+      "office": "District Attorney, Northern District - Middlesex County",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1037843",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 140961.73,
+        "disbursements": 159335.26,
+        "cashOnHand": 82403.88,
+        "startingBalance": 95680.74
+      },
+      "contentHash": "sha256:c29a72c425ea92825bf2d0f914c9d85620b614b34f218394d108670ce8b8176b"
+    },
+    {
+      "candidateId": "deborah-goldberg",
+      "raceId": "treasurer",
+      "cpfId": 14385,
+      "filerName": "Deborah Goldberg",
+      "committeeName": "Goldberg Committee",
+      "office": "Treasurer of the Commonwealth",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036475",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 154456.84,
+        "disbursements": 69023.44,
+        "cashOnHand": 455227.35,
+        "startingBalance": 369793.95
+      },
+      "contentHash": "sha256:0dfcf9dd32e471926156d75caacb7007445fa148af434f2bd6fbfbcbacd328c5"
+    },
+    {
+      "candidateId": "diana-dizoglio",
+      "raceId": "auditor",
+      "cpfId": 15465,
+      "filerName": "Diana DiZoglio",
+      "committeeName": "DiZoglio Committee",
+      "office": "Auditor",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1035399",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 92454.36,
+        "disbursements": 13918.44,
+        "cashOnHand": 226089.89,
+        "startingBalance": 147553.97
+      },
+      "contentHash": "sha256:6d48066799259dbdc111a4997e8d0b05a16bbd6a469980733286f035e4479adb"
+    },
+    {
+      "candidateId": "elizabeth-dionne",
+      "raceId": "treasurer",
+      "cpfId": 19582,
+      "filerName": "Elizabeth Harmer Dionne",
+      "committeeName": "Dionne Committee",
+      "office": "Treasurer of the Commonwealth",
+      "party": "Republican",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1037645",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 238956.88,
+        "disbursements": 188903.72,
+        "cashOnHand": 105200.78,
+        "startingBalance": 55147.62
+      },
+      "contentHash": "sha256:64a38564f5c0d774e1dfa1a6181a7824fab2bafc7e8699071f13237b6112654e"
+    },
+    {
+      "candidateId": "eunice-zeigler",
+      "raceId": "governors-council-5",
+      "cpfId": 17614,
+      "filerName": "Eunice Delice Zeigler",
+      "committeeName": "Zeigler Committee",
+      "office": "Governor's Council, 5th District",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1037863",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 3627.7,
+        "disbursements": 1798.08,
+        "cashOnHand": 4498.69,
+        "startingBalance": 2669.07
+      },
+      "contentHash": "sha256:7d2d708d25b49a82121ea13408ce38dd2acda4970bd064df9538d9f04ae5c235"
+    },
+    {
+      "candidateId": "kimberley-driscoll",
+      "raceId": "lieutenant-governor",
+      "cpfId": 15268,
+      "filerName": "Kimberley Driscoll",
+      "committeeName": "Driscoll Committee",
+      "office": "Lieutenant Governor",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036763",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 1154128.52,
+        "disbursements": 187067.7,
+        "cashOnHand": 2565791.79,
+        "startingBalance": 1598163.56
+      },
+      "contentHash": "sha256:bfa3dfde64dbad3ece0837aa303526856b59ae1651694867c127e98489ad8190"
+    },
+    {
+      "candidateId": "marian-ryan",
+      "raceId": "northern-district-attorney",
+      "cpfId": 15632,
+      "filerName": "Marian Teresa Ryan",
+      "committeeName": "Ryan Committee",
+      "office": "District Attorney, Northern District - Middlesex County",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1035006",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 155392.75,
+        "disbursements": 21428.29,
+        "cashOnHand": 770733.46,
+        "startingBalance": 636769
+      },
+      "contentHash": "sha256:787840a4847d5f0ed71612de0ec3a927d47caa60e7ed318069348c853d9d91b4"
+    },
+    {
+      "candidateId": "maura-healey",
+      "raceId": "governor",
+      "cpfId": 15710,
+      "filerName": "Maura T. Healey",
+      "committeeName": "Healey Committee",
+      "office": "Governor",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036462",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 3049534.44,
+        "disbursements": 1071288.16,
+        "cashOnHand": 6602136.91,
+        "startingBalance": 2640397.35
+      },
+      "contentHash": "sha256:5fc34356f8a4a214581be357aa3d8d1a7c40739f3f86fe46f023e3f5dfb64e0f"
+    },
+    {
+      "candidateId": "michael-minogue",
+      "raceId": "governor",
+      "cpfId": 19431,
+      "filerName": "Michael R. Minogue",
+      "committeeName": "Minogue Committee",
+      "office": "Governor",
+      "party": "Republican",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036743",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 10903005.07,
+        "disbursements": 6476381.85,
+        "cashOnHand": 8141164.26,
+        "startingBalance": 3711421.28
+      },
+      "contentHash": "sha256:760d9db185f7ec8c09052c6900958c77da1e5642cfaa0c2697c3276bb0151450"
+    },
+    {
+      "candidateId": "michael-walsh",
+      "raceId": "attorney-general",
+      "cpfId": 18059,
+      "filerName": "Michael C. Walsh",
+      "committeeName": "Walsh Committee",
+      "office": "Attorney General",
+      "party": "Republican",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1035109",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 55891.31,
+        "disbursements": 51235.66,
+        "cashOnHand": 4655.65,
+        "startingBalance": 0
+      },
+      "contentHash": "sha256:546abea86372d94c089fe74e8789753c40b9a97ad4f66acc65e3ebd09f3696fb"
+    },
+    {
+      "candidateId": "shawn-oliver",
+      "raceId": "lieutenant-governor",
+      "cpfId": 18168,
+      "filerName": "Shawn Oliver",
+      "committeeName": "Oliver Committee",
+      "office": "Lieutenant Governor",
+      "party": "Republican",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1035588",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 129709.26,
+        "disbursements": 154849.19,
+        "cashOnHand": 2870.79,
+        "startingBalance": 13519.56
+      },
+      "contentHash": "sha256:1029501435082340d2be0b60daf8dce9c0844543000119ede99343ab47bebffb"
+    },
+    {
+      "candidateId": "tara-decristofaro",
+      "raceId": "middlesex-register-probate",
+      "cpfId": 13675,
+      "filerName": "Tara DeCristofaro",
+      "committeeName": "DeCristofaro Committee",
+      "office": "Register of Probate, Middlesex County",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036282",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 0,
+        "disbursements": 69.93,
+        "cashOnHand": 1254.62,
+        "startingBalance": 1324.55
+      },
+      "contentHash": "sha256:4ce9259c3a30512cccb6bf994de2adc075dc5e57dfafe5289fde67492beb6b40"
+    },
+    {
+      "candidateId": "theodore-semesnyei",
+      "raceId": "state-senate-second-essex-middlesex",
+      "cpfId": 17269,
+      "filerName": "Theodore Semesnyei",
+      "committeeName": "Semesnyei Committee",
+      "office": "Senate, 2nd Essex & Middlesex",
+      "party": "Republican",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1035374",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 5188.6,
+        "disbursements": 3926.5,
+        "cashOnHand": 4949.29,
+        "startingBalance": 3682.19
+      },
+      "contentHash": "sha256:e5bf5c89a956f227d2cfee75a104d31ffbcb24ef62ba0d048107b3e6515f2b6e"
+    },
+    {
+      "candidateId": "william-galvin",
+      "raceId": "secretary",
+      "cpfId": 10176,
+      "filerName": "William F. Galvin",
+      "committeeName": "Galvin Committee",
+      "office": "Secretary of State",
+      "party": "Democratic",
+      "isActive": true,
+      "matchStatus": "automated_checks_passed",
+      "ytdReport": {
+        "reportId": "1036831",
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "receipts": 131312.1,
+        "disbursements": 51099.16,
+        "cashOnHand": 2028436,
+        "startingBalance": 673473.14
+      },
+      "contentHash": "sha256:8278a7a048bebb4d87c6924e6b4e515ee5440ce2c3045a82aef36955f22977e1"
+    }
+  ]
+}

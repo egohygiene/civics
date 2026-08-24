@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "1.0.0",
+  "provider": "ocpf",
+  "sourceId": "source:ocpf-public-api",
+  "electionCycle": 2026,
+  "checkedAt": "2026-08-24T00:00:00.000Z",
+  "matchPolicy": {
+    "description": "Candidate IDs are mapped to OCPF CPF IDs only after name, office sought, active status, and locality or incumbency context agree. The adapter fails closed when the current provider identity differs from these expected values.",
+    "automaticFuzzyMatchingAllowed": false,
+    "humanReviewRequiredForPublication": true
+  },
+  "review": {
+    "status": "automated_checks_passed",
+    "reviewedAt": null,
+    "reviewer": null,
+    "notes": [
+      "Mappings were checked against the official OCPF filer listing endpoint on 2026-08-24.",
+      "A project maintainer must review these mappings before treating them as human-reviewed identity links."
+    ]
+  },
+  "candidates": [
+    {
+      "candidateId": "andrea-campbell",
+      "raceId": "attorney-general",
+      "cpfId": 15931,
+      "expectedFilerName": "Andrea Joy Campbell",
+      "expectedOffice": "Attorney General",
+      "expectedCity": "Dartmouth",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "barry-finegold",
+      "raceId": "state-senate-second-essex-middlesex",
+      "cpfId": 13045,
+      "expectedFilerName": "Barry R. Finegold",
+      "expectedOffice": "Senate, 2nd Essex & Middlesex",
+      "expectedCity": "Andover",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "brian-shortsleeve",
+      "raceId": "governor",
+      "cpfId": 19172,
+      "expectedFilerName": "Brian Shortsleeve",
+      "expectedOffice": "Governor",
+      "expectedCity": "Barnstable",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "david-robertson",
+      "raceId": "state-house-nineteenth-middlesex",
+      "cpfId": 17043,
+      "expectedFilerName": "David A. Robertson",
+      "expectedOffice": "House, 19th Middlesex",
+      "expectedCity": "Wilmington",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "david-solet",
+      "raceId": "northern-district-attorney",
+      "cpfId": 19422,
+      "expectedFilerName": "David M. Solet",
+      "expectedOffice": "District Attorney, Northern District - Middlesex County",
+      "expectedCity": "Cambridge",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "deborah-goldberg",
+      "raceId": "treasurer",
+      "cpfId": 14385,
+      "expectedFilerName": "Deborah Goldberg",
+      "expectedOffice": "Treasurer of the Commonwealth",
+      "expectedCity": "Brookline",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "diana-dizoglio",
+      "raceId": "auditor",
+      "cpfId": 15465,
+      "expectedFilerName": "Diana DiZoglio",
+      "expectedOffice": "Auditor",
+      "expectedCity": "Methuen",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "elizabeth-dionne",
+      "raceId": "treasurer",
+      "cpfId": 19582,
+      "expectedFilerName": "Elizabeth Harmer Dionne",
+      "expectedOffice": "Treasurer of the Commonwealth",
+      "expectedCity": "Belmont",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "eunice-zeigler",
+      "raceId": "governors-council-5",
+      "cpfId": 17614,
+      "expectedFilerName": "Eunice Delice Zeigler",
+      "expectedOffice": "Governor's Council, 5th District",
+      "expectedCity": "Methuen",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "kimberley-driscoll",
+      "raceId": "lieutenant-governor",
+      "cpfId": 15268,
+      "expectedFilerName": "Kimberley Driscoll",
+      "expectedOffice": "Lieutenant Governor",
+      "expectedCity": "Salem",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "marian-ryan",
+      "raceId": "northern-district-attorney",
+      "cpfId": 15632,
+      "expectedFilerName": "Marian Teresa Ryan",
+      "expectedOffice": "District Attorney, Northern District - Middlesex County",
+      "expectedCity": "Belmont",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "maura-healey",
+      "raceId": "governor",
+      "cpfId": 15710,
+      "expectedFilerName": "Maura T. Healey",
+      "expectedOffice": "Governor",
+      "expectedCity": "Arlington",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "michael-minogue",
+      "raceId": "governor",
+      "cpfId": 19431,
+      "expectedFilerName": "Michael R. Minogue",
+      "expectedOffice": "Governor",
+      "expectedCity": "South Hamilton",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "michael-walsh",
+      "raceId": "attorney-general",
+      "cpfId": 18059,
+      "expectedFilerName": "Michael C. Walsh",
+      "expectedOffice": "Attorney General",
+      "expectedCity": "Lynnfield",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "shawn-oliver",
+      "raceId": "lieutenant-governor",
+      "cpfId": 18168,
+      "expectedFilerName": "Shawn Oliver",
+      "expectedOffice": "Lieutenant Governor",
+      "expectedCity": "New Bedford",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "tara-decristofaro",
+      "raceId": "middlesex-register-probate",
+      "cpfId": 13675,
+      "expectedFilerName": "Tara DeCristofaro",
+      "expectedOffice": "Register of Probate, Middlesex County",
+      "expectedCity": "Medford",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "theodore-semesnyei",
+      "raceId": "state-senate-second-essex-middlesex",
+      "cpfId": 17269,
+      "expectedFilerName": "Theodore Semesnyei",
+      "expectedOffice": "Senate, 2nd Essex & Middlesex",
+      "expectedCity": "Amesbury",
+      "matchStatus": "automated_checks_passed"
+    },
+    {
+      "candidateId": "william-galvin",
+      "raceId": "secretary",
+      "cpfId": 10176,
+      "expectedFilerName": "William F. Galvin",
+      "expectedOffice": "Secretary of State",
+      "expectedCity": "Brighton",
+      "matchStatus": "automated_checks_passed"
+    }
+  ]
+}

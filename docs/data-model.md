@@ -13,6 +13,7 @@ Civics publishes a versioned static knowledge graph. Source adapters collect pub
 | Source | Source authority, terms, retrieval health, and change fingerprint | `schemas/source.schema.json` |
 | Evidence | A locatable observation from one source | `schemas/evidence.schema.json` |
 | Claim | A factual or interpretive statement tied to evidence | `schemas/claim.schema.json` |
+| Finance view | Comparable provider metrics with explicit gaps, periods, and provenance | `schemas/finance.schema.json` |
 | Dataset manifest | Release inventory, hashes, coverage, limitations, and validation | `schemas/dataset-manifest.schema.json` |
 
 All schemas use JSON Schema Draft 2020-12. `schemas/common.schema.json` contains shared identifiers and the required provenance, freshness, review, and field-state envelopes.
@@ -137,3 +138,32 @@ JSON Schema validates individual documents. The build must additionally verify g
 - Public output contains no API credentials, private voter preferences, or raw secrets.
 
 User priorities and ballot notes remain local to the browser and are not part of this public graph.
+
+## Candidate finance views
+
+Finance is a materialized view rather than a candidate score. Each candidate
+record identifies its provider entity, reporting period, totals, receipt
+composition, outside spending, time series, comparability basis, source record,
+freshness, review state, and optional synthesis claim references. The required
+totals are receipts, disbursements, cash on hand, and debts owed. Every metric
+uses an availability envelope so unknown or unresearched data cannot be rendered
+as zero.
+
+The initial Massachusetts OCPF adapter uses the official no-authentication
+[`filer/payload/{cpfId}` API](https://api.ocpf.us/developers/guide). It stores
+only a sanitized identity subset and the filer-specific `ytdReport`; provider
+contact details and the race-wide `raceActivityReports` array are discarded.
+The latter is deliberately excluded because race aggregates are a different
+comparison unit and must not silently replace filer totals.
+
+The first published view therefore marks every candidate `partial` even when
+receipts, disbursements, and cash are known. Debt is `not_available` from this
+payload, while receipt composition, outside spending, and monthly series are
+`not_researched`. Comparisons are `limited` and include a key derived from the
+provider, period start, and period end. Interfaces should compare values only
+when those keys match and should still disclose account-type/reporting-rule
+differences.
+
+Generated prose is never placed inside a monetary field. Any later AI summary
+must be represented by a claim ID in `synthesisRefs`, linked to evidence and
+clearly labeled with its generator and review status.

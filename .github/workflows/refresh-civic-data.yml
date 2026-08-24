@@ -20,6 +20,7 @@ on:
           - all
           - openstates
           - fec
+          - ocpf
       election_cycle:
         description: Even-numbered federal election year
         required: true
@@ -88,6 +89,9 @@ jobs:
             fec)
               required_secrets=(DATA_GOV_API_KEY)
               ;;
+            ocpf)
+              required_secrets=()
+              ;;
             *)
               echo "Unsupported provider selection." >&2
               exit 1
@@ -102,6 +106,7 @@ jobs:
           done
 
       - name: Retrieve bounded source data
+        if: env.REFRESH_PROVIDERS != 'ocpf'
         env:
           OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
           DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
@@ -114,6 +119,7 @@ jobs:
           --max-fec-requests 5
 
       - name: Validate generated snapshots
+        if: env.REFRESH_PROVIDERS != 'ocpf'
         env:
           OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
           DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
@@ -122,12 +128,23 @@ jobs:
           --providers "${REFRESH_PROVIDERS}"
           --election-cycle "${ELECTION_CYCLE}"
 
+      - name: Refresh bounded OCPF finance data
+        if: env.REFRESH_PROVIDERS == 'all' || env.REFRESH_PROVIDERS == 'ocpf'
+        run: >-
+          node scripts/refresh-ocpf-finance.mjs
+          --max-requests 30
+          --code-revision "${GITHUB_SHA}"
+
+      - name: Validate OCPF finance data
+        if: env.REFRESH_PROVIDERS == 'all' || env.REFRESH_PROVIDERS == 'ocpf'
+        run: node scripts/validate-ocpf-finance.mjs
+
       - name: Detect data changes
         id: changes
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- data/raw && [[ -z "$(git status --short --untracked-files=all -- data/raw)" ]]; then
+          if git diff --quiet -- data/raw public/data/finance && [[ -z "$(git status --short --untracked-files=all -- data/raw public/data/finance)" ]]; then
             echo "changed=false" >> "${GITHUB_OUTPUT}"
             echo "No civic data changes were produced." >> "${GITHUB_STEP_SUMMARY}"
           else
@@ -138,7 +155,7 @@ jobs:
               echo "Generated changes for review:"
               echo
               echo '```text'
-              git status --short -- data/raw
+              git status --short -- data/raw public/data/finance
               echo '```'
             } >> "${GITHUB_STEP_SUMMARY}"
           fi
@@ -155,7 +172,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch --create "${branch_name}"
-          git add -- data/raw
+          git add -- data/raw public/data/finance
           git commit --message "data: refresh Massachusetts civic sources"
           git push --set-upstream origin "${branch_name}"
 
@@ -163,4 +180,4 @@ jobs:
             --base "${DEFAULT_BRANCH}" \
             --head "${branch_name}" \
             --title "data: refresh Massachusetts civic sources" \
-            --body "Automated ${REFRESH_MODE} of the bounded Massachusetts Open States and FEC source snapshots. The generated files passed hash, scope, freshness, and secret-leak validation. Review the source-data diff before merging."
+            --body "Automated ${REFRESH_MODE} of the selected bounded Massachusetts Open States, FEC, and OCPF source snapshots. The generated files passed hash, scope, freshness, identity, and secret-leak validation. Review the source-data diff before merging."

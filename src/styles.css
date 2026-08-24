@@ -1549,6 +1549,45 @@ footer {
 .empty-race h3 { margin: 18px 0 6px; font-size: 1.15rem; }
 .empty-race p { max-width: 470px; margin: 0 0 20px; color: var(--muted); font-size: 0.72rem; line-height: 1.6; }
 
+.race-finance-section {
+  scroll-margin-top: 92px;
+  margin-top: 22px;
+}
+
+.finance-pending-panel {
+  min-height: 180px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 26px;
+  border: 1px dashed color-mix(in srgb, var(--violet), transparent 58%);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 4% 50%, color-mix(in srgb, var(--violet), transparent 87%), transparent 15rem),
+    var(--surface);
+}
+
+.finance-pending-panel > svg {
+  width: 32px;
+  height: 32px;
+  color: var(--violet);
+}
+
+.finance-pending-panel h3 {
+  margin: 4px 0 8px;
+  font-size: 1.15rem;
+  letter-spacing: -0.035em;
+}
+
+.finance-pending-panel div > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
 .evidence-matrix { margin-top: 18px; }
 .matrix-heading { display: grid; grid-template-columns: 1fr minmax(260px, 0.6fr); gap: 36px; align-items: end; padding: 24px; border-bottom: 1px solid var(--line); }
 .matrix-heading h3 { margin: 0; font-size: 1.45rem; letter-spacing: -0.035em; }
@@ -1835,6 +1874,10 @@ footer > p { grid-column: 1 / -1; text-align: center; }
 .dialog-header p { margin: 0; color: var(--muted); font-size: 0.67rem; }
 .dialog-close { align-self: start; }
 .dialog-body { display: grid; gap: 30px; padding: 30px; }
+.dialog-body .finance-candidate-embed { margin: 4px -8px; }
+.finance-candidate-embed .finance-hero { padding: 22px; }
+.finance-candidate-embed .finance-hero h2 { font-size: clamp(2rem, 8vw, 3.25rem); }
+.finance-candidate-embed .finance-snapshot-grid { grid-template-columns: 1fr; }
 .dialog-body section > h3 { margin: 0; font-size: 1.15rem; letter-spacing: -0.03em; }
 .dialog-body section > p:not(.section-kicker) { margin: 12px 0 0; color: var(--muted); font-size: 0.75rem; line-height: 1.7; }
 .prototype-note { display: flex; gap: 11px; margin-top: 18px; padding: 15px; border: 1px solid color-mix(in srgb, var(--violet), transparent 72%); border-radius: 13px; background: color-mix(in srgb, var(--violet), transparent 94%); }
@@ -1949,6 +1992,8 @@ footer > p { grid-column: 1 / -1; text-align: center; }
   .candidate-lane-stack.is-single { grid-template-columns: 1fr; }
   .candidate-grid { grid-template-columns: 1fr; }
   .candidate-card { min-height: 460px; }
+  .finance-pending-panel { grid-template-columns: 1fr; align-items: start; padding: 22px; }
+  .finance-pending-panel > .status { width: fit-content; }
   .matrix-heading { grid-template-columns: 1fr; gap: 12px; }
   .notes-section { gap: 30px; margin-right: -4px; margin-bottom: 94px; margin-left: -4px; padding: 28px 20px; border-radius: 22px; }
   .method-flow { grid-template-columns: 1fr; }

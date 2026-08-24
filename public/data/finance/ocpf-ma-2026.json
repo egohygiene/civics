@@ -1,0 +1,2601 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "finance:ocpf:ma:2026",
+  "kind": "finance_dataset",
+  "provider": {
+    "id": "ocpf",
+    "name": "Massachusetts Office of Campaign and Political Finance Public API",
+    "jurisdiction": "Massachusetts",
+    "documentationUrl": "https://api.ocpf.us/developers/guide"
+  },
+  "status": "partial",
+  "period": {
+    "cycle": 2026,
+    "startDate": "2026-01-01",
+    "endDate": "2026-07-31",
+    "asOf": "2026-07-31"
+  },
+  "candidates": [
+    {
+      "candidateId": "andrea-campbell",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "15931"
+      },
+      "identity": {
+        "filerName": "Andrea Joy Campbell",
+        "committeeName": "Campbell Committee",
+        "office": "Attorney General",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036466"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 576755.15,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15931:report:1036466"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 556446.11,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15931:report:1036466"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 866409.45,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15931:report:1036466"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:15931:report:1036466",
+        "url": "https://api.ocpf.us/filer/payload/15931",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:8463ae62e0faf1ff895137aa07d88054176ed8ec3b1078d50b452c7330b661c1"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "barry-finegold",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "13045"
+      },
+      "identity": {
+        "filerName": "Barry R. Finegold",
+        "committeeName": "Finegold Committee",
+        "office": "Senate, 2nd Essex & Middlesex",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036443"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 229191.78,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:13045:report:1036443"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 58879.87,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:13045:report:1036443"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 594377.49,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:13045:report:1036443"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:13045:report:1036443",
+        "url": "https://api.ocpf.us/filer/payload/13045",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:c11a48943f4393a9a985487429f3554aff23059d2d9b5443357689169f7e3cf7"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "brian-shortsleeve",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "19172"
+      },
+      "identity": {
+        "filerName": "Brian Shortsleeve",
+        "committeeName": "Shortsleeve Committee",
+        "office": "Governor",
+        "party": "Republican",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036782"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 1642055.8,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19172:report:1036782"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 1725146.74,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19172:report:1036782"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 526805.6,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19172:report:1036782"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:19172:report:1036782",
+        "url": "https://api.ocpf.us/filer/payload/19172",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:ca2784c6fe09ec6a18fd02fe723527bfa1e54a0dbe0234fc5fa2024085787b97"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "david-robertson",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "17043"
+      },
+      "identity": {
+        "filerName": "David A. Robertson",
+        "committeeName": "Robertson Committee",
+        "office": "House, 19th Middlesex",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1035732"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 500,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17043:report:1035732"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 749,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17043:report:1035732"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 1572.21,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17043:report:1035732"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:17043:report:1035732",
+        "url": "https://api.ocpf.us/filer/payload/17043",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:d166b2d26817c54128f850ef1ff1e828adc777ff4c61df9d3bd90541e2a8ab7d"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "david-solet",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "19422"
+      },
+      "identity": {
+        "filerName": "David M. Solet",
+        "committeeName": "Solet Committee",
+        "office": "District Attorney, Northern District - Middlesex County",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1037843"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 140961.73,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19422:report:1037843"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 159335.26,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19422:report:1037843"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 82403.88,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19422:report:1037843"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:19422:report:1037843",
+        "url": "https://api.ocpf.us/filer/payload/19422",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:c29a72c425ea92825bf2d0f914c9d85620b614b34f218394d108670ce8b8176b"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "deborah-goldberg",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "14385"
+      },
+      "identity": {
+        "filerName": "Deborah Goldberg",
+        "committeeName": "Goldberg Committee",
+        "office": "Treasurer of the Commonwealth",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036475"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 154456.84,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:14385:report:1036475"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 69023.44,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:14385:report:1036475"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 455227.35,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:14385:report:1036475"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:14385:report:1036475",
+        "url": "https://api.ocpf.us/filer/payload/14385",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:0dfcf9dd32e471926156d75caacb7007445fa148af434f2bd6fbfbcbacd328c5"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "diana-dizoglio",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "15465"
+      },
+      "identity": {
+        "filerName": "Diana DiZoglio",
+        "committeeName": "DiZoglio Committee",
+        "office": "Auditor",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1035399"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 92454.36,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15465:report:1035399"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 13918.44,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15465:report:1035399"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 226089.89,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15465:report:1035399"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:15465:report:1035399",
+        "url": "https://api.ocpf.us/filer/payload/15465",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:6d48066799259dbdc111a4997e8d0b05a16bbd6a469980733286f035e4479adb"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "elizabeth-dionne",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "19582"
+      },
+      "identity": {
+        "filerName": "Elizabeth Harmer Dionne",
+        "committeeName": "Dionne Committee",
+        "office": "Treasurer of the Commonwealth",
+        "party": "Republican",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1037645"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 238956.88,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19582:report:1037645"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 188903.72,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19582:report:1037645"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 105200.78,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19582:report:1037645"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:19582:report:1037645",
+        "url": "https://api.ocpf.us/filer/payload/19582",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:64a38564f5c0d774e1dfa1a6181a7824fab2bafc7e8699071f13237b6112654e"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "eunice-zeigler",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "17614"
+      },
+      "identity": {
+        "filerName": "Eunice Delice Zeigler",
+        "committeeName": "Zeigler Committee",
+        "office": "Governor's Council, 5th District",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1037863"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 3627.7,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17614:report:1037863"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 1798.08,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17614:report:1037863"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 4498.69,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17614:report:1037863"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:17614:report:1037863",
+        "url": "https://api.ocpf.us/filer/payload/17614",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:7d2d708d25b49a82121ea13408ce38dd2acda4970bd064df9538d9f04ae5c235"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "kimberley-driscoll",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "15268"
+      },
+      "identity": {
+        "filerName": "Kimberley Driscoll",
+        "committeeName": "Driscoll Committee",
+        "office": "Lieutenant Governor",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036763"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 1154128.52,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15268:report:1036763"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 187067.7,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15268:report:1036763"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 2565791.79,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15268:report:1036763"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:15268:report:1036763",
+        "url": "https://api.ocpf.us/filer/payload/15268",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:bfa3dfde64dbad3ece0837aa303526856b59ae1651694867c127e98489ad8190"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "marian-ryan",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "15632"
+      },
+      "identity": {
+        "filerName": "Marian Teresa Ryan",
+        "committeeName": "Ryan Committee",
+        "office": "District Attorney, Northern District - Middlesex County",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1035006"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 155392.75,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15632:report:1035006"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 21428.29,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15632:report:1035006"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 770733.46,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15632:report:1035006"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:15632:report:1035006",
+        "url": "https://api.ocpf.us/filer/payload/15632",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:787840a4847d5f0ed71612de0ec3a927d47caa60e7ed318069348c853d9d91b4"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "maura-healey",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "15710"
+      },
+      "identity": {
+        "filerName": "Maura T. Healey",
+        "committeeName": "Healey Committee",
+        "office": "Governor",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036462"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 3049534.44,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15710:report:1036462"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 1071288.16,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15710:report:1036462"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 6602136.91,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:15710:report:1036462"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:15710:report:1036462",
+        "url": "https://api.ocpf.us/filer/payload/15710",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:5fc34356f8a4a214581be357aa3d8d1a7c40739f3f86fe46f023e3f5dfb64e0f"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "michael-minogue",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "19431"
+      },
+      "identity": {
+        "filerName": "Michael R. Minogue",
+        "committeeName": "Minogue Committee",
+        "office": "Governor",
+        "party": "Republican",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036743"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 10903005.07,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19431:report:1036743"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 6476381.85,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19431:report:1036743"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 8141164.26,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:19431:report:1036743"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:19431:report:1036743",
+        "url": "https://api.ocpf.us/filer/payload/19431",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:760d9db185f7ec8c09052c6900958c77da1e5642cfaa0c2697c3276bb0151450"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "michael-walsh",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "18059"
+      },
+      "identity": {
+        "filerName": "Michael C. Walsh",
+        "committeeName": "Walsh Committee",
+        "office": "Attorney General",
+        "party": "Republican",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1035109"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 55891.31,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:18059:report:1035109"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 51235.66,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:18059:report:1035109"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 4655.65,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:18059:report:1035109"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:18059:report:1035109",
+        "url": "https://api.ocpf.us/filer/payload/18059",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:546abea86372d94c089fe74e8789753c40b9a97ad4f66acc65e3ebd09f3696fb"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "shawn-oliver",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "18168"
+      },
+      "identity": {
+        "filerName": "Shawn Oliver",
+        "committeeName": "Oliver Committee",
+        "office": "Lieutenant Governor",
+        "party": "Republican",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1035588"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 129709.26,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:18168:report:1035588"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 154849.19,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:18168:report:1035588"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 2870.79,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:18168:report:1035588"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:18168:report:1035588",
+        "url": "https://api.ocpf.us/filer/payload/18168",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:1029501435082340d2be0b60daf8dce9c0844543000119ede99343ab47bebffb"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "tara-decristofaro",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "13675"
+      },
+      "identity": {
+        "filerName": "Tara DeCristofaro",
+        "committeeName": "DeCristofaro Committee",
+        "office": "Register of Probate, Middlesex County",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036282"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 0,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:13675:report:1036282"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 69.93,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:13675:report:1036282"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 1254.62,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:13675:report:1036282"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:13675:report:1036282",
+        "url": "https://api.ocpf.us/filer/payload/13675",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:4ce9259c3a30512cccb6bf994de2adc075dc5e57dfafe5289fde67492beb6b40"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "theodore-semesnyei",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "17269"
+      },
+      "identity": {
+        "filerName": "Theodore Semesnyei",
+        "committeeName": "Semesnyei Committee",
+        "office": "Senate, 2nd Essex & Middlesex",
+        "party": "Republican",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1035374"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 5188.6,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17269:report:1035374"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 3926.5,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17269:report:1035374"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 4949.29,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:17269:report:1035374"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:17269:report:1035374",
+        "url": "https://api.ocpf.us/filer/payload/17269",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:e5bf5c89a956f227d2cfee75a104d31ffbcb24ef62ba0d048107b3e6515f2b6e"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    },
+    {
+      "candidateId": "william-galvin",
+      "status": "partial",
+      "provider": {
+        "id": "ocpf",
+        "entityId": "10176"
+      },
+      "identity": {
+        "filerName": "William F. Galvin",
+        "committeeName": "Galvin Committee",
+        "office": "Secretary of State",
+        "party": "Democratic",
+        "matchStatus": "automated_checks_passed"
+      },
+      "period": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-07-31",
+        "cycle": 2026,
+        "asOf": "2026-07-31",
+        "basis": "year_to_date",
+        "reportId": "1036831"
+      },
+      "totals": {
+        "receipts": {
+          "status": "known",
+          "value": 131312.1,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:10176:report:1036831"
+          ],
+          "note": null
+        },
+        "disbursements": {
+          "status": "known",
+          "value": 51099.16,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:10176:report:1036831"
+          ],
+          "note": null
+        },
+        "cashOnHand": {
+          "status": "known",
+          "value": 2028436,
+          "currency": "USD",
+          "sourceRecordRefs": [
+            "ocpf:10176:report:1036831"
+          ],
+          "note": null
+        },
+        "debtsOwed": {
+          "status": "not_available",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "The OCPF filer YTD payload used by this adapter does not expose debts owed."
+        }
+      },
+      "receiptComposition": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Receipt-level category aggregation is outside this bounded first-pass adapter."
+      },
+      "outsideSpending": {
+        "status": "not_researched",
+        "value": null,
+        "sourceRecordRefs": [],
+        "note": "Independent spending requires OCPF miscellaneous-report endpoints and has not been joined yet."
+      },
+      "timeSeries": {
+        "receipts": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly receipt history has not been materialized from report-level records yet."
+        },
+        "disbursements": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Monthly disbursement history has not been materialized from report-level records yet."
+        },
+        "cashOnHand": {
+          "status": "not_researched",
+          "value": null,
+          "currency": "USD",
+          "sourceRecordRefs": [],
+          "note": "Historical cash balances have not been materialized from report-level records yet."
+        }
+      },
+      "comparability": {
+        "status": "limited",
+        "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
+        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "caveats": [
+          "Year-to-date totals are not lifetime or full election-cycle totals.",
+          "Candidates may use different OCPF account types and reporting schedules.",
+          "A missing value is not zero and must not be ranked as zero."
+        ]
+      },
+      "source": {
+        "sourceId": "source:ocpf-public-api",
+        "recordId": "ocpf:10176:report:1036831",
+        "url": "https://api.ocpf.us/filer/payload/10176",
+        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "contentHash": "sha256:8278a7a048bebb4d87c6924e6b4e515ee5440ce2c3045a82aef36955f22977e1"
+      },
+      "provenance": {
+        "method": "deterministic_derivation",
+        "sourceIds": [
+          "source:ocpf-public-api"
+        ],
+        "evidenceIds": [],
+        "producedAt": "2026-08-24T13:30:00.000Z",
+        "generator": {
+          "kind": "script",
+          "name": "scripts/materialize-finance-data.mjs",
+          "version": "1.0.0"
+        },
+        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+      },
+      "freshness": {
+        "status": "current",
+        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "validThrough": null
+      },
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Provider identity checks passed; a maintainer has not yet marked this finance view human-reviewed."
+        ]
+      },
+      "synthesisRefs": []
+    }
+  ],
+  "limitations": [
+    "This OCPF view covers mapped Massachusetts state and local candidates, not federal candidates governed by FEC reporting.",
+    "The current adapter materializes filer-specific year-to-date totals only; receipt composition, outside spending, debt, and historical series remain explicit research gaps.",
+    "Periods and reporting rules must match before candidate totals are compared.",
+    "Provider identity mappings passed deterministic checks but still require maintainer review before stable publication."
+  ],
+  "source": {
+    "sourceId": "source:ocpf-public-api",
+    "recordId": "massachusetts-candidate-finance-ytd",
+    "url": "https://api.ocpf.us/developers/guide",
+    "retrievedAt": "2026-08-24T13:30:00.000Z",
+    "contentHash": "sha256:dcce7b1c9efb8fcfc48de0e38c0e69b3ee1d2d24d156bf481b3f09ab50e61efc"
+  },
+  "contentHash": "sha256:d2fcf9f1759179bac95c740af3f5fd9a0d53e0901c4d315d89e336f3b517b65a",
+  "provenance": {
+    "method": "deterministic_derivation",
+    "sourceIds": [
+      "source:ocpf-public-api"
+    ],
+    "evidenceIds": [],
+    "producedAt": "2026-08-24T13:30:00.000Z",
+    "generator": {
+      "kind": "script",
+      "name": "scripts/materialize-finance-data.mjs",
+      "version": "1.0.0"
+    },
+    "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+  },
+  "freshness": {
+    "status": "current",
+    "checkedAt": "2026-08-24T13:30:00.000Z",
+    "sourceChangedAt": "2026-08-24T13:30:00.000Z",
+    "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+    "validThrough": null
+  },
+  "review": {
+    "status": "needs_review",
+    "reviewedAt": null,
+    "reviewer": null,
+    "notes": [
+      "Generated finance data passed deterministic validation but has not received maintainer review."
+    ]
+  }
+}
