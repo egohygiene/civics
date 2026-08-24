@@ -1,0 +1,428 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/dataset-manifest.schema.json",
+  "title": "Civics dataset manifest",
+  "description": "The immutable inventory, coverage report, integrity record, and publication metadata for one generated Civics dataset release.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "datasetVersion",
+    "publicationStatus",
+    "title",
+    "description",
+    "generatedAt",
+    "geographicCoverage",
+    "electionIds",
+    "sourceIds",
+    "files",
+    "counts",
+    "coverage",
+    "build",
+    "validation",
+    "attributions",
+    "limitations",
+    "contentHash",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "dataset_manifest"
+    },
+    "datasetVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[a-z0-9.-]+)?$"
+    },
+    "publicationStatus": {
+      "type": "string",
+      "enum": [
+        "experimental",
+        "preview",
+        "stable",
+        "deprecated"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "geographicCoverage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/jurisdictionRef"
+      }
+    },
+    "electionIds": {
+      "$ref": "#/$defs/entityIds"
+    },
+    "sourceIds": {
+      "$ref": "#/$defs/entityIds"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/file"
+      }
+    },
+    "counts": {
+      "$ref": "#/$defs/counts"
+    },
+    "coverage": {
+      "$ref": "#/$defs/coverage"
+    },
+    "build": {
+      "$ref": "#/$defs/build"
+    },
+    "validation": {
+      "$ref": "#/$defs/validation"
+    },
+    "attributions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/attribution"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000
+      }
+    },
+    "contentHash": {
+      "$ref": "common.schema.json#/$defs/sha256"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "entityIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    },
+    "file": {
+      "type": "object",
+      "required": [
+        "path",
+        "recordType",
+        "schemaId",
+        "recordCount",
+        "byteSize",
+        "contentHash"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(data|public/data)/[A-Za-z0-9._/-]+$"
+        },
+        "recordType": {
+          "type": "string",
+          "enum": [
+            "candidate",
+            "election",
+            "ballot",
+            "race",
+            "source",
+            "evidence",
+            "claim",
+            "jurisdiction",
+            "party",
+            "topic",
+            "office",
+            "geojson",
+            "index"
+          ]
+        },
+        "schemaId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "byteSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "contentHash": {
+          "$ref": "common.schema.json#/$defs/sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "candidates",
+        "elections",
+        "ballots",
+        "races",
+        "sources",
+        "evidence",
+        "claims"
+      ],
+      "properties": {
+        "candidates": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "elections": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "ballots": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "races": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "sources": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "evidence": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        },
+        "claims": {
+          "$ref": "#/$defs/nonnegativeInteger"
+        }
+      },
+      "additionalProperties": false
+    },
+    "nonnegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "status",
+        "candidateProfiles",
+        "ballotStyles",
+        "legislativeRecords",
+        "campaignFinance",
+        "interpretiveAnalysis",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ]
+        },
+        "candidateProfiles": {
+          "$ref": "#/$defs/coverageArea"
+        },
+        "ballotStyles": {
+          "$ref": "#/$defs/coverageArea"
+        },
+        "legislativeRecords": {
+          "$ref": "#/$defs/coverageArea"
+        },
+        "campaignFinance": {
+          "$ref": "#/$defs/coverageArea"
+        },
+        "interpretiveAnalysis": {
+          "$ref": "#/$defs/coverageArea"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "coverageArea": {
+      "type": "object",
+      "required": [
+        "status",
+        "included",
+        "expected",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "partial",
+            "not_started",
+            "not_applicable",
+            "unknown"
+          ]
+        },
+        "included": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expected": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      },
+      "additionalProperties": false
+    },
+    "build": {
+      "type": "object",
+      "required": [
+        "pipelineVersion",
+        "codeRevision",
+        "workflowRunUrl",
+        "incremental",
+        "changedSourceIds",
+        "skippedSourceIds"
+      ],
+      "properties": {
+        "pipelineVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "codeRevision": {
+          "type": "string",
+          "minLength": 7,
+          "maxLength": 100
+        },
+        "workflowRunUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "incremental": {
+          "type": "boolean"
+        },
+        "changedSourceIds": {
+          "$ref": "#/$defs/entityIds"
+        },
+        "skippedSourceIds": {
+          "$ref": "#/$defs/entityIds"
+        }
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "status",
+        "validatedAt",
+        "schemaErrors",
+        "brokenReferences",
+        "warnings"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "passed_with_warnings",
+            "failed",
+            "not_run"
+          ]
+        },
+        "validatedAt": {
+          "$ref": "common.schema.json#/$defs/nullableTimestamp"
+        },
+        "schemaErrors": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "brokenReferences": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "attribution": {
+      "type": "object",
+      "required": [
+        "sourceId",
+        "text",
+        "licenseName",
+        "licenseUrl"
+      ],
+      "properties": {
+        "sourceId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "licenseName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "licenseUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

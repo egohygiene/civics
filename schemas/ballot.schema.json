@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/ballot.schema.json",
+  "title": "Civics ballot style",
+  "description": "A ballot style available to a voter for an election, party choice, and geographic selector set.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "electionId",
+    "name",
+    "ballotType",
+    "party",
+    "geographyRules",
+    "raceIds",
+    "measureIds",
+    "completeness",
+    "officialSourceIds",
+    "provenance",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "ballot"
+    },
+    "electionId": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "ballotType": {
+      "type": "string",
+      "enum": [
+        "partisan",
+        "nonpartisan",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "party": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/partyRef"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "geographyRules": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/geographyRule"
+                  },
+                  "minItems": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "raceIds": {
+      "$ref": "#/$defs/entityIdsField"
+    },
+    "measureIds": {
+      "$ref": "#/$defs/entityIdsField"
+    },
+    "completeness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "unknown"
+      ]
+    },
+    "officialSourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "geographyRule": {
+      "type": "object",
+      "required": [
+        "selectorType",
+        "selectorId",
+        "relationship"
+      ],
+      "properties": {
+        "selectorType": {
+          "type": "string",
+          "enum": [
+            "state",
+            "county",
+            "municipality",
+            "district",
+            "precinct",
+            "ward",
+            "other"
+          ]
+        },
+        "selectorId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "relationship": {
+          "type": "string",
+          "enum": [
+            "includes",
+            "excludes"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "entityIdsField": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/entityId"
+                  },
+                  "uniqueItems": true
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

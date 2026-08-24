@@ -1,0 +1,463 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/race.schema.json",
+  "title": "Civics electoral race",
+  "description": "A contest for an office within an election and ballot context.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "electionId",
+    "name",
+    "office",
+    "jurisdiction",
+    "district",
+    "party",
+    "seats",
+    "electionMethod",
+    "candidateEntries",
+    "ballotIds",
+    "results",
+    "completeness",
+    "officialSourceIds",
+    "provenance",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "race"
+    },
+    "electionId": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          }
+        }
+      ]
+    },
+    "office": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/office"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "jurisdiction": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/jurisdictionRef"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "district": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/district"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "party": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/partyRef"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "seats": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "electionMethod": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "plurality",
+                    "majority",
+                    "ranked_choice",
+                    "proportional",
+                    "appointment",
+                    "other",
+                    "unknown"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "candidateEntries": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/candidateEntry"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ballotIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    },
+    "results": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/result"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "completeness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "unknown"
+      ]
+    },
+    "officialSourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "office": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "level",
+        "branch",
+        "termLengthYears",
+        "authoritySummaryClaimIds"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "federal",
+            "state",
+            "county",
+            "municipal",
+            "district",
+            "other"
+          ]
+        },
+        "branch": {
+          "type": "string",
+          "enum": [
+            "executive",
+            "legislative",
+            "judicial",
+            "administrative",
+            "other",
+            "unknown"
+          ]
+        },
+        "termLengthYears": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "authoritySummaryClaimIds": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/entityId"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "district": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "geoJsonPath"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "geoJsonPath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(data|/data)/.+\\.geojson$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidateEntry": {
+      "type": "object",
+      "required": [
+        "candidateId",
+        "ballotName",
+        "ballotOrder",
+        "partyId",
+        "status",
+        "writeIn"
+      ],
+      "properties": {
+        "candidateId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "ballotName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "ballotOrder": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "partyId": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/entityId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "withdrawn",
+            "disqualified",
+            "write_in",
+            "unknown"
+          ]
+        },
+        "writeIn": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "candidateId",
+        "votes",
+        "voteShare",
+        "outcome",
+        "reportingStatus"
+      ],
+      "properties": {
+        "candidateId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "votes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "voteShare": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "won",
+            "lost",
+            "advanced",
+            "eliminated",
+            "undetermined",
+            "unknown"
+          ]
+        },
+        "reportingStatus": {
+          "type": "string",
+          "enum": [
+            "unofficial",
+            "official",
+            "recount",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

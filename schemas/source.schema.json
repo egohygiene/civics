@@ -1,0 +1,384 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/source.schema.json",
+  "title": "Civics source",
+  "description": "A registered public source with access, licensing, attribution, health, and change-detection metadata.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "title",
+    "publisher",
+    "url",
+    "sourceType",
+    "authorityLevel",
+    "jurisdictionIds",
+    "dataCategories",
+    "access",
+    "license",
+    "retrieval",
+    "externalIdentifiers",
+    "provenance",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "source"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "sourceType": {
+      "type": "string",
+      "enum": [
+        "official_government",
+        "election_authority",
+        "legislative_data",
+        "campaign_finance",
+        "candidate_campaign",
+        "candidate_social",
+        "organization",
+        "journalism",
+        "research",
+        "other"
+      ]
+    },
+    "authorityLevel": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "authoritative_aggregator",
+        "self_reported",
+        "secondary",
+        "unverified"
+      ]
+    },
+    "jurisdictionIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    },
+    "dataCategories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "elections",
+          "ballots",
+          "candidates",
+          "districts",
+          "offices",
+          "bills",
+          "votes",
+          "statements",
+          "campaign_finance",
+          "endorsements",
+          "images",
+          "other"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "access": {
+      "$ref": "#/$defs/access"
+    },
+    "license": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/license"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "retrieval": {
+      "$ref": "#/$defs/retrieval"
+    },
+    "externalIdentifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/externalIdentifier"
+      }
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "access": {
+      "type": "object",
+      "required": [
+        "method",
+        "documentationUrl",
+        "termsUrl",
+        "requiresCredential",
+        "credentialSecretName",
+        "rateLimitNotes",
+        "cachePolicy"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "api",
+            "bulk_download",
+            "http",
+            "manual",
+            "other"
+          ]
+        },
+        "documentationUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "termsUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "requiresCredential": {
+          "type": "boolean"
+        },
+        "credentialSecretName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        },
+        "rateLimitNotes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        },
+        "cachePolicy": {
+          "type": "string",
+          "enum": [
+            "permanent",
+            "time_limited",
+            "metadata_only",
+            "no_storage",
+            "unknown"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "requiresCredential": {
+                "const": true
+              }
+            },
+            "required": [
+              "requiresCredential"
+            ]
+          },
+          "then": {
+            "properties": {
+              "credentialSecretName": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requiresCredential": {
+                "const": false
+              }
+            },
+            "required": [
+              "requiresCredential"
+            ]
+          },
+          "then": {
+            "properties": {
+              "credentialSecretName": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "object",
+      "required": [
+        "name",
+        "url",
+        "attributionRequired",
+        "attributionText",
+        "redistributionAllowed"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "attributionRequired": {
+          "type": "boolean"
+        },
+        "attributionText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        },
+        "redistributionAllowed": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "no",
+            "conditional",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "retrieval": {
+      "type": "object",
+      "required": [
+        "status",
+        "lastCheckedAt",
+        "lastSuccessfulAt",
+        "sourceChangedAt",
+        "etag",
+        "lastModified",
+        "contentHash",
+        "upstreamChangeHash",
+        "httpStatus",
+        "error"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "healthy",
+            "redirected",
+            "degraded",
+            "unavailable",
+            "unchecked"
+          ]
+        },
+        "lastCheckedAt": {
+          "$ref": "common.schema.json#/$defs/nullableTimestamp"
+        },
+        "lastSuccessfulAt": {
+          "$ref": "common.schema.json#/$defs/nullableTimestamp"
+        },
+        "sourceChangedAt": {
+          "$ref": "common.schema.json#/$defs/nullableTimestamp"
+        },
+        "etag": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "lastModified": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "contentHash": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "upstreamChangeHash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "httpStatus": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 100,
+          "maximum": 599
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,166 @@
+name: Refresh civic data
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Bootstrap a new dataset or refresh existing snapshots
+        required: true
+        default: refresh
+        type: choice
+        options:
+          - refresh
+          - bootstrap
+      providers:
+        description: Source adapters to run
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - openstates
+          - fec
+      election_cycle:
+        description: Even-numbered federal election year
+        required: true
+        default: "2026"
+        type: string
+  schedule:
+    - cron: "17 9 1 * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: civic-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh Massachusetts source snapshots
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      REFRESH_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'refresh' }}
+      REFRESH_PROVIDERS: ${{ github.event_name == 'workflow_dispatch' && inputs.providers || 'all' }}
+      ELECTION_CYCLE: ${{ github.event_name == 'workflow_dispatch' && inputs.election_cycle || '' }}
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+
+      - name: Resolve scheduled election cycle
+        if: env.ELECTION_CYCLE == ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          election_cycle="$(date --utc +%Y)"
+          if (( election_cycle % 2 != 0 )); then
+            election_cycle="$((election_cycle + 1))"
+          fi
+          echo "ELECTION_CYCLE=${election_cycle}" >> "${GITHUB_ENV}"
+
+      - name: Confirm required secrets are configured
+        env:
+          OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
+          DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          case "${REFRESH_PROVIDERS}" in
+            all)
+              required_secrets=(OPENSTATES_API_KEY DATA_GOV_API_KEY)
+              ;;
+            openstates)
+              required_secrets=(OPENSTATES_API_KEY)
+              ;;
+            fec)
+              required_secrets=(DATA_GOV_API_KEY)
+              ;;
+            *)
+              echo "Unsupported provider selection." >&2
+              exit 1
+              ;;
+          esac
+
+          for secret_name in "${required_secrets[@]}"; do
+            if [[ -z "${!secret_name:-}" ]]; then
+              echo "Required repository secret ${secret_name} is not configured." >&2
+              exit 1
+            fi
+          done
+
+      - name: Retrieve bounded source data
+        env:
+          OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
+          DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+        run: >-
+          node scripts/refresh-civic-data.mjs
+          --mode "${REFRESH_MODE}"
+          --providers "${REFRESH_PROVIDERS}"
+          --election-cycle "${ELECTION_CYCLE}"
+          --max-openstates-requests 8
+          --max-fec-requests 5
+
+      - name: Validate generated snapshots
+        env:
+          OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
+          DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+        run: >-
+          node scripts/validate-civic-data.mjs
+          --providers "${REFRESH_PROVIDERS}"
+          --election-cycle "${ELECTION_CYCLE}"
+
+      - name: Detect data changes
+        id: changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/raw && [[ -z "$(git status --short --untracked-files=all -- data/raw)" ]]; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+            echo "No civic data changes were produced." >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+            {
+              echo "## Civic data refresh"
+              echo
+              echo "Generated changes for review:"
+              echo
+              echo '```text'
+              git status --short -- data/raw
+              echo '```'
+            } >> "${GITHUB_STEP_SUMMARY}"
+          fi
+
+      - name: Open a review pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          branch_name="automation/civic-data-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --create "${branch_name}"
+          git add -- data/raw
+          git commit --message "data: refresh Massachusetts civic sources"
+          git push --set-upstream origin "${branch_name}"
+
+          gh pr create \
+            --base "${DEFAULT_BRANCH}" \
+            --head "${branch_name}" \
+            --title "data: refresh Massachusetts civic sources" \
+            --body "Automated ${REFRESH_MODE} of the bounded Massachusetts Open States and FEC source snapshots. The generated files passed hash, scope, freshness, and secret-leak validation. Review the source-data diff before merging."

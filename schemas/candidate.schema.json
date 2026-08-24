@@ -1,0 +1,573 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/candidate.schema.json",
+  "title": "Civics candidate",
+  "description": "A consistent person-and-candidacy profile. Interpretive content is represented only by references to evidence-backed claim records.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "displayName",
+    "legalName",
+    "images",
+    "partyAffiliations",
+    "geographicBase",
+    "currentOccupation",
+    "currentOffices",
+    "candidacies",
+    "webLinks",
+    "externalIdentifiers",
+    "analysis",
+    "provenance",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "candidate"
+    },
+    "displayName": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            }
+          }
+        }
+      ]
+    },
+    "legalName": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/personName"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "images": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/image"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "partyAffiliations": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/partyAffiliation"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "geographicBase": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/jurisdictionRef"
+                  },
+                  "uniqueItems": true
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "currentOccupation": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 500
+            }
+          }
+        }
+      ]
+    },
+    "currentOffices": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/officeTenure"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "candidacies": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/candidacy"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "webLinks": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/webLink"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "externalIdentifiers": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/externalIdentifier"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "analysis": {
+      "$ref": "#/$defs/analysis"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "personName": {
+      "type": "object",
+      "required": [
+        "full",
+        "given",
+        "middle",
+        "family",
+        "suffix"
+      ],
+      "properties": {
+        "full": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "given": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "middle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "family": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 150
+        },
+        "suffix": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 50
+        }
+      },
+      "additionalProperties": false
+    },
+    "image": {
+      "type": "object",
+      "required": [
+        "url",
+        "alt",
+        "sourceId",
+        "license",
+        "attribution"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "sourceId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "attribution": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        }
+      },
+      "additionalProperties": false
+    },
+    "partyAffiliation": {
+      "type": "object",
+      "required": [
+        "party",
+        "relationship",
+        "startedOn",
+        "endedOn",
+        "isCurrent"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "common.schema.json#/$defs/partyRef"
+        },
+        "relationship": {
+          "type": "string",
+          "enum": [
+            "member",
+            "ballot_designation",
+            "endorsed",
+            "self_identified",
+            "unknown"
+          ]
+        },
+        "startedOn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "endedOn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "isCurrent": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "officeTenure": {
+      "type": "object",
+      "required": [
+        "officeId",
+        "title",
+        "jurisdictionId",
+        "districtId",
+        "startedOn",
+        "endedOn"
+      ],
+      "properties": {
+        "officeId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "jurisdictionId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "districtId": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/entityId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "startedOn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "endedOn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidacy": {
+      "type": "object",
+      "required": [
+        "electionId",
+        "raceId",
+        "ballotIds",
+        "partyId",
+        "filingStatus",
+        "incumbency"
+      ],
+      "properties": {
+        "electionId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "raceId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "ballotIds": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/entityId"
+          },
+          "uniqueItems": true
+        },
+        "partyId": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/entityId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filingStatus": {
+          "type": "string",
+          "enum": [
+            "declared",
+            "qualified",
+            "withdrawn",
+            "disqualified",
+            "won",
+            "lost",
+            "unknown"
+          ]
+        },
+        "incumbency": {
+          "type": "string",
+          "enum": [
+            "incumbent",
+            "challenger",
+            "open_seat",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "description": "References only. The claim schema owns all generated prose, evidence, uncertainty, and review metadata.",
+      "required": [
+        "status",
+        "summaryClaimIds",
+        "statedPriorityClaimIds",
+        "recordClaimIds",
+        "ideologyClaimIds",
+        "likelyPolicyDirectionClaimIds",
+        "tradeoffClaimIds",
+        "contradictionClaimIds",
+        "uncertaintyClaimIds"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "partial",
+            "available",
+            "conflicting",
+            "unavailable"
+          ]
+        },
+        "summaryClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "statedPriorityClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "recordClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "ideologyClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "likelyPolicyDirectionClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "tradeoffClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "contradictionClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        },
+        "uncertaintyClaimIds": {
+          "$ref": "#/$defs/claimIds"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claimIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

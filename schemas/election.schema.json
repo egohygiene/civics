@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/election.schema.json",
+  "title": "Civics election",
+  "description": "An election event that groups races and ballot styles for a jurisdiction and date.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "name",
+    "electionType",
+    "date",
+    "status",
+    "jurisdiction",
+    "partyScope",
+    "registrationDeadline",
+    "earlyVotingPeriod",
+    "pollingHours",
+    "raceIds",
+    "ballotIds",
+    "externalIdentifiers",
+    "officialSourceIds",
+    "provenance",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "election"
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          }
+        }
+      ]
+    },
+    "electionType": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "general",
+        "special_primary",
+        "special_general",
+        "runoff",
+        "local",
+        "other",
+        "unknown"
+      ]
+    },
+    "date": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            }
+          }
+        }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "cancelled",
+        "unknown"
+      ]
+    },
+    "jurisdiction": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/jurisdictionRef"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "partyScope": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/partyRef"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "registrationDeadline": {
+      "$ref": "#/$defs/dateField"
+    },
+    "earlyVotingPeriod": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/dateRange"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "pollingHours": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "opens",
+                    "closes",
+                    "timeZone"
+                  ],
+                  "properties": {
+                    "opens": {
+                      "type": "string",
+                      "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+                    },
+                    "closes": {
+                      "type": "string",
+                      "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+                    },
+                    "timeZone": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "raceIds": {
+      "$ref": "#/$defs/entityIdsField"
+    },
+    "ballotIds": {
+      "$ref": "#/$defs/entityIdsField"
+    },
+    "externalIdentifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/externalIdentifier"
+      }
+    },
+    "officialSourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/entityId"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "dateField": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            }
+          }
+        }
+      ]
+    },
+    "dateRange": {
+      "type": "object",
+      "required": [
+        "startsOn",
+        "endsOn"
+      ],
+      "properties": {
+        "startsOn": {
+          "type": "string",
+          "format": "date"
+        },
+        "endsOn": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entityIdsField": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/dataField"
+        },
+        {
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/entityId"
+                  },
+                  "uniqueItems": true
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,545 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/common.schema.json",
+  "title": "Civics common schema definitions",
+  "description": "Reusable identifiers, data-state envelopes, provenance, freshness, and review definitions for the Civics static knowledge graph.",
+  "$defs": {
+    "entityId": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 200,
+      "pattern": "^[a-z0-9][a-z0-9._:-]*[a-z0-9]$"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "nullableTimestamp": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/timestamp"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "availabilityStatus": {
+      "type": "string",
+      "enum": [
+        "known",
+        "unknown",
+        "not_applicable",
+        "not_available",
+        "not_researched",
+        "conflicting"
+      ]
+    },
+    "dataField": {
+      "type": "object",
+      "description": "Envelope that prevents absent or unknown values from being confused with known empty values.",
+      "required": [
+        "status",
+        "value",
+        "evidenceRefs"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/availabilityStatus"
+        },
+        "value": {},
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityId"
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "known"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "not": {
+                  "type": "null"
+                }
+              },
+              "evidenceRefs": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "conflicting"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "not": {
+                  "type": "null"
+                }
+              },
+              "evidenceRefs": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "unknown",
+                  "not_applicable",
+                  "not_available",
+                  "not_researched"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "status",
+        "reviewedAt",
+        "reviewer",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "automated_checks_passed",
+            "human_reviewed",
+            "needs_review",
+            "rejected"
+          ]
+        },
+        "reviewedAt": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "human_reviewed"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "reviewedAt": {
+                "$ref": "#/$defs/timestamp"
+              },
+              "reviewer": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unreviewed"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "reviewedAt": {
+                "type": "null"
+              },
+              "reviewer": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "freshness": {
+      "type": "object",
+      "description": "Separates the last source check, observed source change, and generated-data update.",
+      "required": [
+        "status",
+        "checkedAt",
+        "sourceChangedAt",
+        "dataUpdatedAt",
+        "validThrough"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "current",
+            "stale",
+            "unknown"
+          ]
+        },
+        "checkedAt": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "sourceChangedAt": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "dataUpdatedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "validThrough": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "current",
+                  "stale"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "checkedAt": {
+                "$ref": "#/$defs/timestamp"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "generator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "name",
+            "version"
+          ],
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "script",
+                "model",
+                "human"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "version": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            },
+            "promptVersion": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "method",
+        "sourceIds",
+        "evidenceIds",
+        "producedAt",
+        "generator",
+        "codeRevision"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "imported",
+            "structured_extraction",
+            "deterministic_derivation",
+            "ai_assisted",
+            "human_authored"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityId"
+          },
+          "uniqueItems": true
+        },
+        "evidenceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityId"
+          },
+          "uniqueItems": true
+        },
+        "producedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "generator": {
+          "$ref": "#/$defs/generator"
+        },
+        "codeRevision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "ai_assisted"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "properties": {
+              "generator": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "model"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "externalIdentifier": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "value"
+      ],
+      "properties": {
+        "scheme": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "jurisdictionRef": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "level",
+        "stateCode",
+        "countryCode"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/entityId"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "country",
+            "state",
+            "county",
+            "municipality",
+            "district",
+            "precinct",
+            "other"
+          ]
+        },
+        "stateCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{2}$"
+        },
+        "countryCode": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "partyRef": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "abbreviation"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/entityId"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "abbreviation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 30
+        }
+      },
+      "additionalProperties": false
+    },
+    "webLink": {
+      "type": "object",
+      "required": [
+        "kind",
+        "url",
+        "label"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "campaign",
+            "government",
+            "social",
+            "profile",
+            "other"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "additionalProperties": false
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}
