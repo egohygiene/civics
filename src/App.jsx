@@ -102,15 +102,6 @@ function MassachusettsMap({ selectedCounty, onSelectCounty }) {
         <desc id="ma-map-description">
           Select a county to establish geographic context. Statewide races appear in every county; district-level ballot resolution is being added.
         </desc>
-        <defs>
-          <filter id="mapGlow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
         <g transform={transform}>
           {counties.map((county) => {
             const id = String(county.id).padStart(5, "0");
