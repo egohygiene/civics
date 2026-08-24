@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
+  BadgeDollarSign,
   Bookmark,
   CalendarDays,
   Check,
@@ -24,6 +25,17 @@ import {
   X,
 } from "lucide-react";
 import { geoPath } from "d3-geo";
+import {
+  FinanceCandidateExperience,
+  FinanceRaceExperience,
+} from "./features/finance/FinanceExperience.jsx";
+import {
+  adaptOcpfFinanceDataset,
+  financeRecords,
+  financeSynthesisByRace,
+  getFinanceRecord,
+  getRaceFinanceRecords,
+} from "./data/finance.js";
 import { candidates, countyNames, election, races, sources } from "./data/seed.js";
 import massachusettsCounties from "./data/ma-counties.json";
 import {
@@ -268,6 +280,7 @@ function AtlasLane({ candidates: laneCandidates, emptyLabel, isSaved, onOpen, pa
 function BallotAtlas({
   atlasScope,
   availableRaces,
+  candidateRecords,
   hasLocalProof,
   isSaved,
   onOpenCandidate,
@@ -275,8 +288,8 @@ function BallotAtlas({
   onScopeChange,
 }) {
   const rows = useMemo(
-    () => buildBallotRows(availableRaces, candidates, atlasScope),
-    [atlasScope, availableRaces],
+    () => buildBallotRows(availableRaces, candidateRecords, atlasScope),
+    [atlasScope, availableRaces, candidateRecords],
   );
   const summary = useMemo(() => summarizeBallotRows(rows), [rows]);
   const statewideCount = availableRaces.filter((race) => race.scope === "statewide").length;
@@ -440,7 +453,7 @@ function CompareTray({ profiles, onClear, onOpen }) {
   );
 }
 
-function CandidateDialog({ candidate, onClose, isSaved, onToggleSave }) {
+function CandidateDialog({ candidate, financeRecord, onClose, isSaved, onToggleSave }) {
   const closeButton = useRef(null);
   const dialog = useRef(null);
   const previouslyFocused = useRef(document.activeElement);
@@ -516,6 +529,20 @@ function CandidateDialog({ candidate, onClose, isSaved, onToggleSave }) {
               ))}
             </dl>
           </section>
+          {financeRecord ? (
+            <FinanceCandidateExperience
+              candidate={candidate}
+              className="finance-candidate-embed"
+              electionLabel={election.name}
+              id={`finance-profile-${candidate.id}`}
+              limitations={[
+                "A finance filing describes committee activity; it is not a candidate-quality or voter-support score.",
+              ]}
+              office={candidate.office}
+              record={financeRecord}
+              title="Campaign finance snapshot"
+            />
+          ) : null}
           <section className="source-box">
             <FileCheck2 aria-hidden="true" />
             <div>
@@ -544,6 +571,7 @@ function App() {
   const [atlasScope, setAtlasScope] = useState("available");
   const [selectedRace, setSelectedRace] = useState(races[0].id);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const [materializedFinanceRecords, setMaterializedFinanceRecords] = useState(financeRecords);
   const [savedCandidates, setSavedCandidates] = useState(() => {
     try {
       return new Set(JSON.parse(localStorage.getItem("civics-ballot-notes") ?? "[]"));
@@ -557,12 +585,47 @@ function App() {
     localStorage.setItem("civics-theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch(`${import.meta.env.BASE_URL}data/finance/ocpf-ma-2026.json`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`OCPF finance view returned ${response.status}.`);
+        return response.json();
+      })
+      .then((dataset) => {
+        if (cancelled) return;
+        setMaterializedFinanceRecords([
+          ...financeRecords,
+          ...adaptOcpfFinanceDataset(dataset),
+        ]);
+      })
+      .catch(() => {
+        if (!cancelled) setMaterializedFinanceRecords(financeRecords);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const isWilmingtonProof = selectedCounty === "25017";
   const availableRaces = useMemo(
     () => races.filter((race) => race.scope === "statewide" || isWilmingtonProof),
     [isWilmingtonProof],
   );
   const activeRace = availableRaces.find((race) => race.id === selectedRace) ?? availableRaces[0];
+
+  const enrichedCandidates = useMemo(() => {
+    const financeCandidateIds = new Set(materializedFinanceRecords
+      .filter((record) => ["available", "partial"].includes(record.status))
+      .map((record) => record.candidateId));
+
+    return candidates.map((candidate) => financeCandidateIds.has(candidate.id) ? {
+      ...candidate,
+      evidence: { ...candidate.evidence, finance: "available" },
+    } : candidate);
+  }, [materializedFinanceRecords]);
 
   useEffect(() => {
     if (!availableRaces.some((race) => race.id === selectedRace)) {
@@ -579,14 +642,19 @@ function App() {
   const visibleCandidateIds = ballot === "all"
     ? [...activeRace.democratic, ...activeRace.republican]
     : activeRace[ballot];
-  const visibleCandidates = visibleCandidateIds.map((id) => candidates.find((candidate) => candidate.id === id)).filter(Boolean);
+  const visibleCandidates = visibleCandidateIds.map((id) => enrichedCandidates.find((candidate) => candidate.id === id)).filter(Boolean);
+  const raceFinanceRecords = getRaceFinanceRecords(activeRace, visibleCandidateIds, materializedFinanceRecords);
+  const raceFinanceSynthesis = financeSynthesisByRace[activeRace.id];
+  const visibleFinanceSynthesis = raceFinanceSynthesis?.evidenceCandidateIds.every((candidateId) => (
+    visibleCandidateIds.includes(candidateId)
+  )) ? raceFinanceSynthesis : null;
   const candidateGroups = (ballot === "all" ? ["democratic", "republican"] : [ballot]).map((party) => ({
     party,
-    candidates: activeRace[party].map((id) => candidates.find((candidate) => candidate.id === id)).filter(Boolean),
+    candidates: activeRace[party].map((id) => enrichedCandidates.find((candidate) => candidate.id === id)).filter(Boolean),
   }));
   const selectedCountyName = countyNames[selectedCounty];
   const regionContext = isWilmingtonProof ? "Wilmington proof of concept" : `${selectedCountyName} County`;
-  const savedProfiles = candidates.filter((candidate) => savedCandidates.has(candidate.id));
+  const savedProfiles = enrichedCandidates.filter((candidate) => savedCandidates.has(candidate.id));
   const remainingDays = daysUntil(election.date);
 
   function toggleSaved(candidateId) {
@@ -622,6 +690,7 @@ function App() {
           <a href="#explore">Explore</a>
           <a href="#atlas">Atlas</a>
           <a href="#compare">Compare</a>
+          <a href="#money">Money</a>
           <a href="#method">Method</a>
         </nav>
         <button className="theme-button" type="button" aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
@@ -716,6 +785,7 @@ function App() {
         <BallotAtlas
           atlasScope={atlasScope}
           availableRaces={availableRaces}
+          candidateRecords={enrichedCandidates}
           hasLocalProof={isWilmingtonProof}
           isSaved={(candidateId) => savedCandidates.has(candidateId)}
           onOpenCandidate={setSelectedCandidate}
@@ -754,6 +824,34 @@ function App() {
               <button type="button" className="quiet-button" onClick={() => setBallot("all")}>Show both ballots</button>
             </div>
           )}
+
+          <div className="race-finance-section" id="money">
+            {raceFinanceRecords.length ? (
+              <FinanceRaceExperience
+                candidates={visibleCandidates}
+                electionLabel={election.name}
+                id={`finance-${activeRace.id}`}
+                limitations={[
+                  "Candidate-controlled committee activity and independent outside spending are separate datasets.",
+                  "Different reporting-period starts are shown rather than normalized into a potentially misleading pace score.",
+                ]}
+                office={activeRace.office}
+                records={raceFinanceRecords}
+                synthesis={visibleFinanceSynthesis}
+                title={`Money in the ${activeRace.office} race`}
+              />
+            ) : (
+              <article className="finance-pending-panel">
+                <BadgeDollarSign aria-hidden="true" />
+                <div>
+                  <p className="section-kicker">Campaign finance lens</p>
+                  <h3>Regulator data is being resolved for this race.</h3>
+                  <p>Civics will publish exact receipts, spending, cash, debt, and source mix only after the candidate-to-filer identity has been reviewed. Missing finance remains unknown—not zero.</p>
+                </div>
+                <Status value="queued" />
+              </article>
+            )}
+          </div>
 
           <div className="evidence-matrix" aria-labelledby="matrix-title">
             <div className="matrix-heading">
@@ -829,12 +927,13 @@ function App() {
         <a href="#explore"><Map aria-hidden="true" /><small>Map</small></a>
         <a href="#atlas"><Network aria-hidden="true" /><small>Atlas</small></a>
         <a href="#compare"><Scale aria-hidden="true" /><small>Compare</small></a>
-        <a href="#method"><FileCheck2 aria-hidden="true" /><small>Method</small></a>
+        <a href="#money"><BadgeDollarSign aria-hidden="true" /><small>Money</small></a>
       </nav>
 
       {selectedCandidate ? (
         <CandidateDialog
           candidate={selectedCandidate}
+          financeRecord={getFinanceRecord(selectedCandidate.id, materializedFinanceRecords)}
           onClose={() => setSelectedCandidate(null)}
           isSaved={savedCandidates.has(selectedCandidate.id)}
           onToggleSave={toggleSaved}

@@ -1,0 +1,760 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/finance.schema.json",
+  "title": "Civics candidate finance view",
+  "description": "A deterministic, provider-backed static view of comparable candidate finance metrics. Missing values remain explicit and generated synthesis is referenced rather than embedded as fact.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "kind",
+    "provider",
+    "status",
+    "period",
+    "candidates",
+    "limitations",
+    "source",
+    "contentHash",
+    "provenance",
+    "freshness",
+    "review"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "finance_dataset"
+    },
+    "provider": {
+      "$ref": "#/$defs/provider"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "unknown",
+        "not_applicable"
+      ]
+    },
+    "period": {
+      "$ref": "#/$defs/datasetPeriod"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidateFinance"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000
+      }
+    },
+    "source": {
+      "$ref": "#/$defs/sourceRecord"
+    },
+    "contentHash": {
+      "$ref": "common.schema.json#/$defs/sha256"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "freshness": {
+      "$ref": "common.schema.json#/$defs/freshness"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    }
+  },
+  "$defs": {
+    "provider": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "jurisdiction",
+        "documentationUrl"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "jurisdiction": {
+          "type": "string",
+          "const": "Massachusetts"
+        },
+        "documentationUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "datasetPeriod": {
+      "type": "object",
+      "required": [
+        "cycle",
+        "startDate",
+        "endDate",
+        "asOf"
+      ],
+      "properties": {
+        "cycle": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2200
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "endDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "asOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidateFinance": {
+      "type": "object",
+      "required": [
+        "candidateId",
+        "status",
+        "provider",
+        "identity",
+        "period",
+        "totals",
+        "receiptComposition",
+        "outsideSpending",
+        "timeSeries",
+        "comparability",
+        "source",
+        "provenance",
+        "freshness",
+        "review",
+        "synthesisRefs"
+      ],
+      "properties": {
+        "candidateId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "partial",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "provider": {
+          "$ref": "#/$defs/candidateProvider"
+        },
+        "identity": {
+          "$ref": "#/$defs/providerIdentity"
+        },
+        "period": {
+          "$ref": "#/$defs/reportingPeriod"
+        },
+        "totals": {
+          "type": "object",
+          "required": [
+            "receipts",
+            "disbursements",
+            "cashOnHand",
+            "debtsOwed"
+          ],
+          "properties": {
+            "receipts": {
+              "$ref": "#/$defs/moneyMetric"
+            },
+            "disbursements": {
+              "$ref": "#/$defs/moneyMetric"
+            },
+            "cashOnHand": {
+              "$ref": "#/$defs/moneyMetric"
+            },
+            "debtsOwed": {
+              "$ref": "#/$defs/moneyMetric"
+            }
+          },
+          "additionalProperties": false
+        },
+        "receiptComposition": {
+          "$ref": "#/$defs/compositionField"
+        },
+        "outsideSpending": {
+          "$ref": "#/$defs/outsideSpendingField"
+        },
+        "timeSeries": {
+          "type": "object",
+          "required": [
+            "receipts",
+            "disbursements",
+            "cashOnHand"
+          ],
+          "properties": {
+            "receipts": {
+              "$ref": "#/$defs/seriesField"
+            },
+            "disbursements": {
+              "$ref": "#/$defs/seriesField"
+            },
+            "cashOnHand": {
+              "$ref": "#/$defs/seriesField"
+            }
+          },
+          "additionalProperties": false
+        },
+        "comparability": {
+          "$ref": "#/$defs/comparability"
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRecord"
+        },
+        "provenance": {
+          "$ref": "common.schema.json#/$defs/provenance"
+        },
+        "freshness": {
+          "$ref": "common.schema.json#/$defs/freshness"
+        },
+        "review": {
+          "$ref": "common.schema.json#/$defs/review"
+        },
+        "synthesisRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/entityId"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidateProvider": {
+      "type": "object",
+      "required": [
+        "id",
+        "entityId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "entityId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "additionalProperties": false
+    },
+    "providerIdentity": {
+      "type": "object",
+      "required": [
+        "filerName",
+        "committeeName",
+        "office",
+        "party",
+        "matchStatus"
+      ],
+      "properties": {
+        "filerName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "committeeName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "office": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "party": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "matchStatus": {
+          "type": "string",
+          "enum": [
+            "automated_checks_passed",
+            "human_reviewed",
+            "needs_review"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "reportingPeriod": {
+      "type": "object",
+      "required": [
+        "startDate",
+        "endDate",
+        "cycle",
+        "asOf",
+        "basis",
+        "reportId"
+      ],
+      "properties": {
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "endDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "cycle": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2200
+        },
+        "asOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "year_to_date",
+            "election_cycle",
+            "reporting_period",
+            "unknown"
+          ]
+        },
+        "reportId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        }
+      },
+      "additionalProperties": false
+    },
+    "moneyMetric": {
+      "type": "object",
+      "required": [
+        "status",
+        "value",
+        "currency",
+        "sourceRecordRefs",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "common.schema.json#/$defs/availabilityStatus"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "const": "USD"
+        },
+        "sourceRecordRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "known",
+                  "conflicting"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "sourceRecordRefs": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "unknown",
+                  "not_applicable",
+                  "not_available",
+                  "not_researched"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "compositionField": {
+      "type": "object",
+      "required": [
+        "status",
+        "value",
+        "sourceRecordRefs",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "common.schema.json#/$defs/availabilityStatus"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/compositionCategory"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceRecordRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      },
+      "additionalProperties": false
+    },
+    "compositionCategory": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "amount",
+        "share"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "amount": {
+          "type": "number"
+        },
+        "share": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "outsideSpendingField": {
+      "type": "object",
+      "required": [
+        "status",
+        "value",
+        "sourceRecordRefs",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "common.schema.json#/$defs/availabilityStatus"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "supporting",
+                "opposing",
+                "other",
+                "total"
+              ],
+              "properties": {
+                "supporting": {
+                  "type": "number"
+                },
+                "opposing": {
+                  "type": "number"
+                },
+                "other": {
+                  "type": "number"
+                },
+                "total": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceRecordRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      },
+      "additionalProperties": false
+    },
+    "seriesField": {
+      "type": "object",
+      "required": [
+        "status",
+        "value",
+        "currency",
+        "sourceRecordRefs",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "common.schema.json#/$defs/availabilityStatus"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/seriesPoint"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "const": "USD"
+        },
+        "sourceRecordRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      },
+      "additionalProperties": false
+    },
+    "seriesPoint": {
+      "type": "object",
+      "required": [
+        "date",
+        "value",
+        "reportId"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "value": {
+          "type": "number"
+        },
+        "reportId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        }
+      },
+      "additionalProperties": false
+    },
+    "comparability": {
+      "type": "object",
+      "required": [
+        "status",
+        "basis",
+        "key",
+        "caveats"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "comparable",
+            "limited",
+            "not_comparable",
+            "unknown"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceRecord": {
+      "type": "object",
+      "required": [
+        "sourceId",
+        "recordId",
+        "url",
+        "retrievedAt",
+        "contentHash"
+      ],
+      "properties": {
+        "sourceId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "recordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "retrievedAt": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "contentHash": {
+          "$ref": "common.schema.json#/$defs/sha256"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

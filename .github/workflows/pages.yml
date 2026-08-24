@@ -47,6 +47,9 @@ jobs:
             echo "Raw API snapshots have not been bootstrapped; validating the reviewed seed only."
           fi
 
+      - name: Validate campaign finance data
+        run: node scripts/validate-ocpf-finance.mjs
+
       - name: Run tests
         run: npm test
 

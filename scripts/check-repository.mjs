@@ -4,6 +4,13 @@ import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { sha256Canonical } from "./lib/civic-data.mjs";
+import {
+  assertFinanceDataset,
+  assertOcpfRawRecord,
+  assertOcpfRegistry,
+} from "./lib/ocpf-finance.mjs";
+
 const SCRIPT_DIRECTORY = path.dirname(fileURLToPath(import.meta.url));
 const REPOSITORY_ROOT = path.resolve(SCRIPT_DIRECTORY, "..");
 const SCHEMA_DIRECTORY = path.join(REPOSITORY_ROOT, "schemas");
@@ -62,7 +69,42 @@ async function main() {
     throw new Error("public/CNAME must contain civics.egohygiene.io.");
   }
 
-  process.stdout.write(`Checked ${schemaNames.length} schemas, map geometry, and Pages metadata.\n`);
+  const ocpfRegistry = await parseJson(
+    path.join(REPOSITORY_ROOT, "data", "sources", "ocpf-candidate-registry.json"),
+  );
+  assertOcpfRegistry(ocpfRegistry);
+  const ocpfSnapshot = await parseJson(
+    path.join(
+      REPOSITORY_ROOT,
+      "data",
+      "raw",
+      "ocpf",
+      "ma-candidate-finance-2026.json",
+    ),
+  );
+  if (
+    ocpfSnapshot.provider !== "ocpf" ||
+    !Array.isArray(ocpfSnapshot.records) ||
+    ocpfSnapshot.recordCount !== ocpfSnapshot.records.length ||
+    ocpfSnapshot.contentHash !== sha256Canonical(ocpfSnapshot.records)
+  ) {
+    throw new Error("Checked OCPF snapshot metadata or content hash is invalid.");
+  }
+  ocpfSnapshot.records.forEach((record) => assertOcpfRawRecord(record));
+  const ocpfFinance = await parseJson(
+    path.join(REPOSITORY_ROOT, "public", "data", "finance", "ocpf-ma-2026.json"),
+  );
+  assertFinanceDataset(ocpfFinance);
+  if (
+    ocpfFinance.candidates.length !== ocpfSnapshot.recordCount ||
+    ocpfFinance.source.contentHash !== ocpfSnapshot.contentHash
+  ) {
+    throw new Error("Materialized OCPF finance view does not match its snapshot.");
+  }
+
+  process.stdout.write(
+    `Checked ${schemaNames.length} schemas, map geometry, Pages metadata, and ${ocpfFinance.candidates.length} OCPF finance views.\n`,
+  );
 }
 
 main().catch((error) => {

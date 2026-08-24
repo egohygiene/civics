@@ -1,0 +1,401 @@
+{
+  "schemaVersion": "1.0.0",
+  "provider": {
+    "id": "ocpf",
+    "name": "Massachusetts Office of Campaign and Political Finance",
+    "documentationUrl": "https://api.ocpf.us/developers/guide",
+    "apiReferenceUrl": "https://api.ocpf.us/swagger"
+  },
+  "electionId": "ma-primary-2026-09-01",
+  "retrievedAt": "2026-08-24T14:58:33Z",
+  "review": {
+    "status": "agent_reviewed_maintainer_confirmation_required",
+    "autoPublish": false,
+    "fuzzyMatchingAllowed": false,
+    "method": "Each applicable match was checked against the official OCPF candidate listing using the candidate name, current office sought, active status, and city or incumbency context. Federal candidates are explicitly routed to the FEC for current-race finance."
+  },
+  "coverage": {
+    "seedCandidates": 28,
+    "ocpfApplicable": 18,
+    "exactCurrentMatches": 18,
+    "ambiguousApplicableMatches": 0,
+    "unmatchedApplicableCandidates": 0,
+    "notApplicableCurrentRace": 10,
+    "historicalOnlyMatches": 2
+  },
+  "candidates": [
+    {
+      "candidateId": "edward-markey",
+      "raceId": "us-senate",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Edward%20J.%20Markey"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "seth-moulton",
+      "raceId": "us-senate",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Seth%20Moulton"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "john-deaton",
+      "raceId": "us-senate",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=John%20Deaton"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "maura-healey",
+      "raceId": "governor",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 15710,
+      "ocpfName": "Maura T. Healey",
+      "ocpfOffice": "Governor",
+      "ocpfCity": "Arlington",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/15710",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Maura%20Healey"
+      ]
+    },
+    {
+      "candidateId": "michael-minogue",
+      "raceId": "governor",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 19431,
+      "ocpfName": "Michael R. Minogue",
+      "ocpfOffice": "Governor",
+      "ocpfCity": "South Hamilton",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/19431",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Minogue"
+      ]
+    },
+    {
+      "candidateId": "brian-shortsleeve",
+      "raceId": "governor",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 19172,
+      "ocpfName": "Brian Shortsleeve",
+      "ocpfOffice": "Governor",
+      "ocpfCity": "Barnstable",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/19172",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Brian%20Shortsleeve"
+      ]
+    },
+    {
+      "candidateId": "kimberley-driscoll",
+      "raceId": "lieutenant-governor",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 15268,
+      "ocpfName": "Kimberley Driscoll",
+      "ocpfOffice": "Lieutenant Governor",
+      "ocpfCity": "Salem",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/15268",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Kimberley%20Driscoll"
+      ]
+    },
+    {
+      "candidateId": "shawn-oliver",
+      "raceId": "lieutenant-governor",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 18168,
+      "ocpfName": "Shawn Oliver",
+      "ocpfOffice": "Lieutenant Governor",
+      "ocpfCity": "New Bedford",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/18168",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Shawn%20Oliver"
+      ]
+    },
+    {
+      "candidateId": "andrea-campbell",
+      "raceId": "attorney-general",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 15931,
+      "ocpfName": "Andrea Joy Campbell",
+      "ocpfOffice": "Attorney General",
+      "ocpfCity": "Dartmouth",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/15931",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Andrea%20Joy%20Campbell"
+      ]
+    },
+    {
+      "candidateId": "michael-walsh",
+      "raceId": "attorney-general",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 18059,
+      "ocpfName": "Michael C. Walsh",
+      "ocpfOffice": "Attorney General",
+      "ocpfCity": "Lynnfield",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/18059",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Walsh"
+      ],
+      "note": "The CPF ID is selected from multiple same-surname results because name, active status, Lynnfield city, and Attorney General office all agree."
+    },
+    {
+      "candidateId": "william-galvin",
+      "raceId": "secretary",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 10176,
+      "ocpfName": "William F. Galvin",
+      "ocpfOffice": "Secretary of State",
+      "ocpfCity": "Brighton",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/10176",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Galvin"
+      ],
+      "note": "The CPF ID is selected from multiple Galvin results because first name, active status, incumbent office, and Boston/Brighton geography agree."
+    },
+    {
+      "candidateId": "deborah-goldberg",
+      "raceId": "treasurer",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 14385,
+      "ocpfName": "Deborah Goldberg",
+      "ocpfOffice": "Treasurer of the Commonwealth",
+      "ocpfCity": "Brookline",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/14385",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Goldberg"
+      ]
+    },
+    {
+      "candidateId": "elizabeth-dionne",
+      "raceId": "treasurer",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 19582,
+      "ocpfName": "Elizabeth Harmer Dionne",
+      "ocpfOffice": "Treasurer of the Commonwealth",
+      "ocpfCity": "Belmont",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/19582",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Elizabeth%20Dionne"
+      ]
+    },
+    {
+      "candidateId": "diana-dizoglio",
+      "raceId": "auditor",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 15465,
+      "ocpfName": "Diana DiZoglio",
+      "ocpfOffice": "Auditor",
+      "ocpfCity": "Methuen",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/15465",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Diana%20DiZoglio"
+      ]
+    },
+    {
+      "candidateId": "bethany-andres-beck",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Bethany%20Andres-Beck"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "john-beccia",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=John%20A.%20Beccia%2C%20III"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "jamie-belsito",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Jamie%20Belsito",
+        "https://api.ocpf.us/filer/17857"
+      ],
+      "historicalOcpfMatches": [
+        {
+          "cpfId": 17857,
+          "office": "House, 4th Essex",
+          "isActive": false,
+          "useForCurrentRaceFinance": false
+        }
+      ],
+      "note": "OCPF contains an inactive state legislative committee, but current U.S. House campaign finance must come from the FEC."
+    },
+    {
+      "candidateId": "dan-koh",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Dan%20Koh"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "mariah-lancaster",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Mariah%20L.%20Lancaster"
+      ],
+      "note": "Current campaign is for federal office; no exact OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "tram-nguyen",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Nguyen",
+        "https://api.ocpf.us/filer/16891"
+      ],
+      "historicalOcpfMatches": [
+        {
+          "cpfId": 16891,
+          "office": "House, 18th Essex",
+          "isActive": true,
+          "useForCurrentRaceFinance": false
+        }
+      ],
+      "note": "OCPF contains her state legislative committee, but current U.S. House campaign finance must come from the FEC and remain separate."
+    },
+    {
+      "candidateId": "micah-quinney-jones",
+      "raceId": "us-house-6",
+      "matchStatus": "not_applicable_current_race",
+      "currentFinanceProvider": "fec",
+      "sourceUrls": [
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Micah%20Quinney%20Jones"
+      ],
+      "note": "Current campaign is for federal office; no OCPF filer match was found or expected."
+    },
+    {
+      "candidateId": "eunice-zeigler",
+      "raceId": "governors-council-5",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 17614,
+      "ocpfName": "Eunice Delice Zeigler",
+      "ocpfOffice": "Governor's Council, 5th District",
+      "ocpfCity": "Methuen",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/17614",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Zeigler"
+      ]
+    },
+    {
+      "candidateId": "barry-finegold",
+      "raceId": "state-senate-second-essex-middlesex",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 13045,
+      "ocpfName": "Barry R. Finegold",
+      "ocpfOffice": "Senate, 2nd Essex & Middlesex",
+      "ocpfCity": "Andover",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/13045",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Barry%20R.%20Finegold"
+      ]
+    },
+    {
+      "candidateId": "theodore-semesnyei",
+      "raceId": "state-senate-second-essex-middlesex",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 17269,
+      "ocpfName": "Theodore Semesnyei",
+      "ocpfOffice": "Senate, 2nd Essex & Middlesex",
+      "ocpfCity": "Amesbury",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/17269",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Semesnyei"
+      ]
+    },
+    {
+      "candidateId": "david-robertson",
+      "raceId": "state-house-nineteenth-middlesex",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 17043,
+      "ocpfName": "David A. Robertson",
+      "ocpfOffice": "House, 19th Middlesex",
+      "ocpfCity": "Wilmington",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/17043",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Robertson"
+      ]
+    },
+    {
+      "candidateId": "marian-ryan",
+      "raceId": "northern-district-attorney",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 15632,
+      "ocpfName": "Marian Teresa Ryan",
+      "ocpfOffice": "District Attorney, Northern District - Middlesex County",
+      "ocpfCity": "Belmont",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/15632",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Ryan"
+      ],
+      "note": "The CPF ID is selected from multiple Ryan results because first name, active status, incumbency, and Northern District office all agree."
+    },
+    {
+      "candidateId": "david-solet",
+      "raceId": "northern-district-attorney",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 19422,
+      "ocpfName": "David M. Solet",
+      "ocpfOffice": "District Attorney, Northern District - Middlesex County",
+      "ocpfCity": "Cambridge",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/19422",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=Solet"
+      ]
+    },
+    {
+      "candidateId": "tara-decristofaro",
+      "raceId": "middlesex-register-probate",
+      "matchStatus": "exact_current",
+      "currentFinanceProvider": "ocpf",
+      "cpfId": 13675,
+      "ocpfName": "Tara DeCristofaro",
+      "ocpfOffice": "Register of Probate, Middlesex County",
+      "ocpfCity": "Medford",
+      "sourceUrls": [
+        "https://api.ocpf.us/filer/13675",
+        "https://api.ocpf.us/filers/listings/C?searchPhrase=DeCristofaro"
+      ]
+    }
+  ]
+}

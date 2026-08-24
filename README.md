@@ -12,6 +12,8 @@ The first public checkpoint focuses on the September 1, 2026 Massachusetts State
 - Massachusetts county map derived from U.S. Census cartographic geometry.
 - Interactive Ballot Atlas that places both party rosters across a shared office spine.
 - Side-by-side Democratic and Republican statewide choices plus a 13-race Wilmington proof of concept.
+- Race and candidate campaign-finance views with exact FEC and OCPF totals, shared-period safeguards, source mix, freshness, and explicit research gaps.
+- Clearly disclosed AI-assisted finance orientation that links back to the regulator records it summarizes.
 - Evidence-coverage profiles with discrete states that preserve unknown and incomplete research without scoring candidates.
 - Local-only candidate bookmarks and a persistent private comparison tray.
 - Versioned civic knowledge-graph schemas with provenance and review states.
@@ -62,7 +64,9 @@ DATA_GOV_API_KEY
 LEGISCAN_API_KEY
 ```
 
-Open States and FEC are used by the first deterministic ingestion workflow. LegiScan is reserved as a supplementary source after its key is approved. Secrets are available only inside GitHub Actions and are never written into output.
+Open States and FEC are used by the first secret-backed ingestion workflow. Massachusetts OCPF finance data comes from a separate bounded, no-key adapter. LegiScan is reserved as a supplementary source after its key is approved. Secrets are available only inside GitHub Actions and are never written into output.
+
+The monthly workflow refreshes source snapshots into a review pull request instead of changing the public site directly. OCPF refreshes are content-hashed, fail closed when a candidate identity drifts, and materialize only sanitized totals into `public/data/finance/`. See [the finance data contract](docs/finance-data.md) for exact metric semantics and known gaps.
 
 Massachusetts Secretary of the Commonwealth pages are human-reviewed sources only. Their published terms prohibit automated scraping or crawling, so Civics does not automate those pages. Election facts from them are seeded with direct citations and review timestamps.
 
