@@ -69,7 +69,7 @@ function Status({ value }) {
 }
 
 function MassachusettsMap({ selectedCounty, onSelectCounty }) {
-  const { counties, path, transform } = useMemo(() => {
+  const { counties, offsetX, offsetY, path, scale, transform } = useMemo(() => {
     const massachusetts = massachusettsCounties.features;
     const collection = { type: "FeatureCollection", features: massachusetts };
     const rawPath = geoPath(null);
@@ -82,13 +82,22 @@ function MassachusettsMap({ selectedCounty, onSelectCounty }) {
     const offsetY = (height - scale * (y1 + y0)) / 2;
     return {
       counties: massachusetts,
+      offsetX,
+      offsetY,
       path: rawPath,
+      scale,
       transform: `translate(${offsetX} ${offsetY}) scale(${scale})`,
     };
   }, []);
 
   const selectedFeature = counties.find((county) => String(county.id).padStart(5, "0") === selectedCounty);
   const selectedCentroid = selectedFeature ? path.centroid(selectedFeature) : null;
+  const selectedScreenCentroid = selectedCentroid
+    ? [
+        selectedCentroid[0] * scale + offsetX,
+        selectedCentroid[1] * scale + offsetY,
+      ]
+    : null;
 
   return (
     <div className="map-stage">
@@ -126,12 +135,12 @@ function MassachusettsMap({ selectedCounty, onSelectCounty }) {
               />
             );
           })}
-          {selectedFeature && selectedCentroid ? (
-            <g className="county-label" transform={`translate(${selectedCentroid[0]} ${selectedCentroid[1]})`}>
-              <circle r="3.5" vectorEffect="non-scaling-stroke" />
-            </g>
-          ) : null}
         </g>
+        {selectedFeature && selectedScreenCentroid ? (
+          <g className="county-label" transform={`translate(${selectedScreenCentroid[0]} ${selectedScreenCentroid[1]})`}>
+            <circle r="3.5" />
+          </g>
+        ) : null}
       </svg>
       <div className="map-legend" aria-hidden="true">
         <span><i className="legend-selected" /> Selected region</span>
