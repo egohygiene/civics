@@ -261,13 +261,13 @@ footer {
 }
 
 .hero {
-  min-height: 690px;
+  min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(380px, 0.8fr);
-  gap: 72px;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 470px);
+  gap: 56px;
   align-items: center;
-  padding-top: 82px;
-  padding-bottom: 90px;
+  padding-top: 68px;
+  padding-bottom: 62px;
 }
 
 .eyebrow,
@@ -372,65 +372,222 @@ footer {
   color: var(--mint);
 }
 
-.election-orbit {
+.quick-start-card {
   position: relative;
-  min-height: 460px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 46px 36px;
+  min-height: 520px;
+  padding: 22px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 50% 50% 38% 38%;
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
   background:
-    radial-gradient(circle at center, color-mix(in srgb, var(--violet), transparent 86%), transparent 45%),
-    linear-gradient(150deg, color-mix(in srgb, var(--surface-raised), transparent 2%), var(--surface));
+    linear-gradient(color-mix(in srgb, var(--line), transparent 34%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--line), transparent 34%) 1px, transparent 1px),
+    radial-gradient(circle at 86% 10%, color-mix(in srgb, var(--violet), transparent 78%), transparent 17rem),
+    linear-gradient(145deg, color-mix(in srgb, var(--surface-raised), transparent 3%), var(--surface));
+  background-size: 30px 30px, 30px 30px, auto, auto;
   box-shadow: var(--shadow), inset 0 1px color-mix(in srgb, white, transparent 91%);
-  text-align: center;
 }
 
-.orbit-lines,
-.orbit-lines i {
+.quick-start-card::after {
+  content: "";
   position: absolute;
-  inset: 22px;
-  border: 1px solid color-mix(in srgb, var(--violet), transparent 82%);
+  right: -72px;
+  bottom: -72px;
+  width: 190px;
+  height: 190px;
+  border: 1px solid color-mix(in srgb, var(--mint), transparent 76%);
   border-radius: 50%;
-  transform: rotate(-8deg);
+  box-shadow: 0 0 70px color-mix(in srgb, var(--mint), transparent 88%);
+  pointer-events: none;
 }
 
-.orbit-lines i:nth-child(1) { inset: 36px -12px; transform: rotate(46deg); }
-.orbit-lines i:nth-child(2) { inset: 74px -36px; transform: rotate(-42deg); }
-.orbit-lines i:nth-child(3) { inset: 6px 68px; transform: rotate(86deg); }
-
-.orbit-icon {
+.quick-status,
+.quick-heading,
+.quick-step,
+.quick-result,
+.quick-privacy {
   position: relative;
-  width: 58px;
-  height: 58px;
+  z-index: 1;
+}
+
+.quick-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quick-status span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 14px var(--mint);
+}
+
+.quick-status strong {
+  color: var(--mint);
+  font-size: 0.64rem;
+}
+
+.quick-heading {
+  padding: 22px 0 18px;
+}
+
+.quick-heading p {
+  margin: 0 0 6px;
+  color: var(--violet);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.quick-heading h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.quick-step {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 13px;
+  align-items: start;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.quick-step-number {
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--mint), transparent 58%);
-  border-radius: 18px;
-  background: var(--surface-solid);
-  color: var(--mint);
-  box-shadow: 0 0 42px color-mix(in srgb, var(--mint), transparent 82%);
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 66%);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--violet), transparent 92%);
+  color: var(--violet);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 0.72rem;
+  font-style: italic;
 }
 
-.orbit-icon svg { width: 26px; height: 26px; }
-.election-orbit > p { position: relative; margin: 24px 0 8px; color: var(--faint); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-.election-orbit h2 { position: relative; max-width: 270px; margin: 0; font-size: 1.55rem; line-height: 1.16; letter-spacing: -0.04em; }
-.election-orbit > strong { position: relative; margin-top: 9px; color: var(--violet); font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 1.12rem; font-style: italic; font-weight: 500; }
-.election-orbit dl { position: relative; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); margin: 34px 0 24px; }
-.election-orbit dl div { padding: 0 8px; border-right: 1px solid var(--line); }
-.election-orbit dl div:last-child { border: 0; }
-.election-orbit dt { font-size: 1.1rem; font-weight: 700; }
-.election-orbit dd { margin: 4px 0 0; color: var(--faint); font-size: 0.57rem; line-height: 1.35; text-transform: uppercase; letter-spacing: 0.08em; }
-.election-orbit > a { position: relative; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 0.68rem; text-underline-offset: 4px; }
+.quick-step label,
+.quick-ballot-choice {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.quick-step label > span,
+.quick-ballot-choice > span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.quick-step select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--surface-solid), transparent 4%);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.quick-start-card .ballot-switch button {
+  min-height: 38px;
+}
+
+.quick-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  margin-top: 4px;
+  padding: 15px;
+  border: 1px solid color-mix(in srgb, var(--mint), transparent 69%);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--mint), transparent 94%);
+}
+
+.quick-result > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.quick-result small,
+.quick-result span {
+  overflow: hidden;
+  color: var(--faint);
+  font-size: 0.59rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick-result strong {
+  overflow: hidden;
+  font-size: 0.77rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick-result > a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.quick-result > a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.quick-privacy {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  margin: 14px 2px 0;
+  color: var(--faint);
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.quick-privacy svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--mint);
+}
 
 .election-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 0.65fr)) minmax(280px, 1.5fr);
-  margin-bottom: 120px;
+  margin-bottom: 96px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -456,6 +613,7 @@ footer {
 .strip-notice svg { color: var(--mint); }
 
 .explorer-section,
+.atlas-section,
 .compare-section,
 .method-section {
   padding-bottom: 130px;
@@ -653,7 +811,7 @@ footer {
   padding: 13px 18px 16px;
   border-top: 1px solid var(--line);
   color: var(--faint);
-  font-size: 0.61rem;
+  font-size: 0.68rem;
 }
 
 .map-source svg { flex: 0 0 auto; color: var(--mint); }
@@ -717,8 +875,8 @@ footer {
 .race-list button:hover { background: var(--surface); }
 .race-list button.is-active { background: color-mix(in srgb, var(--violet), transparent 91%); }
 .race-list button > span:first-child { display: flex; flex-direction: column; gap: 3px; }
-.race-list button small { color: var(--faint); font-size: 0.54rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.race-list button strong { font-size: 0.74rem; }
+.race-list button small { color: var(--faint); font-size: 0.61rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.race-list button strong { font-size: 0.8rem; }
 .race-list button svg { color: var(--faint); }
 .race-count { min-width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); font-size: 0.64rem; }
 .race-list button.is-active .race-count { border-color: color-mix(in srgb, var(--violet), transparent 55%); background: color-mix(in srgb, var(--violet), transparent 87%); color: var(--text); }
@@ -737,9 +895,474 @@ footer {
 .ballot-footnote p { margin: 0; color: var(--muted); font-size: 0.65rem; line-height: 1.55; }
 .ballot-footnote strong { color: var(--text); }
 
+.atlas-heading {
+  align-items: center;
+}
+
+.atlas-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--violet), transparent 89%), transparent 32rem),
+    linear-gradient(145deg, color-mix(in srgb, var(--surface-raised), transparent 8%), var(--surface));
+  box-shadow: var(--shadow), inset 0 1px color-mix(in srgb, white, transparent 94%);
+}
+
+.atlas-panel::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 152px;
+  bottom: 76px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(transparent, var(--violet) 8%, var(--mint) 50%, var(--violet) 92%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--violet), transparent 45%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.atlas-toolbar {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-solid), transparent 22%);
+}
+
+.atlas-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atlas-stats > span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--faint);
+  font-size: 0.62rem;
+}
+
+.atlas-stats strong {
+  color: var(--text);
+  font-size: 0.72rem;
+}
+
+.atlas-scopes {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--bg), transparent 38%);
+}
+
+.atlas-scopes button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.atlas-scopes button span {
+  min-width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--faint);
+  font-size: 0.57rem;
+}
+
+.atlas-scopes button[aria-pressed="true"] {
+  background: var(--surface-raised);
+  color: var(--text);
+  box-shadow: 0 3px 12px color-mix(in srgb, black, transparent 82%);
+}
+
+.atlas-scopes button[aria-pressed="true"] span {
+  border-color: color-mix(in srgb, var(--violet), transparent 58%);
+  color: var(--violet);
+}
+
+.atlas-column-headings,
+.atlas-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 0.43fr) minmax(0, 1fr);
+}
+
+.atlas-column-headings {
+  min-height: 48px;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.atlas-column-headings span:first-child {
+  color: var(--blue);
+  text-align: right;
+}
+
+.atlas-column-headings span:last-child {
+  color: var(--rose);
+  text-align: left;
+}
+
+.atlas-row {
+  min-height: 116px;
+  border-bottom: 1px solid var(--line);
+}
+
+.atlas-row:last-child {
+  border-bottom: 0;
+}
+
+.atlas-lane {
+  min-width: 0;
+  display: grid;
+  gap: 9px;
+  align-content: center;
+  padding: 14px 18px;
+}
+
+.atlas-lane-democratic {
+  justify-items: end;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--blue), transparent 96%));
+}
+
+.atlas-lane-republican {
+  justify-items: start;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--rose), transparent 96%), transparent);
+}
+
+.atlas-lane-label {
+  color: var(--faint);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.atlas-lane-democratic .atlas-lane-label {
+  color: color-mix(in srgb, var(--blue), var(--muted) 35%);
+}
+
+.atlas-lane-republican .atlas-lane-label {
+  color: color-mix(in srgb, var(--rose), var(--muted) 35%);
+}
+
+.atlas-candidates {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.atlas-lane-democratic .atlas-candidates {
+  justify-content: flex-end;
+}
+
+.atlas-candidate {
+  position: relative;
+  min-height: 42px;
+  max-width: 210px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--surface-solid), transparent 15%);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.atlas-candidate:hover {
+  border-color: color-mix(in srgb, var(--party-color), transparent 48%);
+  background: color-mix(in srgb, var(--party-color), transparent 94%);
+}
+
+.atlas-candidate > span:first-child {
+  overflow: hidden;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+}
+
+.atlas-candidate > svg {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--bg);
+  fill: currentColor;
+}
+
+.evidence-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.evidence-dots i,
+.atlas-legend i {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--faint);
+}
+
+.evidence-dots .status-verified,
+.evidence-dots .status-available,
+.atlas-legend .status-verified,
+.atlas-legend .status-available {
+  border-color: var(--mint);
+  background: var(--mint);
+  box-shadow: 0 0 7px color-mix(in srgb, var(--mint), transparent 45%);
+}
+
+.evidence-dots .status-queued,
+.atlas-legend .status-queued {
+  border-color: var(--violet);
+  background: var(--violet);
+}
+
+.evidence-dots .status-researching,
+.atlas-legend .status-researching {
+  border-color: var(--amber);
+  background: var(--amber);
+}
+
+.evidence-dots .status-not-applicable,
+.atlas-legend .status-not-applicable {
+  background: transparent;
+}
+
+.atlas-empty {
+  max-width: 190px;
+  color: var(--faint);
+  font-size: 0.6rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.atlas-lane-democratic .atlas-empty {
+  text-align: right;
+}
+
+.atlas-office {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  grid-template-areas: "index office arrow" "index scope arrow";
+  gap: 2px 9px;
+  align-items: center;
+  align-content: center;
+  margin: 11px 0;
+  padding: 11px 13px;
+  border: 1px solid color-mix(in srgb, var(--violet), transparent 75%);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-soft), transparent 3%);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 8px 24px color-mix(in srgb, black, transparent 80%);
+}
+
+.atlas-office:hover {
+  border-color: color-mix(in srgb, var(--mint), transparent 48%);
+  transform: translateY(-1px);
+}
+
+.atlas-office > span {
+  grid-area: index;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--violet);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 0.66rem;
+  font-style: italic;
+}
+
+.atlas-office strong {
+  grid-area: office;
+  overflow: hidden;
+  font-size: 0.68rem;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+}
+
+.atlas-office small {
+  grid-area: scope;
+  overflow: hidden;
+  color: var(--faint);
+  font-size: 0.53rem;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.atlas-office svg {
+  grid-area: arrow;
+  width: 14px;
+  height: 14px;
+  color: var(--faint);
+}
+
+.atlas-legend {
+  position: relative;
+  z-index: 1;
+  min-height: 68px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px 13px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-solid), transparent 28%);
+  color: var(--faint);
+  font-size: 0.59rem;
+}
+
+.atlas-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.atlas-legend > span:first-child {
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.atlas-legend p {
+  flex: 1 1 300px;
+  margin: 0;
+  text-align: right;
+}
+
 .comparison-heading { align-items: center; }
 .comparison-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
 .comparison-meta span { min-height: 32px; display: inline-flex; align-items: center; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 0.62rem; }
+
+.candidate-lanes {
+  display: grid;
+  gap: 14px;
+}
+
+.candidate-lanes.is-split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.candidate-lane {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--party-color), transparent 95%), transparent 180px),
+    color-mix(in srgb, var(--surface), transparent 10%);
+  box-shadow: var(--shadow-soft), inset 0 1px color-mix(in srgb, white, transparent 96%);
+}
+
+.candidate-lane-header {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 8px 10px;
+}
+
+.candidate-lane-header > span:last-child {
+  color: var(--faint);
+  font-size: 0.64rem;
+}
+
+.candidate-lane-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.candidate-lane-stack.is-single {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.candidate-lane-empty {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 18px;
+  color: var(--faint);
+  text-align: center;
+}
+
+.candidate-lane-empty svg {
+  width: 24px;
+  height: 24px;
+  color: var(--party-color);
+}
+
+.candidate-lane-empty p {
+  max-width: 300px;
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.candidate-lane-empty strong {
+  color: var(--text);
+}
 
 .candidate-grid {
   display: grid;
@@ -750,7 +1373,7 @@ footer {
 .candidate-card {
   position: relative;
   min-width: 0;
-  min-height: 440px;
+  min-height: 470px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -849,19 +1472,46 @@ footer {
 .candidate-avatar.large { width: 76px; height: 76px; border-radius: 23px; font-size: 1.5rem; }
 .candidate-identity p { margin: 0 0 5px; color: var(--party-color); font-size: 0.59rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
 .candidate-identity h3 { margin: 0; font-size: 1.15rem; line-height: 1.15; letter-spacing: -0.035em; }
-.candidate-identity span { display: block; margin-top: 6px; color: var(--faint); font-size: 0.62rem; line-height: 1.45; }
-.candidate-summary { flex: 1; margin: 23px 0 19px; color: var(--muted); font-size: 0.72rem; line-height: 1.65; }
+.candidate-identity span { display: block; margin-top: 6px; color: var(--faint); font-size: 0.7rem; line-height: 1.45; }
+.candidate-summary { flex: 1; margin: 23px 0 19px; color: var(--muted); font-size: 0.8rem; line-height: 1.65; }
 
-.evidence-meter > span {
-  display: flex;
-  justify-content: space-between;
-  color: var(--faint);
-  font-size: 0.59rem;
+.evidence-cells {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
 }
 
-.evidence-meter strong { color: var(--text); }
-.evidence-meter > i { height: 4px; display: block; margin-top: 9px; overflow: hidden; border-radius: 999px; background: var(--line); }
-.evidence-meter > i b { height: 100%; display: block; border-radius: inherit; background: linear-gradient(90deg, var(--mint), var(--violet)); }
+.evidence-cells > div {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface-solid), transparent 28%);
+}
+
+.evidence-cells dt {
+  overflow: hidden;
+  color: var(--faint);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.evidence-cells dd {
+  margin: 0;
+}
+
+.evidence-cells .status {
+  min-height: 24px;
+  padding: 0 6px;
+  font-size: 0.53rem;
+}
 
 .candidate-action {
   min-height: 47px;
@@ -875,7 +1525,7 @@ footer {
   border-radius: 11px;
   background: var(--surface-solid);
   color: var(--text);
-  font-size: 0.67rem;
+  font-size: 0.74rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -918,7 +1568,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.57rem;
+  font-size: 0.62rem;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -956,6 +1606,132 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .notes-empty { min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 26px; border: 1px dashed var(--line-strong); border-radius: 18px; text-align: center; }
 .notes-empty svg { width: 26px; height: 26px; color: var(--violet); }
 .notes-empty p { max-width: 340px; margin: 13px 0 0; color: var(--muted); font-size: 0.7rem; line-height: 1.6; }
+
+.compare-tray {
+  position: fixed;
+  z-index: 130;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: 50%;
+  width: min(900px, calc(100vw - 32px));
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) auto auto;
+  gap: 14px;
+  align-items: center;
+  padding: 9px 10px 9px 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: 19px;
+  background: color-mix(in srgb, var(--bg-soft), transparent 7%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.42), inset 0 1px color-mix(in srgb, white, transparent 90%);
+  backdrop-filter: blur(22px);
+  transform: translateX(-50%);
+}
+
+.tray-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tray-heading > svg {
+  width: 19px;
+  height: 19px;
+  color: var(--mint);
+  fill: color-mix(in srgb, var(--mint), transparent 70%);
+}
+
+.tray-heading > span {
+  display: grid;
+  gap: 2px;
+}
+
+.tray-heading small {
+  color: var(--faint);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tray-heading strong {
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.tray-profiles {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.tray-profiles button,
+.tray-more {
+  width: 39px;
+  height: 39px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--party-color, var(--violet)), transparent 57%);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--party-color, var(--violet)), transparent 91%);
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 0.66rem;
+  font-style: italic;
+}
+
+.tray-profiles button {
+  cursor: pointer;
+}
+
+.tray-profiles button:hover {
+  border-color: var(--party-color);
+}
+
+.tray-more {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: inherit;
+  font-style: normal;
+}
+
+.compare-tray > a,
+.tray-clear {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 12px;
+  border-radius: 11px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.compare-tray > a {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.compare-tray > a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tray-clear {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tray-clear:hover {
+  color: var(--text);
+}
 
 .method-flow {
   display: grid;
@@ -1081,12 +1857,17 @@ footer > p { grid-column: 1 / -1; text-align: center; }
 .dialog-footer .primary-button.is-saved { background: var(--mint); color: var(--bg); }
 
 @media (max-width: 1060px) {
-  .hero { grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr); gap: 38px; }
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(370px, 440px); gap: 34px; }
   .explorer-grid { grid-template-columns: 1fr; }
   .map-stage { min-height: 490px; }
   .ballot-panel { display: grid; grid-template-columns: 330px 1fr; }
   .panel-heading.stacked { border-right: 1px solid var(--line); border-bottom: 0; }
   .ballot-footnote { grid-column: 1 / -1; }
+  .atlas-toolbar { grid-template-columns: 1fr; }
+  .atlas-scopes { width: fit-content; grid-auto-flow: column; }
+  .atlas-column-headings, .atlas-row { grid-template-columns: minmax(0, 1fr) minmax(190px, 0.5fr) minmax(0, 1fr); }
+  .atlas-candidate { max-width: 180px; }
+  .candidate-lane-stack.is-single { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .candidate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .notes-section { gap: 42px; }
   .method-flow { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -1100,11 +1881,22 @@ footer > p { grid-column: 1 / -1; text-align: center; }
   .hero-copy { text-align: center; }
   .eyebrow, .hero-actions, .privacy-line { justify-content: center; }
   .hero-lede { margin-right: auto; margin-left: auto; }
-  .election-orbit { width: min(500px, 100%); min-height: 430px; justify-self: center; }
+  .quick-start-card { width: min(560px, 100%); justify-self: center; }
   .election-strip { grid-template-columns: repeat(3, 1fr); }
   .election-strip .strip-notice { grid-column: 1 / -1; border-top: 1px solid var(--line); }
   .section-heading { grid-template-columns: 1fr; gap: 20px; }
   .comparison-meta { justify-content: flex-start; }
+  .atlas-panel::before { display: none; }
+  .atlas-column-headings { display: none; }
+  .atlas-row { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "office office" "democratic republican"; padding: 12px; }
+  .atlas-office { grid-area: office; margin: 0; }
+  .atlas-lane-democratic { grid-area: democratic; justify-items: start; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--blue), transparent 96%); }
+  .atlas-lane-republican { grid-area: republican; background: color-mix(in srgb, var(--rose), transparent 96%); }
+  .atlas-lane-democratic .atlas-candidates { justify-content: flex-start; }
+  .atlas-lane-democratic .atlas-empty { text-align: left; }
+  .atlas-candidate { max-width: 100%; }
+  .atlas-legend p { flex-basis: 100%; text-align: left; }
+  .candidate-lanes.is-split { grid-template-columns: 1fr; }
   .notes-section { grid-template-columns: 1fr; }
   .method-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   footer { grid-template-columns: 1fr; text-align: center; }
@@ -1123,13 +1915,17 @@ footer > p { grid-column: 1 / -1; text-align: center; }
   .hero-actions { flex-direction: column; }
   .hero-actions .primary-button, .hero-actions .quiet-button { width: 100%; }
   .privacy-line { align-items: flex-start; text-align: left; }
-  .election-orbit { min-height: 390px; padding: 36px 23px; border-radius: 38% 38% 30% 30%; }
-  .election-orbit h2 { font-size: 1.35rem; }
-  .election-orbit dl { margin-top: 28px; }
+  .quick-start-card { min-height: 0; padding: 17px; border-radius: 21px; }
+  .quick-status { align-items: flex-start; }
+  .quick-status span { min-width: 0; line-height: 1.35; }
+  .quick-heading h2 { font-size: 1.5rem; }
+  .quick-step { grid-template-columns: 34px minmax(0, 1fr); gap: 10px; }
+  .quick-result { grid-template-columns: 1fr; }
+  .quick-result > a { width: 100%; }
   .election-strip { grid-template-columns: 1fr; margin-bottom: 88px; }
   .election-strip > div { min-height: 67px; border-right: 0; border-bottom: 1px solid var(--line); }
   .election-strip .strip-notice { grid-column: auto; border-top: 0; border-bottom: 0; }
-  .explorer-section, .compare-section, .method-section { padding-bottom: 94px; }
+  .explorer-section, .atlas-section, .compare-section, .method-section { padding-bottom: 94px; }
   .section-heading h2, .notes-section h2 { font-size: 2.45rem; }
   .map-panel, .ballot-panel, .evidence-matrix { border-radius: 19px; }
   .map-stage { min-height: 340px; }
@@ -1138,20 +1934,36 @@ footer > p { grid-column: 1 / -1; text-align: center; }
   .ballot-panel { display: block; }
   .panel-heading.stacked { border-right: 0; border-bottom: 1px solid var(--line); }
   .ballot-switch button { font-size: 0.58rem; }
+  .atlas-panel { border-radius: 20px; }
+  .atlas-toolbar { gap: 15px; padding: 16px; }
+  .atlas-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .atlas-stats > span { justify-content: center; padding: 0 7px; text-align: center; }
+  .atlas-scopes { width: 100%; grid-auto-flow: initial; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+  .atlas-scopes button { justify-content: center; padding: 0 6px; }
+  .atlas-row { grid-template-columns: 1fr; grid-template-areas: "office" "democratic" "republican"; padding: 11px; }
+  .atlas-lane { justify-items: stretch; padding: 13px 8px; }
+  .atlas-lane-democratic { border-right: 0; border-bottom: 1px solid var(--line); }
+  .atlas-candidates, .atlas-lane-democratic .atlas-candidates { justify-content: flex-start; }
+  .atlas-candidate { flex: 1 1 150px; }
+  .atlas-legend { padding: 14px 16px; }
+  .candidate-lane-stack.is-single { grid-template-columns: 1fr; }
   .candidate-grid { grid-template-columns: 1fr; }
-  .candidate-card { min-height: 410px; }
+  .candidate-card { min-height: 460px; }
   .matrix-heading { grid-template-columns: 1fr; gap: 12px; }
   .notes-section { gap: 30px; margin-right: -4px; margin-bottom: 94px; margin-left: -4px; padding: 28px 20px; border-radius: 22px; }
   .method-flow { grid-template-columns: 1fr; }
   .method-flow > div { min-height: 190px; }
   footer { padding-bottom: 116px; }
-  .mobile-dock { position: fixed; z-index: 120; right: 10px; bottom: 10px; left: 10px; min-height: 66px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; padding: 5px; border: 1px solid var(--line-strong); border-radius: 18px; background: color-mix(in srgb, var(--bg-soft), transparent 8%); box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35); backdrop-filter: blur(20px); }
+  .compare-tray { bottom: calc(86px + env(safe-area-inset-bottom)); width: calc(100vw - 20px); grid-template-columns: auto minmax(80px, 1fr) auto; gap: 8px; padding-left: 10px; }
+  .tray-heading > span, .tray-clear { display: none; }
+  .compare-tray > a { padding: 0 9px; }
+  .mobile-dock { position: fixed; z-index: 120; right: 10px; bottom: max(10px, env(safe-area-inset-bottom)); left: 10px; min-height: 66px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; padding: 5px; border: 1px solid var(--line-strong); border-radius: 18px; background: color-mix(in srgb, var(--bg-soft), transparent 8%); box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35); backdrop-filter: blur(20px); }
   .mobile-dock a { min-height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border-radius: 13px; color: var(--muted); text-decoration: none; }
   .mobile-dock a:hover { background: var(--surface); color: var(--text); }
   .mobile-dock svg { width: 18px; height: 18px; }
   .mobile-dock small { font-size: 0.55rem; }
   .dialog-backdrop { align-items: flex-end; padding: 0; }
-  .candidate-dialog { max-height: 92vh; border-right: 0; border-bottom: 0; border-left: 0; border-radius: 25px 25px 0 0; }
+  .candidate-dialog { max-height: 92dvh; border-right: 0; border-bottom: 0; border-left: 0; border-radius: 25px 25px 0 0; }
   .dialog-header { grid-template-columns: 58px 1fr 42px; gap: 12px; padding: 17px; }
   .candidate-avatar.large { width: 58px; height: 58px; border-radius: 17px; font-size: 1.1rem; }
   .dialog-header h2 { font-size: 1.2rem; }

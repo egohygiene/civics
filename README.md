@@ -10,9 +10,10 @@ The first public checkpoint focuses on the September 1, 2026 Massachusetts State
 
 - Responsive React and Vite portal with an Ego Hygiene visual identity.
 - Massachusetts county map derived from U.S. Census cartographic geometry.
+- Interactive Ballot Atlas that places both party rosters across a shared office spine.
 - Side-by-side Democratic and Republican statewide choices plus a 13-race Wilmington proof of concept.
-- Evidence-coverage profiles that preserve unknown and incomplete states.
-- Local-only candidate bookmarks for private ballot preparation.
+- Evidence-coverage profiles with discrete states that preserve unknown and incomplete research without scoring candidates.
+- Local-only candidate bookmarks and a persistent private comparison tray.
 - Versioned civic knowledge-graph schemas with provenance and review states.
 - Secret-backed Open States and FEC ingestion with content hashing.
 - Static publication through GitHub Pages at [civics.egohygiene.io](https://civics.egohygiene.io).

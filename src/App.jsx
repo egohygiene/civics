@@ -11,7 +11,6 @@ import {
   ExternalLink,
   FileCheck2,
   Info,
-  Landmark,
   Map,
   MapPin,
   Moon,
@@ -27,6 +26,12 @@ import {
 import { geoPath } from "d3-geo";
 import { candidates, countyNames, election, races, sources } from "./data/seed.js";
 import massachusettsCounties from "./data/ma-counties.json";
+import {
+  EVIDENCE_KEYS,
+  buildBallotRows,
+  describeEvidence,
+  summarizeBallotRows,
+} from "./lib/ballot-view.js";
 
 const PARTY_LABELS = {
   all: "Both ballots",
@@ -66,6 +71,28 @@ function daysUntil(value) {
 
 function Status({ value }) {
   return <span className={`status status-${value}`}>{STATUS_LABELS[value] ?? value}</span>;
+}
+
+function EvidenceCells({ evidence }) {
+  return (
+    <dl className="evidence-cells" aria-label="Evidence coverage by layer">
+      {EVIDENCE_KEYS.map((key) => (
+        <div key={key}>
+          <dt>{EVIDENCE_LABELS[key]}</dt>
+          <dd><Status value={evidence[key]} /></dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function EvidenceDots({ evidence }) {
+  const description = describeEvidence(evidence, EVIDENCE_LABELS, STATUS_LABELS);
+  return (
+    <span className="evidence-dots" role="img" aria-label={description}>
+      {EVIDENCE_KEYS.map((key) => <i key={key} className={`status-${evidence[key]}`} />)}
+    </span>
+  );
 }
 
 function MassachusettsMap({ selectedCounty, onSelectCounty }) {
@@ -150,8 +177,180 @@ function MassachusettsMap({ selectedCounty, onSelectCounty }) {
   );
 }
 
+function QuickStartPanel({
+  activeRace,
+  ballot,
+  onSelectBallot,
+  onSelectCounty,
+  regionContext,
+  remainingDays,
+  selectedCounty,
+  visibleCandidateCount,
+}) {
+  return (
+    <aside className="quick-start-card" aria-label="Ballot quick start">
+      <div className="quick-status">
+        <span><i aria-hidden="true" /> {election.name}</span>
+        <strong>{remainingDays} days</strong>
+      </div>
+      <div className="quick-heading">
+        <p>Ballot observatory</p>
+        <h2>Set your view in two steps.</h2>
+      </div>
+      <div className="quick-step">
+        <span className="quick-step-number">01</span>
+        <label>
+          <span>County context</span>
+          <select value={selectedCounty} onChange={(event) => onSelectCounty(event.target.value)}>
+            {Object.entries(countyNames).sort(([, a], [, b]) => a.localeCompare(b)).map(([id, name]) => (
+              <option key={id} value={id}>{name} County</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div className="quick-step">
+        <span className="quick-step-number">02</span>
+        <div className="quick-ballot-choice">
+          <span>Primary ballot lens</span>
+          <div className="ballot-switch" role="group" aria-label="Choose quick-start ballot view">
+            {Object.entries(PARTY_LABELS).map(([value, label]) => (
+              <button key={value} type="button" aria-pressed={ballot === value} onClick={() => onSelectBallot(value)}>{label}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="quick-result" aria-live="polite">
+        <div>
+          <small>Ready to inspect · {regionContext}</small>
+          <strong>{activeRace.office}</strong>
+          <span>{visibleCandidateCount} {visibleCandidateCount === 1 ? "listing" : "listings"} in this view</span>
+        </div>
+        <a href="#compare" aria-label={`Review ${activeRace.office}`}>Review race <ArrowRight aria-hidden="true" /></a>
+      </div>
+      <p className="quick-privacy"><ShieldCheck aria-hidden="true" /> Your selections stay on this device · official roster checked {formatDate(sources.ballot.checkedAt)}</p>
+    </aside>
+  );
+}
+
+function AtlasCandidate({ candidate, isSaved, onOpen }) {
+  return (
+    <button
+      className={`atlas-candidate party-${candidate.party}${isSaved ? " is-saved" : ""}`}
+      type="button"
+      onClick={() => onOpen(candidate)}
+      aria-label={`Open ${candidate.name}. ${describeEvidence(candidate.evidence, EVIDENCE_LABELS, STATUS_LABELS)}`}
+    >
+      <span>{candidate.name}</span>
+      <EvidenceDots evidence={candidate.evidence} />
+      {isSaved ? <Bookmark aria-hidden="true" /> : null}
+    </button>
+  );
+}
+
+function AtlasLane({ candidates: laneCandidates, emptyLabel, isSaved, onOpen, party }) {
+  return (
+    <div className={`atlas-lane atlas-lane-${party}`}>
+      <span className="atlas-lane-label">{PARTY_LABELS[party]}</span>
+      <div className="atlas-candidates">
+        {laneCandidates.length ? laneCandidates.map((candidate) => (
+          <AtlasCandidate
+            key={candidate.id}
+            candidate={candidate}
+            isSaved={isSaved(candidate.id)}
+            onOpen={onOpen}
+          />
+        )) : <span className="atlas-empty">{emptyLabel}</span>}
+      </div>
+    </div>
+  );
+}
+
+function BallotAtlas({
+  atlasScope,
+  availableRaces,
+  hasLocalProof,
+  isSaved,
+  onOpenCandidate,
+  onOpenRace,
+  onScopeChange,
+}) {
+  const rows = useMemo(
+    () => buildBallotRows(availableRaces, candidates, atlasScope),
+    [atlasScope, availableRaces],
+  );
+  const summary = useMemo(() => summarizeBallotRows(rows), [rows]);
+  const statewideCount = availableRaces.filter((race) => race.scope === "statewide").length;
+  const localCount = availableRaces.length - statewideCount;
+  const scopeOptions = [
+    { id: "available", label: "Available", count: availableRaces.length },
+    { id: "statewide", label: "Statewide", count: statewideCount },
+    ...(hasLocalProof ? [{ id: "local", label: "Wilmington", count: localCount }] : []),
+  ];
+
+  return (
+    <section className="atlas-section" id="atlas" aria-labelledby="atlas-title">
+      <div className="section-heading atlas-heading">
+        <div><p className="section-kicker">Ballot Atlas</p><h2 id="atlas-title">Both ballots. One field of view.</h2></div>
+        <p>Scan every available race across equal party lanes. Open a person for evidence, or jump into a focused race comparison—without turning coverage into a candidate score.</p>
+      </div>
+      <article className="atlas-panel">
+        <header className="atlas-toolbar">
+          <div className="atlas-stats" aria-live="polite">
+            <span><strong>{rows.length}</strong> races</span>
+            <span><strong>{summary.listings}</strong> roster listings</span>
+            <span><strong>{summary.choiceRaces}</strong> races with a multi-person lane</span>
+            <span><strong>{summary.emptyLanes}</strong> empty party lanes</span>
+          </div>
+          <div className="atlas-scopes" role="group" aria-label="Filter Ballot Atlas scope">
+            {scopeOptions.map((option) => (
+              <button key={option.id} type="button" aria-pressed={atlasScope === option.id} onClick={() => onScopeChange(option.id)}>
+                {option.label} <span>{option.count}</span>
+              </button>
+            ))}
+          </div>
+        </header>
+        <div className="atlas-column-headings" aria-hidden="true">
+          <span>Democratic roster</span><span>Office spine</span><span>Republican roster</span>
+        </div>
+        <div className="atlas-grid" role="list" aria-label="Available races across both primary ballots">
+          {rows.map((row, index) => (
+            <div className="atlas-row" role="listitem" key={row.id}>
+              <AtlasLane
+                candidates={row.democraticCandidates}
+                emptyLabel="No nomination listed in checked roster"
+                isSaved={isSaved}
+                onOpen={onOpenCandidate}
+                party="democratic"
+              />
+              <button className="atlas-office" type="button" onClick={() => onOpenRace(row.id)} aria-label={`Focus ${row.office} comparison`}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{row.office}</strong>
+                <small>{row.scope}</small>
+                <ChevronRight aria-hidden="true" />
+              </button>
+              <AtlasLane
+                candidates={row.republicanCandidates}
+                emptyLabel="No nomination listed in checked roster"
+                isSaved={isSaved}
+                onOpen={onOpenCandidate}
+                party="republican"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="atlas-legend">
+          <span>Evidence dots</span>
+          {Object.entries(STATUS_LABELS).map(([value, label]) => (
+            <span key={value}><i className={`status-${value}`} />{label}</span>
+          ))}
+          <p>“No nomination listed” reflects the checked roster snapshot, not a prediction or final certification.</p>
+        </div>
+      </article>
+    </section>
+  );
+}
+
 function CandidateCard({ candidate, isSaved, onToggleSave, onOpen }) {
-  const evidenceReady = Object.values(candidate.evidence).filter((value) => value === "verified" || value === "available").length;
   return (
     <article className={`candidate-card party-${candidate.party}`}>
       <div className="candidate-card-topline">
@@ -159,7 +358,7 @@ function CandidateCard({ candidate, isSaved, onToggleSave, onOpen }) {
         <button
           className={`save-button${isSaved ? " is-saved" : ""}`}
           type="button"
-          aria-label={isSaved ? `Remove ${candidate.name} from ballot notes` : `Save ${candidate.name} to ballot notes`}
+          aria-label={isSaved ? `Remove ${candidate.name} from private comparison` : `Save ${candidate.name} to private comparison`}
           aria-pressed={isSaved}
           onClick={() => onToggleSave(candidate.id)}
         >
@@ -175,10 +374,7 @@ function CandidateCard({ candidate, isSaved, onToggleSave, onOpen }) {
         </div>
       </div>
       <p className="candidate-summary">{candidate.summary}</p>
-      <div className="evidence-meter" aria-label={`${evidenceReady} of 4 evidence layers ready`}>
-        <span><strong>{evidenceReady}/4</strong> evidence layers ready</span>
-        <i><b style={{ width: `${evidenceReady * 25}%` }} /></i>
-      </div>
+      <EvidenceCells evidence={candidate.evidence} />
       <button className="candidate-action" type="button" onClick={() => onOpen(candidate)}>
         Open evidence profile <ArrowRight aria-hidden="true" />
       </button>
@@ -186,26 +382,107 @@ function CandidateCard({ candidate, isSaved, onToggleSave, onOpen }) {
   );
 }
 
+function CandidateLane({ laneCandidates, party, isSaved, onOpen, onToggleSave, single }) {
+  return (
+    <section className={`candidate-lane party-${party}`} aria-labelledby={`candidate-lane-${party}`}>
+      <header className="candidate-lane-header">
+        <span className="party-label" id={`candidate-lane-${party}`}><i aria-hidden="true" />{PARTY_LABELS[party]} ballot</span>
+        <span>{laneCandidates.length} {laneCandidates.length === 1 ? "listing" : "listings"}</span>
+      </header>
+      {laneCandidates.length ? (
+        <div className={`candidate-lane-stack${single ? " is-single" : ""}`}>
+          {laneCandidates.map((candidate) => (
+            <CandidateCard
+              key={candidate.id}
+              candidate={candidate}
+              isSaved={isSaved(candidate.id)}
+              onToggleSave={onToggleSave}
+              onOpen={onOpen}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="candidate-lane-empty">
+          <CircleHelp aria-hidden="true" />
+          <p><strong>No nomination listed.</strong> This describes the checked official roster snapshot, not a final prediction.</p>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function CompareTray({ profiles, onClear, onOpen }) {
+  if (!profiles.length) return null;
+
+  return (
+    <aside className="compare-tray" aria-label="Private comparison tray">
+      <div className="tray-heading">
+        <Bookmark aria-hidden="true" />
+        <span><small>Private compare</small><strong aria-live="polite">{profiles.length} saved locally</strong></span>
+      </div>
+      <div className="tray-profiles" aria-label="Saved candidate profiles">
+        {profiles.slice(0, 5).map((candidate) => (
+          <button
+            className={`party-${candidate.party}`}
+            key={candidate.id}
+            type="button"
+            onClick={() => onOpen(candidate)}
+            aria-label={`Open saved profile for ${candidate.name}`}
+          >
+            <span>{candidate.initials}</span>
+          </button>
+        ))}
+        {profiles.length > 5 ? <span className="tray-more">+{profiles.length - 5}</span> : null}
+      </div>
+      <a href="#ballot-notes">Review set <ChevronRight aria-hidden="true" /></a>
+      <button className="tray-clear" type="button" onClick={onClear}>Clear</button>
+    </aside>
+  );
+}
+
 function CandidateDialog({ candidate, onClose, isSaved, onToggleSave }) {
   const closeButton = useRef(null);
+  const dialog = useRef(null);
+  const previouslyFocused = useRef(document.activeElement);
   const candidateSource = candidate.party === "democratic"
     ? sources.democraticCandidates
     : sources.republicanCandidates;
 
   useEffect(() => {
     closeButton.current?.focus();
-    const closeOnEscape = (event) => {
-      if (event.key === "Escape") onClose();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleDialogKeys = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = [...dialog.current.querySelectorAll("a[href], button:not([disabled]), select, [tabindex]:not([tabindex='-1'])")];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+    window.addEventListener("keydown", handleDialogKeys);
+    return () => {
+      window.removeEventListener("keydown", handleDialogKeys);
+      document.body.style.overflow = previousOverflow;
+      previouslyFocused.current?.focus?.();
+    };
   }, [onClose]);
 
   return (
     <div className="dialog-backdrop" role="presentation" onMouseDown={(event) => {
       if (event.target === event.currentTarget) onClose();
     }}>
-      <section className="candidate-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+      <section ref={dialog} className={`candidate-dialog party-${candidate.party}`} role="dialog" aria-modal="true" aria-labelledby="profile-title">
         <div className="dialog-header">
           <div className="candidate-avatar large" aria-hidden="true">{candidate.initials}</div>
           <div>
@@ -252,7 +529,7 @@ function CandidateDialog({ candidate, onClose, isSaved, onToggleSave }) {
           <p>This profile is research support—not an endorsement or voting recommendation.</p>
           <button className={`primary-button${isSaved ? " is-saved" : ""}`} type="button" onClick={() => onToggleSave(candidate.id)}>
             {isSaved ? <Check aria-hidden="true" /> : <Bookmark aria-hidden="true" />}
-            {isSaved ? "Saved to ballot notes" : "Save to ballot notes"}
+            {isSaved ? "Saved to private compare" : "Save to private compare"}
           </button>
         </div>
       </section>
@@ -264,6 +541,7 @@ function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem("civics-theme") ?? "dark");
   const [selectedCounty, setSelectedCounty] = useState("25017");
   const [ballot, setBallot] = useState("all");
+  const [atlasScope, setAtlasScope] = useState("available");
   const [selectedRace, setSelectedRace] = useState(races[0].id);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [savedCandidates, setSavedCandidates] = useState(() => {
@@ -292,10 +570,20 @@ function App() {
     }
   }, [availableRaces, selectedRace]);
 
+  useEffect(() => {
+    if (!isWilmingtonProof && atlasScope === "local") {
+      setAtlasScope("available");
+    }
+  }, [atlasScope, isWilmingtonProof]);
+
   const visibleCandidateIds = ballot === "all"
     ? [...activeRace.democratic, ...activeRace.republican]
     : activeRace[ballot];
   const visibleCandidates = visibleCandidateIds.map((id) => candidates.find((candidate) => candidate.id === id)).filter(Boolean);
+  const candidateGroups = (ballot === "all" ? ["democratic", "republican"] : [ballot]).map((party) => ({
+    party,
+    candidates: activeRace[party].map((id) => candidates.find((candidate) => candidate.id === id)).filter(Boolean),
+  }));
   const selectedCountyName = countyNames[selectedCounty];
   const regionContext = isWilmingtonProof ? "Wilmington proof of concept" : `${selectedCountyName} County`;
   const savedProfiles = candidates.filter((candidate) => savedCandidates.has(candidate.id));
@@ -311,9 +599,19 @@ function App() {
     });
   }
 
+  function clearSaved() {
+    setSavedCandidates(new Set());
+    localStorage.setItem("civics-ballot-notes", "[]");
+  }
+
+  function focusRace(raceId) {
+    setSelectedRace(raceId);
+    window.requestAnimationFrame(() => document.getElementById("compare")?.scrollIntoView({ behavior: "smooth" }));
+  }
+
   return (
-    <div className="app-shell">
-      <a className="skip-link" href="#explore">Skip to ballot explorer</a>
+    <div className={`app-shell${savedProfiles.length ? " has-compare-tray" : ""}`}>
+      <a className="skip-link" href="#atlas">Skip to Ballot Atlas</a>
       <div className="ambient-field" aria-hidden="true"><span /><span /><span /></div>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Civics home">
@@ -322,9 +620,9 @@ function App() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#explore">Explore</a>
+          <a href="#atlas">Atlas</a>
           <a href="#compare">Compare</a>
           <a href="#method">Method</a>
-          <a href="https://github.com/egohygiene/civics" target="_blank" rel="noreferrer">GitHub <ExternalLink aria-hidden="true" /></a>
         </nav>
         <button className="theme-button" type="button" aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
           {theme === "dark" ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
@@ -338,24 +636,21 @@ function App() {
             <h1 id="hero-title">See the choice<br /><em>before the ballot.</em></h1>
             <p className="hero-lede">Explore both primary ballots, understand the offices, and follow every interpretation back to evidence—without giving your political preferences to a server.</p>
             <div className="hero-actions">
-              <a className="primary-button" href="#explore">Explore your choices <ArrowRight aria-hidden="true" /></a>
+              <a className="primary-button" href="#atlas">Open the Ballot Atlas <ArrowRight aria-hidden="true" /></a>
               <a className="quiet-button" href="#method">How evidence works <Network aria-hidden="true" /></a>
             </div>
-            <p className="privacy-line"><ShieldCheck aria-hidden="true" /> Your region and ballot notes stay in this browser.</p>
+            <p className="privacy-line"><ShieldCheck aria-hidden="true" /> Your region and private comparison stay in this browser.</p>
           </div>
-          <aside className="election-orbit" aria-label="Upcoming election summary">
-            <div className="orbit-lines" aria-hidden="true"><i /><i /><i /></div>
-            <span className="orbit-icon"><Landmark aria-hidden="true" /></span>
-            <p>Next Massachusetts election</p>
-            <h2>{election.name}</h2>
-            <strong>{formatDate(election.date, { weekday: "long" })}</strong>
-            <dl>
-              <div><dt>{remainingDays}</dt><dd>days away</dd></div>
-              <div><dt>2</dt><dd>primary ballots</dd></div>
-              <div><dt>{races.length}</dt><dd>ballot races seeded</dd></div>
-            </dl>
-            <a href={sources.calendar.url} target="_blank" rel="noreferrer">Official election calendar <ExternalLink aria-hidden="true" /></a>
-          </aside>
+          <QuickStartPanel
+            activeRace={activeRace}
+            ballot={ballot}
+            onSelectBallot={setBallot}
+            onSelectCounty={setSelectedCounty}
+            regionContext={regionContext}
+            remainingDays={remainingDays}
+            selectedCounty={selectedCounty}
+            visibleCandidateCount={visibleCandidates.length}
+          />
         </section>
 
         <section className="election-strip" aria-label="Election deadlines">
@@ -398,7 +693,7 @@ function App() {
                   ))}
                 </div>
               </div>
-              <div className="race-list" role="list" aria-label="Available primary races">
+              <div className="race-list" aria-label="Available primary races">
                 {availableRaces.map((race) => {
                   const candidateCount = ballot === "all" ? race.democratic.length + race.republican.length : race[ballot].length;
                   return (
@@ -418,9 +713,19 @@ function App() {
           </div>
         </section>
 
+        <BallotAtlas
+          atlasScope={atlasScope}
+          availableRaces={availableRaces}
+          hasLocalProof={isWilmingtonProof}
+          isSaved={(candidateId) => savedCandidates.has(candidateId)}
+          onOpenCandidate={setSelectedCandidate}
+          onOpenRace={focusRace}
+          onScopeChange={setAtlasScope}
+        />
+
         <section className="compare-section" id="compare" aria-labelledby="compare-title">
           <div className="section-heading comparison-heading">
-            <div><p className="section-kicker">Race comparison</p><h2 id="compare-title">{activeRace.office}</h2></div>
+            <div aria-live="polite"><p className="section-kicker">Race comparison</p><h2 id="compare-title">{activeRace.office}</h2></div>
             <div className="comparison-meta">
               <span>{PARTY_LABELS[ballot]}</span>
               <span>{regionContext}</span>
@@ -428,14 +733,16 @@ function App() {
             </div>
           </div>
           {visibleCandidates.length ? (
-            <div className="candidate-grid">
-              {visibleCandidates.map((candidate) => (
-                <CandidateCard
-                  key={candidate.id}
-                  candidate={candidate}
-                  isSaved={savedCandidates.has(candidate.id)}
+            <div className={`candidate-lanes${candidateGroups.length === 2 ? " is-split" : " is-single"}`}>
+              {candidateGroups.map((group) => (
+                <CandidateLane
+                  key={group.party}
+                  laneCandidates={group.candidates}
+                  party={group.party}
+                  isSaved={(candidateId) => savedCandidates.has(candidateId)}
                   onToggleSave={toggleSaved}
                   onOpen={setSelectedCandidate}
+                  single={candidateGroups.length === 1}
                 />
               ))}
             </div>
@@ -466,15 +773,15 @@ function App() {
           </div>
         </section>
 
-        <section className="notes-section" aria-labelledby="notes-title">
+        <section className="notes-section" id="ballot-notes" aria-labelledby="notes-title">
           <div>
             <p className="section-kicker">Private decision workspace</p>
-            <h2 id="notes-title">Your ballot notes stay yours.</h2>
+            <h2 id="notes-title">Your comparison stays yours.</h2>
             <p>Save profiles while you compare. Nothing is transmitted, no account is created, and clearing browser storage clears the list.</p>
           </div>
           <div className="saved-list">
             {savedProfiles.length ? savedProfiles.map((candidate) => (
-              <button key={candidate.id} type="button" onClick={() => setSelectedCandidate(candidate)}>
+              <button className={`party-${candidate.party}`} key={candidate.id} type="button" onClick={() => setSelectedCandidate(candidate)}>
                 <span className="saved-avatar" aria-hidden="true">{candidate.initials}</span>
                 <span><strong>{candidate.name}</strong><small>{candidate.office} · {PARTY_LABELS[candidate.party]}</small></span>
                 <ChevronRight aria-hidden="true" />
@@ -516,11 +823,13 @@ function App() {
         <p>Roster snapshot checked {formatDate(sources.ballot.checkedAt)} · built in public · no tracking</p>
       </footer>
 
+      <CompareTray profiles={savedProfiles} onClear={clearSaved} onOpen={setSelectedCandidate} />
+
       <nav className="mobile-dock" aria-label="Mobile navigation">
         <a href="#explore"><Map aria-hidden="true" /><small>Map</small></a>
+        <a href="#atlas"><Network aria-hidden="true" /><small>Atlas</small></a>
         <a href="#compare"><Scale aria-hidden="true" /><small>Compare</small></a>
-        <a href="#method"><Network aria-hidden="true" /><small>Method</small></a>
-        <a href="https://github.com/egohygiene/civics"><Code2 aria-hidden="true" /><small>Source</small></a>
+        <a href="#method"><FileCheck2 aria-hidden="true" /><small>Method</small></a>
       </nav>
 
       {selectedCandidate ? (
