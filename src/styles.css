@@ -1473,7 +1473,11 @@ footer {
 .candidate-identity p { margin: 0 0 5px; color: var(--party-color); font-size: 0.59rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
 .candidate-identity h3 { margin: 0; font-size: 1.15rem; line-height: 1.15; letter-spacing: -0.035em; }
 .candidate-identity span { display: block; margin-top: 6px; color: var(--faint); font-size: 0.7rem; line-height: 1.45; }
-.candidate-summary { flex: 1; margin: 23px 0 19px; color: var(--muted); font-size: 0.8rem; line-height: 1.65; }
+.candidate-orientation { flex: 1; margin: 23px 0 19px; }
+.candidate-orientation > span { display: inline-flex; align-items: center; gap: 5px; color: var(--violet); font-size: 0.52rem; font-weight: 740; letter-spacing: 0.055em; text-transform: uppercase; }
+.candidate-orientation > span svg { width: 12px; height: 12px; }
+.candidate-summary { margin: 7px 0 0; color: var(--muted); font-size: 0.8rem; line-height: 1.65; }
+.candidate-card .profile-photo-tooltip { right: auto; left: -1px; }
 
 .evidence-cells {
   display: grid;
@@ -1707,8 +1711,8 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 
 .tray-profiles button,
 .tray-more {
-  width: 39px;
-  height: 39px;
+  width: 44px;
+  height: 44px;
   flex: 0 0 auto;
   display: grid;
   place-items: center;
@@ -1847,8 +1851,8 @@ footer > p { grid-column: 1 / -1; text-align: center; }
 }
 
 .candidate-dialog {
-  width: min(760px, 100%);
-  max-height: min(880px, calc(100vh - 40px));
+  width: min(1180px, 100%);
+  max-height: min(940px, calc(100vh - 40px));
   overflow-y: auto;
   border: 1px solid var(--line-strong);
   border-radius: 26px;
@@ -1861,7 +1865,7 @@ footer > p { grid-column: 1 / -1; text-align: center; }
   z-index: 2;
   top: 0;
   display: grid;
-  grid-template-columns: 76px 1fr 44px;
+  grid-template-columns: 44px 1fr 44px;
   gap: 17px;
   align-items: center;
   padding: 22px;
@@ -1873,6 +1877,8 @@ footer > p { grid-column: 1 / -1; text-align: center; }
 .dialog-header h2 { margin: 6px 0 3px; font-size: 1.55rem; letter-spacing: -0.045em; }
 .dialog-header p { margin: 0; color: var(--muted); font-size: 0.67rem; }
 .dialog-close { align-self: start; }
+.profile-dialog-body { padding: 24px; }
+.profile-dialog-body .finance-candidate-embed { margin: 0; }
 .dialog-body { display: grid; gap: 30px; padding: 30px; }
 .dialog-body .finance-candidate-embed { margin: 4px -8px; }
 .finance-candidate-embed .finance-hero { padding: 22px; }
@@ -2009,10 +2015,11 @@ footer > p { grid-column: 1 / -1; text-align: center; }
   .mobile-dock small { font-size: 0.55rem; }
   .dialog-backdrop { align-items: flex-end; padding: 0; }
   .candidate-dialog { max-height: 92dvh; border-right: 0; border-bottom: 0; border-left: 0; border-radius: 25px 25px 0 0; }
-  .dialog-header { grid-template-columns: 58px 1fr 42px; gap: 12px; padding: 17px; }
+  .dialog-header { grid-template-columns: 44px 1fr 42px; gap: 12px; padding: 17px; }
   .candidate-avatar.large { width: 58px; height: 58px; border-radius: 17px; font-size: 1.1rem; }
   .dialog-header h2 { font-size: 1.2rem; }
   .dialog-body { padding: 24px 18px; }
+  .profile-dialog-body { padding: 14px 12px 24px; }
   .dialog-footer { position: sticky; bottom: 0; flex-direction: column; align-items: stretch; gap: 10px; background: var(--bg-soft); }
   .dialog-footer p { max-width: none; text-align: center; }
 }

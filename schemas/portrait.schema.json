@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civics.egohygiene.io/schemas/portrait.schema.json",
+  "title": "Civics portrait materialized view",
+  "description": "Fail-closed candidate avatar records that keep portrait identity verification, reuse rights, review, and ballot evidence separate.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "datasetId",
+    "kind",
+    "generatedAt",
+    "codeRevision",
+    "coverage",
+    "portraits",
+    "providers",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "datasetId": {
+      "$ref": "common.schema.json#/$defs/entityId"
+    },
+    "kind": {
+      "const": "portrait-dataset"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "codeRevision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "candidateCount",
+        "publishedCount",
+        "reviewRequiredCount",
+        "initialsFallbackCount"
+      ],
+      "properties": {
+        "candidateCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "publishedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reviewRequiredCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "initialsFallbackCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "portraits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/portrait"
+      }
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      }
+    }
+  },
+  "$defs": {
+    "portrait": {
+      "type": "object",
+      "required": [
+        "candidateId",
+        "displayName",
+        "initials",
+        "publicationStatus",
+        "display",
+        "identityVerification",
+        "rights",
+        "source",
+        "capturedOn",
+        "review",
+        "provenance"
+      ],
+      "properties": {
+        "candidateId": {
+          "$ref": "common.schema.json#/$defs/entityId"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "initials": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8
+        },
+        "publicationStatus": {
+          "enum": [
+            "published",
+            "review_required",
+            "fallback"
+          ]
+        },
+        "display": {
+          "type": "object",
+          "required": [
+            "kind",
+            "imageUrl",
+            "thumbnailUrl",
+            "alt"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "image",
+                "initials"
+              ]
+            },
+            "imageUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "thumbnailUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "alt": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          },
+          "additionalProperties": false
+        },
+        "identityVerification": {
+          "type": "object",
+          "required": [
+            "status",
+            "scope",
+            "label",
+            "tooltip",
+            "method"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "verified",
+                "unverified",
+                "needs_review",
+                "rejected"
+              ]
+            },
+            "scope": {
+              "const": "portrait_subject_only"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            "tooltip": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "method": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 1000
+            }
+          },
+          "additionalProperties": false
+        },
+        "rights": {
+          "type": "object",
+          "required": [
+            "status",
+            "license",
+            "licenseUrl",
+            "attribution",
+            "attributionRequired",
+            "changes"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "verified",
+                "not_researched",
+                "needs_review",
+                "rejected"
+              ]
+            },
+            "license": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            },
+            "licenseUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "attribution": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 500
+            },
+            "attributionRequired": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "changes": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 500
+            }
+          },
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "sourceRecordId",
+            "providerId",
+            "sourcePageUrl",
+            "checkedAt"
+          ],
+          "properties": {
+            "sourceRecordId": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/entityId"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "providerId": {
+              "oneOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/entityId"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "sourcePageUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "checkedAt": {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            }
+          },
+          "additionalProperties": false
+        },
+        "capturedOn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "review": {
+          "$ref": "common.schema.json#/$defs/review"
+        },
+        "provenance": {
+          "type": "object"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "publicationStatus": {
+                "const": "published"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "display": {
+                "properties": {
+                  "kind": {
+                    "const": "image"
+                  },
+                  "imageUrl": {
+                    "type": "string"
+                  },
+                  "thumbnailUrl": {
+                    "type": "string"
+                  }
+                }
+              },
+              "identityVerification": {
+                "properties": {
+                  "status": {
+                    "const": "verified"
+                  }
+                }
+              },
+              "rights": {
+                "properties": {
+                  "status": {
+                    "const": "verified"
+                  },
+                  "license": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "attribution": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "display": {
+                "properties": {
+                  "kind": {
+                    "const": "initials"
+                  },
+                  "imageUrl": {
+                    "type": "null"
+                  },
+                  "thumbnailUrl": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

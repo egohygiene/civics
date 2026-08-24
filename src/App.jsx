@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   BadgeDollarSign,
@@ -9,7 +9,6 @@ import {
   CircleHelp,
   Clock3,
   Code2,
-  ExternalLink,
   FileCheck2,
   Info,
   Map,
@@ -30,12 +29,21 @@ import {
   FinanceRaceExperience,
 } from "./features/finance/FinanceExperience.jsx";
 import {
+  CandidatePortrait,
+  CandidateProfileExperience,
+} from "./features/profile/ProfileExperience.jsx";
+import { RaceHistoryExperience } from "./features/profile/RaceHistoryExperience.jsx";
+import {
   adaptOcpfFinanceDataset,
   financeRecords,
   financeSynthesisByRace,
   getFinanceRecord,
   getRaceFinanceRecords,
 } from "./data/finance.js";
+import {
+  adaptPortraitDataset,
+  getCandidatePortrait,
+} from "./data/portraits.js";
 import { candidates, countyNames, election, races, sources } from "./data/seed.js";
 import massachusettsCounties from "./data/ma-counties.json";
 import {
@@ -44,6 +52,11 @@ import {
   describeEvidence,
   summarizeBallotRows,
 } from "./lib/ballot-view.js";
+import { buildCandidateProfile } from "./lib/candidate-profile.js";
+import {
+  getSenateCandidateProfile,
+  materializeProfileViewData,
+} from "./lib/senate-profile-data.js";
 
 const PARTY_LABELS = {
   all: "Both ballots",
@@ -65,6 +78,10 @@ const EVIDENCE_LABELS = {
   finance: "Campaign finance",
   positions: "Policy positions",
 };
+
+function candidateIdFromLocation() {
+  return new URL(window.location.href).searchParams.get("candidate");
+}
 
 function formatDate(value, options = {}) {
   return new Intl.DateTimeFormat("en-US", {
@@ -379,14 +396,17 @@ function CandidateCard({ candidate, isSaved, onToggleSave, onOpen }) {
         </button>
       </div>
       <div className="candidate-identity">
-        <div className="candidate-avatar" aria-hidden="true">{candidate.initials}</div>
+        <CandidatePortrait candidate={candidate} compact photo={candidate.portrait} size="card" />
         <div>
           <p>{candidate.office}</p>
           <h3>{candidate.name}</h3>
           <span>{candidate.role} · {candidate.locality}</span>
         </div>
       </div>
-      <p className="candidate-summary">{candidate.summary}</p>
+      <div className="candidate-orientation">
+        <span><Sparkles aria-hidden="true" />AI-assisted orientation · unreviewed</span>
+        <p className="candidate-summary">{candidate.summary}</p>
+      </div>
       <EvidenceCells evidence={candidate.evidence} />
       <button className="candidate-action" type="button" onClick={() => onOpen(candidate)}>
         Open evidence profile <ArrowRight aria-hidden="true" />
@@ -442,7 +462,7 @@ function CompareTray({ profiles, onClear, onOpen }) {
             onClick={() => onOpen(candidate)}
             aria-label={`Open saved profile for ${candidate.name}`}
           >
-            <span>{candidate.initials}</span>
+            <CandidatePortrait candidate={candidate} compact photo={candidate.portrait} showStatus={false} size="small" />
           </button>
         ))}
         {profiles.length > 5 ? <span className="tray-more">+{profiles.length - 5}</span> : null}
@@ -453,13 +473,10 @@ function CompareTray({ profiles, onClear, onOpen }) {
   );
 }
 
-function CandidateDialog({ candidate, financeRecord, onClose, isSaved, onToggleSave }) {
+function CandidateDialog({ candidate, financeRecord, onClose, isSaved, onToggleSave, profile }) {
   const closeButton = useRef(null);
   const dialog = useRef(null);
   const previouslyFocused = useRef(document.activeElement);
-  const candidateSource = candidate.party === "democratic"
-    ? sources.democraticCandidates
-    : sources.republicanCandidates;
 
   useEffect(() => {
     closeButton.current?.focus();
@@ -497,60 +514,33 @@ function CandidateDialog({ candidate, financeRecord, onClose, isSaved, onToggleS
     }}>
       <section ref={dialog} className={`candidate-dialog party-${candidate.party}`} role="dialog" aria-modal="true" aria-labelledby="profile-title">
         <div className="dialog-header">
-          <div className="candidate-avatar large" aria-hidden="true">{candidate.initials}</div>
+          <CandidatePortrait candidate={candidate} compact photo={candidate.portrait} size="small" />
           <div>
             <span className="party-label"><i aria-hidden="true" />{PARTY_LABELS[candidate.party]} ballot</span>
             <h2 id="profile-title">{candidate.name}</h2>
-            <p>{candidate.role} · {candidate.locality}</p>
+            <p>Evidence profile · shareable link</p>
           </div>
           <button ref={closeButton} className="dialog-close" type="button" aria-label="Close candidate profile" onClick={onClose}>
             <X aria-hidden="true" />
           </button>
         </div>
-        <div className="dialog-body">
-          <section>
-            <p className="section-kicker">Current synthesis</p>
-            <h3>What the evidence says so far</h3>
-            <p>{candidate.summary}</p>
-            <div className="prototype-note">
-              <Sparkles aria-hidden="true" />
-              <p><strong>Interpretation is deliberately limited.</strong> Civics will not infer a position simply to complete a profile. Unknown stays unknown until a source supports it.</p>
-            </div>
-          </section>
-          <section>
-            <p className="section-kicker">Evidence coverage</p>
-            <h3>Four independent layers</h3>
-            <dl className="evidence-list">
-              {Object.entries(candidate.evidence).map(([key, value]) => (
-                <div key={key}>
-                  <dt>{EVIDENCE_LABELS[key]}</dt>
-                  <dd><Status value={value} /></dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-          {financeRecord ? (
-            <FinanceCandidateExperience
-              candidate={candidate}
-              className="finance-candidate-embed"
-              electionLabel={election.name}
-              id={`finance-profile-${candidate.id}`}
-              limitations={[
-                "A finance filing describes committee activity; it is not a candidate-quality or voter-support score.",
-              ]}
-              office={candidate.office}
-              record={financeRecord}
-              title="Campaign finance snapshot"
-            />
-          ) : null}
-          <section className="source-box">
-            <FileCheck2 aria-hidden="true" />
-            <div>
-              <strong>Official roster listing verified</strong>
-              <p>Listed as of {formatDate(candidateSource.checkedAt)} on the Secretary's 2026 state-primary candidate roster. The roster can still receive official corrections or withdrawals.</p>
-              <a href={candidateSource.url} target="_blank" rel="noreferrer">Inspect the official source <ExternalLink aria-hidden="true" /></a>
-            </div>
-          </section>
+        <div className="profile-dialog-body">
+          <CandidateProfileExperience candidate={candidate} profile={profile}>
+            {financeRecord ? (
+              <FinanceCandidateExperience
+                candidate={candidate}
+                className="finance-candidate-embed"
+                electionLabel={election.name}
+                id={`finance-profile-${candidate.id}`}
+                limitations={[
+                  "A finance filing describes committee activity; it is not a candidate-quality or voter-support score.",
+                ]}
+                office={candidate.office}
+                record={financeRecord}
+                title="Campaign finance snapshot"
+              />
+            ) : null}
+          </CandidateProfileExperience>
         </div>
         <div className="dialog-footer">
           <p>This profile is research support—not an endorsement or voting recommendation.</p>
@@ -570,8 +560,9 @@ function App() {
   const [ballot, setBallot] = useState("all");
   const [atlasScope, setAtlasScope] = useState("available");
   const [selectedRace, setSelectedRace] = useState(races[0].id);
-  const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const [selectedCandidateId, setSelectedCandidateId] = useState(candidateIdFromLocation);
   const [materializedFinanceRecords, setMaterializedFinanceRecords] = useState(financeRecords);
+  const [materializedPortraitRecords, setMaterializedPortraitRecords] = useState([]);
   const [savedCandidates, setSavedCandidates] = useState(() => {
     try {
       return new Set(JSON.parse(localStorage.getItem("civics-ballot-notes") ?? "[]"));
@@ -584,6 +575,12 @@ function App() {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("civics-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleHistoryChange = () => setSelectedCandidateId(candidateIdFromLocation());
+    window.addEventListener("popstate", handleHistoryChange);
+    return () => window.removeEventListener("popstate", handleHistoryChange);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -609,6 +606,26 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch(`${import.meta.env.BASE_URL}data/portraits/ma-primary-2026.json`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Portrait view returned ${response.status}.`);
+        return response.json();
+      })
+      .then((dataset) => {
+        if (!cancelled) setMaterializedPortraitRecords(adaptPortraitDataset(dataset));
+      })
+      .catch(() => {
+        if (!cancelled) setMaterializedPortraitRecords([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const isWilmingtonProof = selectedCounty === "25017";
   const availableRaces = useMemo(
     () => races.filter((race) => race.scope === "statewide" || isWilmingtonProof),
@@ -621,11 +638,15 @@ function App() {
       .filter((record) => ["available", "partial"].includes(record.status))
       .map((record) => record.candidateId));
 
-    return candidates.map((candidate) => financeCandidateIds.has(candidate.id) ? {
+    return candidates.map((candidate) => ({
       ...candidate,
-      evidence: { ...candidate.evidence, finance: "available" },
-    } : candidate);
-  }, [materializedFinanceRecords]);
+      partyLabel: PARTY_LABELS[candidate.party] ?? candidate.party,
+      portrait: getCandidatePortrait(candidate, materializedPortraitRecords),
+      evidence: financeCandidateIds.has(candidate.id)
+        ? { ...candidate.evidence, finance: "available" }
+        : candidate.evidence,
+    }));
+  }, [materializedFinanceRecords, materializedPortraitRecords]);
 
   useEffect(() => {
     if (!availableRaces.some((race) => race.id === selectedRace)) {
@@ -655,7 +676,38 @@ function App() {
   const selectedCountyName = countyNames[selectedCounty];
   const regionContext = isWilmingtonProof ? "Wilmington proof of concept" : `${selectedCountyName} County`;
   const savedProfiles = enrichedCandidates.filter((candidate) => savedCandidates.has(candidate.id));
+  const selectedCandidate = enrichedCandidates.find((candidate) => candidate.id === selectedCandidateId) ?? null;
+  const selectedFinanceRecord = selectedCandidate
+    ? getFinanceRecord(selectedCandidate.id, materializedFinanceRecords)
+    : null;
+  const selectedCandidateProfile = selectedCandidate ? buildCandidateProfile({
+    ballotSource: selectedCandidate.party === "democratic"
+      ? sources.democraticCandidates
+      : sources.republicanCandidates,
+    candidate: selectedCandidate,
+    financeRecord: selectedFinanceRecord,
+    portrait: selectedCandidate.portrait,
+    senateProfile: materializeProfileViewData(getSenateCandidateProfile(selectedCandidate.id)),
+  }) : null;
   const remainingDays = daysUntil(election.date);
+
+  useEffect(() => {
+    document.title = selectedCandidate ? `${selectedCandidate.name} · civics` : "civics · Ego Hygiene";
+  }, [selectedCandidate]);
+
+  const openCandidate = useCallback((candidate) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("candidate", candidate.id);
+    window.history.pushState({ ...window.history.state, civicsCandidate: candidate.id }, "", url);
+    setSelectedCandidateId(candidate.id);
+  }, []);
+
+  const closeCandidate = useCallback(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete("candidate");
+    window.history.replaceState({ ...window.history.state, civicsCandidate: null }, "", url);
+    setSelectedCandidateId(null);
+  }, []);
 
   function toggleSaved(candidateId) {
     setSavedCandidates((current) => {
@@ -788,7 +840,7 @@ function App() {
           candidateRecords={enrichedCandidates}
           hasLocalProof={isWilmingtonProof}
           isSaved={(candidateId) => savedCandidates.has(candidateId)}
-          onOpenCandidate={setSelectedCandidate}
+          onOpenCandidate={openCandidate}
           onOpenRace={focusRace}
           onScopeChange={setAtlasScope}
         />
@@ -811,7 +863,7 @@ function App() {
                   party={group.party}
                   isSaved={(candidateId) => savedCandidates.has(candidateId)}
                   onToggleSave={toggleSaved}
-                  onOpen={setSelectedCandidate}
+                  onOpen={openCandidate}
                   single={candidateGroups.length === 1}
                 />
               ))}
@@ -824,6 +876,14 @@ function App() {
               <button type="button" className="quiet-button" onClick={() => setBallot("all")}>Show both ballots</button>
             </div>
           )}
+
+          {activeRace.id === "us-senate" ? (
+            <RaceHistoryExperience
+              candidates={visibleCandidates}
+              id="senate-history"
+              office={activeRace.office}
+            />
+          ) : null}
 
           <div className="race-finance-section" id="money">
             {raceFinanceRecords.length ? (
@@ -879,8 +939,8 @@ function App() {
           </div>
           <div className="saved-list">
             {savedProfiles.length ? savedProfiles.map((candidate) => (
-              <button className={`party-${candidate.party}`} key={candidate.id} type="button" onClick={() => setSelectedCandidate(candidate)}>
-                <span className="saved-avatar" aria-hidden="true">{candidate.initials}</span>
+              <button className={`party-${candidate.party}`} key={candidate.id} type="button" onClick={() => openCandidate(candidate)}>
+                <CandidatePortrait candidate={candidate} compact photo={candidate.portrait} showStatus={false} size="small" />
                 <span><strong>{candidate.name}</strong><small>{candidate.office} · {PARTY_LABELS[candidate.party]}</small></span>
                 <ChevronRight aria-hidden="true" />
               </button>
@@ -921,7 +981,7 @@ function App() {
         <p>Roster snapshot checked {formatDate(sources.ballot.checkedAt)} · built in public · no tracking</p>
       </footer>
 
-      <CompareTray profiles={savedProfiles} onClear={clearSaved} onOpen={setSelectedCandidate} />
+      <CompareTray profiles={savedProfiles} onClear={clearSaved} onOpen={openCandidate} />
 
       <nav className="mobile-dock" aria-label="Mobile navigation">
         <a href="#explore"><Map aria-hidden="true" /><small>Map</small></a>
@@ -933,10 +993,11 @@ function App() {
       {selectedCandidate ? (
         <CandidateDialog
           candidate={selectedCandidate}
-          financeRecord={getFinanceRecord(selectedCandidate.id, materializedFinanceRecords)}
-          onClose={() => setSelectedCandidate(null)}
+          financeRecord={selectedFinanceRecord}
+          onClose={closeCandidate}
           isSaved={savedCandidates.has(selectedCandidate.id)}
           onToggleSave={toggleSaved}
+          profile={selectedCandidateProfile}
         />
       ) : null}
     </div>

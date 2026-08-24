@@ -13,6 +13,9 @@ The first public checkpoint focuses on the September 1, 2026 Massachusetts State
 - Interactive Ballot Atlas that places both party rosters across a shared office spine.
 - Side-by-side Democratic and Republican statewide choices plus a 13-race Wilmington proof of concept.
 - Race and candidate campaign-finance views with exact FEC and OCPF totals, shared-period safeguards, source mix, freshness, and explicit research gaps.
+- Deep-linkable candidate profiles with sourced facts, official and candidate-controlled links, career timelines, exact prior-election tables, and honest empty states.
+- A disclosed closest-historical-context transform that gives the U.S. Senate race a shared 0–100% lens without treating past contests as current polling.
+- Rights-aware candidate portraits with independent identity and reuse checks, blue photo-only verification, and initials that fail closed by default.
 - Clearly disclosed AI-assisted finance orientation that links back to the regulator records it summarizes.
 - Evidence-coverage profiles with discrete states that preserve unknown and incomplete research without scoring candidates.
 - Local-only candidate bookmarks and a persistent private comparison tray.
@@ -36,7 +39,7 @@ Permitted public APIs + human-reviewed official election sources
 
 Git holds versioned public knowledge, GitHub Actions provides periodic build-time computation, and GitHub Pages serves the same static materialized views to every visitor. No production database or runtime AI call is required.
 
-See [the data model](docs/data-model.md) for the knowledge graph contracts.
+See [the data model](docs/data-model.md), [visualization contract](docs/visualization-contract.md), and [portrait publication contract](docs/portrait-data.md) for the inspectable data boundaries.
 
 ## Development
 
@@ -66,7 +69,7 @@ LEGISCAN_API_KEY
 
 Open States and FEC are used by the first secret-backed ingestion workflow. Massachusetts OCPF finance data comes from a separate bounded, no-key adapter. LegiScan is reserved as a supplementary source after its key is approved. Secrets are available only inside GitHub Actions and are never written into output.
 
-The monthly workflow refreshes source snapshots into a review pull request instead of changing the public site directly. OCPF refreshes are content-hashed, fail closed when a candidate identity drifts, and materialize only sanitized totals into `public/data/finance/`. See [the finance data contract](docs/finance-data.md) for exact metric semantics and known gaps.
+The monthly workflow refreshes source snapshots into a review pull request instead of changing the public site directly. OCPF refreshes are content-hashed, fail closed when a candidate identity drifts, and materialize only sanitized totals into `public/data/finance/`. Portraits use a separate identity-and-rights registry and materialize only publishable records into `public/data/portraits/`; all other candidates receive initials. See [the finance data contract](docs/finance-data.md) for exact metric semantics and known gaps.
 
 Massachusetts Secretary of the Commonwealth pages are human-reviewed sources only. Their published terms prohibit automated scraping or crawling, so Civics does not automate those pages. Election facts from them are seeded with direct citations and review timestamps.
 

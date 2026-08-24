@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "ma-primary-2026-portrait-source-metadata",
+  "kind": "portrait-source-snapshot",
+  "checkedAt": "2026-08-24T15:42:00Z",
+  "providers": [
+    {
+      "id": "unitedstates-congress-images",
+      "name": "unitedstates/images",
+      "url": "https://github.com/unitedstates/images",
+      "termsUrl": "https://github.com/unitedstates/images/blob/aec3e4a88af843b282c0576f420b930f6a9a46ad/README.md",
+      "access": "public-git-repository",
+      "notes": "The project states that its congressional portraits are GPO-sourced public-domain images and publishes them by exact Bioguide ID."
+    },
+    {
+      "id": "wikimedia-commons",
+      "name": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/",
+      "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "access": "public-media-repository",
+      "notes": "Rights and identity metadata are evaluated per file description; Commons availability alone never makes a portrait publishable."
+    }
+  ],
+  "records": [
+    {
+      "id": "portrait-source-edward-markey-m000133",
+      "providerId": "unitedstates-congress-images",
+      "providerItemId": "congress/M000133",
+      "candidateHint": {
+        "displayName": "Edward J. Markey",
+        "externalIdentifiers": [
+          {
+            "scheme": "bioguide",
+            "value": "M000133"
+          }
+        ]
+      },
+      "sourcePageUrl": "https://github.com/unitedstates/images/tree/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress",
+      "identitySourceUrls": [
+        "https://www.congress.gov/member/edward-markey/M000133",
+        "https://www.markey.senate.gov/about"
+      ],
+      "renditions": [
+        {
+          "purpose": "card",
+          "url": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/225x275/M000133.jpg",
+          "width": 225,
+          "height": 275,
+          "mimeType": "image/jpeg",
+          "sha256": "a7d051c85bd5e7d0b51632f413a11fd31cdd328bdc94d11d3d6d12b685d9d0b7"
+        },
+        {
+          "purpose": "profile",
+          "url": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/450x550/M000133.jpg",
+          "width": 450,
+          "height": 550,
+          "mimeType": "image/jpeg",
+          "sha256": "29a02b47f1156592a967f9918253004fdeed425af8d56392c5a4d424bc40dc1d"
+        }
+      ],
+      "capturedOn": null,
+      "creator": "Government Printing Office source, photographer not specified by the provider",
+      "rightsDeclaration": {
+        "status": "public_domain",
+        "license": "Public domain in the United States",
+        "licenseUrl": "https://github.com/unitedstates/images#public-domain",
+        "attribution": "Official congressional portrait via unitedstates/images",
+        "attributionRequired": false,
+        "changes": "Resized by the source repository."
+      },
+      "providerRevision": "aec3e4a88af843b282c0576f420b930f6a9a46ad"
+    },
+    {
+      "id": "portrait-source-seth-moulton-m001196",
+      "providerId": "unitedstates-congress-images",
+      "providerItemId": "congress/M001196",
+      "candidateHint": {
+        "displayName": "Seth Moulton",
+        "externalIdentifiers": [
+          {
+            "scheme": "bioguide",
+            "value": "M001196"
+          }
+        ]
+      },
+      "sourcePageUrl": "https://github.com/unitedstates/images/tree/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress",
+      "identitySourceUrls": [
+        "https://clerk.house.gov/members/M001196",
+        "https://bioguide.congress.gov/search/bio/M001196"
+      ],
+      "renditions": [
+        {
+          "purpose": "card",
+          "url": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/225x275/M001196.jpg",
+          "width": 225,
+          "height": 275,
+          "mimeType": "image/jpeg",
+          "sha256": "c542dafe3a98394d08b22d9e88cdc4aa207668dc8f1ab0b2bf81ac588e024f45"
+        },
+        {
+          "purpose": "profile",
+          "url": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/450x550/M001196.jpg",
+          "width": 450,
+          "height": 550,
+          "mimeType": "image/jpeg",
+          "sha256": "d62f1ddadf0a60a00c9858913bdcfaff26dabd97517ce6eaacca8e1be6013cc3"
+        }
+      ],
+      "capturedOn": null,
+      "creator": "Government Printing Office source, photographer not specified by the provider",
+      "rightsDeclaration": {
+        "status": "public_domain",
+        "license": "Public domain in the United States",
+        "licenseUrl": "https://github.com/unitedstates/images#public-domain",
+        "attribution": "Official congressional portrait via unitedstates/images",
+        "attributionRequired": false,
+        "changes": "Resized by the source repository."
+      },
+      "providerRevision": "aec3e4a88af843b282c0576f420b930f6a9a46ad"
+    },
+    {
+      "id": "portrait-source-john-deaton-2024-commons",
+      "providerId": "wikimedia-commons",
+      "providerItemId": "File:John Deaton, 2024 (cropped).jpg",
+      "candidateHint": {
+        "displayName": "John Deaton",
+        "externalIdentifiers": []
+      },
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:John_Deaton,_2024_(cropped).jpg",
+      "identitySourceUrls": [
+        "https://www.youtube.com/watch?t=754s&v=BeDIipDt-hs"
+      ],
+      "renditions": [
+        {
+          "purpose": "profile",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/John_Deaton%2C_2024_%28cropped%29.jpg",
+          "width": 657,
+          "height": 827,
+          "mimeType": "image/jpeg",
+          "sha256": "15664def8f09b92be8becddf4a9d35ab2b62a49ac8c77fe437227ca017b6e725"
+        }
+      ],
+      "capturedOn": "2024-06-06",
+      "creator": "Jeff Dranetz",
+      "rightsDeclaration": {
+        "status": "licensed",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Jeff Dranetz / John Deaton for US Senate, via Wikimedia Commons",
+        "attributionRequired": true,
+        "changes": "Still image cropped from the source campaign video by a Wikimedia Commons contributor."
+      },
+      "providerRevision": "1105899012"
+    }
+  ]
+}
