@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "ma-primary-2026-portrait-candidate-registry",
+  "kind": "portrait-candidate-registry",
+  "checkedAt": "2026-08-24T15:42:00Z",
+  "records": [
+    {
+      "candidateId": "edward-markey",
+      "sourceRecordId": "portrait-source-edward-markey-m000133",
+      "identityVerification": {
+        "status": "verified",
+        "method": "Exact Bioguide ID M000133 joins the congressional image path to current official Congress.gov and Senate profiles.",
+        "scope": "portrait_subject_only"
+      },
+      "rightsVerification": {
+        "status": "verified",
+        "method": "The source repository states that GPO assured its congressional portraits are public domain."
+      },
+      "publicationDecision": "publish",
+      "review": {
+        "status": "automated_checks_passed",
+        "reviewedAt": "2026-08-24T15:42:00Z",
+        "reviewer": "civics-portrait-adapter",
+        "notes": [
+          "Verification covers the portrait subject and reuse rights; it does not independently verify ballot status or any political claim.",
+          "The provider does not expose a capture date for this rendition."
+        ]
+      }
+    },
+    {
+      "candidateId": "seth-moulton",
+      "sourceRecordId": "portrait-source-seth-moulton-m001196",
+      "identityVerification": {
+        "status": "verified",
+        "method": "Exact Bioguide ID M001196 joins the congressional image path to the current U.S. House Clerk and Biographical Directory profiles.",
+        "scope": "portrait_subject_only"
+      },
+      "rightsVerification": {
+        "status": "verified",
+        "method": "The source repository states that GPO assured its congressional portraits are public domain."
+      },
+      "publicationDecision": "publish",
+      "review": {
+        "status": "automated_checks_passed",
+        "reviewedAt": "2026-08-24T15:42:00Z",
+        "reviewer": "civics-portrait-adapter",
+        "notes": [
+          "Verification covers the portrait subject and reuse rights; it does not independently verify ballot status or any political claim.",
+          "The provider does not expose a capture date for this rendition."
+        ]
+      }
+    },
+    {
+      "candidateId": "john-deaton",
+      "sourceRecordId": "portrait-source-john-deaton-2024-commons",
+      "identityVerification": {
+        "status": "needs_review",
+        "method": "The Commons record names John Deaton and traces the still to a John Deaton for US Senate campaign video, but it has no stable civic identifier to make the join deterministic.",
+        "scope": "portrait_subject_only"
+      },
+      "rightsVerification": {
+        "status": "verified",
+        "method": "Wikimedia Commons records CC BY 3.0, an automated YouTube license check, and a manual Commons license review."
+      },
+      "publicationDecision": "hold",
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": "2026-08-24T15:42:00Z",
+        "reviewer": "civics-portrait-adapter",
+        "notes": [
+          "A maintainer must confirm the subject-to-candidate match before publication.",
+          "Until then the public view intentionally contains initials and no image URL."
+        ]
+      }
+    }
+  ]
+}

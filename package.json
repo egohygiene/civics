@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "node scripts/check-repository.mjs && node --test && vite build",
+    "check": "node scripts/check-repository.mjs && node scripts/validate-portraits.mjs && node --test && vite build",
     "test": "node --test"
   },
   "dependencies": {

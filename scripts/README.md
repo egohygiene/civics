@@ -13,6 +13,9 @@ continue to use the reviewed `src/data/seed.js` dataset directly.
 - Massachusetts Office of Campaign and Political Finance Public API: sanitized
   filer-specific year-to-date receipts, disbursements, and cash-on-hand totals
   for the reviewed state/local candidate registry. OCPF requires no API key.
+- Pinned public-domain congressional portraits and manually reviewed reusable
+  image leads: identity and rights are separate publication gates, and unknown
+  rights or identity always materialize as initials.
 
 LegiScan is intentionally not required. It can be added as an optional
 legislative validation adapter after the account is approved.
@@ -39,6 +42,8 @@ node scripts/refresh-ocpf-finance.mjs \
   --max-requests 30
 
 node scripts/validate-ocpf-finance.mjs
+
+node scripts/validate-portraits.mjs
 ```
 
 The refresh has conservative hard limits of eight Open States requests and five
@@ -69,6 +74,13 @@ The materialized OCPF view is written to
 not mixed into those totals. Debt, receipt composition, outside spending, and
 monthly series remain explicit `not_available` or `not_researched` fields until
 dedicated adapters are reviewed.
+
+The materialized portrait view is written to
+`public/data/portraits/ma-primary-2026.json`. Its registry covers every seed
+candidate, but image URLs are emitted only when exact identity joins and reuse
+rights both pass. `node scripts/check-portrait-assets.mjs` is the optional
+networked integrity pass; normal builds use the pinned hashes and local
+deterministic validator.
 
 ## Automation
 

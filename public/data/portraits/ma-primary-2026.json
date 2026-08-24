@@ -1,0 +1,1336 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "ma-primary-2026-portraits",
+  "kind": "portrait-dataset",
+  "generatedAt": "2026-08-24T15:42:00Z",
+  "codeRevision": "portrait-registry-v1",
+  "coverage": {
+    "candidateCount": 28,
+    "publishedCount": 2,
+    "reviewRequiredCount": 1,
+    "initialsFallbackCount": 26
+  },
+  "portraits": [
+    {
+      "candidateId": "edward-markey",
+      "displayName": "Edward J. Markey",
+      "initials": "EM",
+      "publicationStatus": "published",
+      "display": {
+        "kind": "image",
+        "imageUrl": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/450x550/M000133.jpg",
+        "thumbnailUrl": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/225x275/M000133.jpg",
+        "alt": "Edward J. Markey, identity- and rights-verified portrait"
+      },
+      "identityVerification": {
+        "status": "verified",
+        "scope": "portrait_subject_only",
+        "label": "Verified portrait",
+        "tooltip": "The portrait subject and reuse rights were verified from cited sources. Ballot status is a separate evidence layer.",
+        "method": "Exact Bioguide ID M000133 joins the congressional image path to current official Congress.gov and Senate profiles."
+      },
+      "rights": {
+        "status": "verified",
+        "license": "Public domain in the United States",
+        "licenseUrl": "https://github.com/unitedstates/images#public-domain",
+        "attribution": "Official congressional portrait via unitedstates/images",
+        "attributionRequired": false,
+        "changes": "Resized by the source repository."
+      },
+      "source": {
+        "sourceRecordId": "portrait-source-edward-markey-m000133",
+        "providerId": "unitedstates-congress-images",
+        "sourcePageUrl": "https://github.com/unitedstates/images/tree/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress",
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "automated_checks_passed",
+        "reviewedAt": "2026-08-24T15:42:00Z",
+        "reviewer": "civics-portrait-adapter",
+        "notes": [
+          "Verification covers the portrait subject and reuse rights; it does not independently verify ballot status or any political claim.",
+          "The provider does not expose a capture date for this rendition."
+        ]
+      },
+      "provenance": {
+        "transformation": "verified-source-to-publishable-portrait",
+        "sourceRecordIds": [
+          "portrait-source-edward-markey-m000133"
+        ]
+      }
+    },
+    {
+      "candidateId": "seth-moulton",
+      "displayName": "Seth Moulton",
+      "initials": "SM",
+      "publicationStatus": "published",
+      "display": {
+        "kind": "image",
+        "imageUrl": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/450x550/M001196.jpg",
+        "thumbnailUrl": "https://raw.githubusercontent.com/unitedstates/images/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress/225x275/M001196.jpg",
+        "alt": "Seth Moulton, identity- and rights-verified portrait"
+      },
+      "identityVerification": {
+        "status": "verified",
+        "scope": "portrait_subject_only",
+        "label": "Verified portrait",
+        "tooltip": "The portrait subject and reuse rights were verified from cited sources. Ballot status is a separate evidence layer.",
+        "method": "Exact Bioguide ID M001196 joins the congressional image path to the current U.S. House Clerk and Biographical Directory profiles."
+      },
+      "rights": {
+        "status": "verified",
+        "license": "Public domain in the United States",
+        "licenseUrl": "https://github.com/unitedstates/images#public-domain",
+        "attribution": "Official congressional portrait via unitedstates/images",
+        "attributionRequired": false,
+        "changes": "Resized by the source repository."
+      },
+      "source": {
+        "sourceRecordId": "portrait-source-seth-moulton-m001196",
+        "providerId": "unitedstates-congress-images",
+        "sourcePageUrl": "https://github.com/unitedstates/images/tree/aec3e4a88af843b282c0576f420b930f6a9a46ad/congress",
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "automated_checks_passed",
+        "reviewedAt": "2026-08-24T15:42:00Z",
+        "reviewer": "civics-portrait-adapter",
+        "notes": [
+          "Verification covers the portrait subject and reuse rights; it does not independently verify ballot status or any political claim.",
+          "The provider does not expose a capture date for this rendition."
+        ]
+      },
+      "provenance": {
+        "transformation": "verified-source-to-publishable-portrait",
+        "sourceRecordIds": [
+          "portrait-source-seth-moulton-m001196"
+        ]
+      }
+    },
+    {
+      "candidateId": "john-deaton",
+      "displayName": "John Deaton",
+      "initials": "JD",
+      "publicationStatus": "review_required",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "John Deaton portrait awaits identity review; initials shown"
+      },
+      "identityVerification": {
+        "status": "needs_review",
+        "scope": "portrait_subject_only",
+        "label": "Portrait review needed",
+        "tooltip": "A possible portrait was found, but it is hidden until the subject match and reuse rights both pass publication checks.",
+        "method": "The Commons record names John Deaton and traces the still to a John Deaton for US Senate campaign video, but it has no stable civic identifier to make the join deterministic."
+      },
+      "rights": {
+        "status": "verified",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Jeff Dranetz / John Deaton for US Senate, via Wikimedia Commons",
+        "attributionRequired": true,
+        "changes": "Still image cropped from the source campaign video by a Wikimedia Commons contributor."
+      },
+      "source": {
+        "sourceRecordId": "portrait-source-john-deaton-2024-commons",
+        "providerId": "wikimedia-commons",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:John_Deaton,_2024_(cropped).jpg",
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": "2024-06-06",
+      "review": {
+        "status": "needs_review",
+        "reviewedAt": "2026-08-24T15:42:00Z",
+        "reviewer": "civics-portrait-adapter",
+        "notes": [
+          "A maintainer must confirm the subject-to-candidate match before publication.",
+          "Until then the public view intentionally contains initials and no image URL."
+        ]
+      },
+      "provenance": {
+        "transformation": "candidate-source-held-behind-initials-fallback",
+        "sourceRecordIds": [
+          "portrait-source-john-deaton-2024-commons"
+        ]
+      }
+    },
+    {
+      "candidateId": "maura-healey",
+      "displayName": "Maura Healey",
+      "initials": "MH",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Maura Healey portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "michael-minogue",
+      "displayName": "Michael Roger Minogue",
+      "initials": "MM",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Michael Roger Minogue portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "brian-shortsleeve",
+      "displayName": "Brian Shortsleeve",
+      "initials": "BS",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Brian Shortsleeve portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "kimberley-driscoll",
+      "displayName": "Kimberley Driscoll",
+      "initials": "KD",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Kimberley Driscoll portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "shawn-oliver",
+      "displayName": "Shawn Oliver",
+      "initials": "SO",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Shawn Oliver portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "andrea-campbell",
+      "displayName": "Andrea Joy Campbell",
+      "initials": "AC",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Andrea Joy Campbell portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "michael-walsh",
+      "displayName": "Michael C. Walsh",
+      "initials": "MW",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Michael C. Walsh portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "william-galvin",
+      "displayName": "William Francis Galvin",
+      "initials": "WG",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "William Francis Galvin portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "deborah-goldberg",
+      "displayName": "Deborah B. Goldberg",
+      "initials": "DG",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Deborah B. Goldberg portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "elizabeth-dionne",
+      "displayName": "Elizabeth Dionne",
+      "initials": "ED",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Elizabeth Dionne portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "diana-dizoglio",
+      "displayName": "Diana DiZoglio",
+      "initials": "DD",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Diana DiZoglio portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "bethany-andres-beck",
+      "displayName": "Bethany Andres-Beck",
+      "initials": "BA",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Bethany Andres-Beck portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "john-beccia",
+      "displayName": "John A. Beccia, III",
+      "initials": "JB",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "John A. Beccia, III portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "jamie-belsito",
+      "displayName": "Jamie Belsito",
+      "initials": "JB",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Jamie Belsito portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "dan-koh",
+      "displayName": "Dan Koh",
+      "initials": "DK",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Dan Koh portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "mariah-lancaster",
+      "displayName": "Mariah L. Lancaster",
+      "initials": "ML",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Mariah L. Lancaster portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "tram-nguyen",
+      "displayName": "Tram T. Nguyen",
+      "initials": "TN",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Tram T. Nguyen portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "micah-quinney-jones",
+      "displayName": "Micah Quinney Jones",
+      "initials": "MQ",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Micah Quinney Jones portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "eunice-zeigler",
+      "displayName": "Eunice Delice Zeigler",
+      "initials": "EZ",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Eunice Delice Zeigler portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "barry-finegold",
+      "displayName": "Barry R. Finegold",
+      "initials": "BF",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Barry R. Finegold portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "theodore-semesnyei",
+      "displayName": "Theodore T. Semesnyei",
+      "initials": "TS",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Theodore T. Semesnyei portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "david-robertson",
+      "displayName": "David Allen Robertson",
+      "initials": "DR",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "David Allen Robertson portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "marian-ryan",
+      "displayName": "Marian T. Ryan",
+      "initials": "MR",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Marian T. Ryan portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "david-solet",
+      "displayName": "David Marc Solet",
+      "initials": "DS",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "David Marc Solet portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    },
+    {
+      "candidateId": "tara-decristofaro",
+      "displayName": "Tara E. DeCristofaro",
+      "initials": "TD",
+      "publicationStatus": "fallback",
+      "display": {
+        "kind": "initials",
+        "imageUrl": null,
+        "thumbnailUrl": null,
+        "alt": "Tara E. DeCristofaro portrait is not verified; initials shown"
+      },
+      "identityVerification": {
+        "status": "unverified",
+        "scope": "portrait_subject_only",
+        "label": "Portrait unverified",
+        "tooltip": "No identity- and rights-verified portrait has been published. Initials are shown instead.",
+        "method": null
+      },
+      "rights": {
+        "status": "not_researched",
+        "license": null,
+        "licenseUrl": null,
+        "attribution": null,
+        "attributionRequired": null,
+        "changes": null
+      },
+      "source": {
+        "sourceRecordId": null,
+        "providerId": null,
+        "sourcePageUrl": null,
+        "checkedAt": "2026-08-24T15:42:00Z"
+      },
+      "capturedOn": null,
+      "review": {
+        "status": "unreviewed",
+        "reviewedAt": null,
+        "reviewer": null,
+        "notes": [
+          "Portrait enrichment has not produced a publishable source for this candidate."
+        ]
+      },
+      "provenance": {
+        "transformation": "default-initials-fallback",
+        "sourceRecordIds": []
+      }
+    }
+  ],
+  "providers": [
+    {
+      "id": "unitedstates-congress-images",
+      "name": "unitedstates/images",
+      "url": "https://github.com/unitedstates/images",
+      "termsUrl": "https://github.com/unitedstates/images/blob/aec3e4a88af843b282c0576f420b930f6a9a46ad/README.md",
+      "access": "public-git-repository",
+      "notes": "The project states that its congressional portraits are GPO-sourced public-domain images and publishes them by exact Bioguide ID."
+    },
+    {
+      "id": "wikimedia-commons",
+      "name": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/",
+      "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "access": "public-media-repository",
+      "notes": "Rights and identity metadata are evaluated per file description; Commons availability alone never makes a portrait publishable."
+    }
+  ],
+  "limitations": [
+    "A verified portrait badge covers only the pictured subject and reuse rights; it does not verify ballot status, biography, party, or political claims.",
+    "Portraits without both verified identity and verified reuse rights fail closed to initials.",
+    "A portrait can be historically accurate but old; capture dates are shown when the provider supplies them.",
+    "Remote image bytes are pinned by immutable repository revision where available and recorded with SHA-256 hashes in the source snapshot."
+  ]
+}

@@ -14,6 +14,7 @@ Civics publishes a versioned static knowledge graph. Source adapters collect pub
 | Evidence | A locatable observation from one source | `schemas/evidence.schema.json` |
 | Claim | A factual or interpretive statement tied to evidence | `schemas/claim.schema.json` |
 | Finance view | Comparable provider metrics with explicit gaps, periods, and provenance | `schemas/finance.schema.json` |
+| Portrait view | Candidate-image identity, reuse rights, attribution, and fail-closed display state | `schemas/portrait.schema.json` |
 | Dataset manifest | Release inventory, hashes, coverage, limitations, and validation | `schemas/dataset-manifest.schema.json` |
 
 All schemas use JSON Schema Draft 2020-12. `schemas/common.schema.json` contains shared identifiers and the required provenance, freshness, review, and field-state envelopes.
@@ -50,6 +51,10 @@ public/data/
 ```
 
 Indexes are disposable materialized views. Canonical resources remain normalized and can be regenerated into different views later.
+
+Visualizations are disposable materialized views too. Their named transformations,
+comparability rules, exact-value fallbacks, and accessibility requirements are
+defined in [the visualization contract](visualization-contract.md).
 
 ## Required data states
 

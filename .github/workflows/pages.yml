@@ -50,6 +50,9 @@ jobs:
       - name: Validate campaign finance data
         run: node scripts/validate-ocpf-finance.mjs
 
+      - name: Validate candidate portrait publication gates
+        run: node scripts/validate-portraits.mjs
+
       - name: Run tests
         run: npm test
 
