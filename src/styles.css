@@ -571,7 +571,6 @@ footer {
     linear-gradient(color-mix(in srgb, var(--line), transparent 20%) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, var(--line), transparent 20%) 1px, transparent 1px);
   background-size: 34px 34px;
-  mask-image: radial-gradient(circle at 50% 48%, black 50%, transparent 100%);
 }
 
 .massachusetts-map {
