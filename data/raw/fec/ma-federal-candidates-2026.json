@@ -1,0 +1,2137 @@
+{
+  "schemaVersion": "1.0.0",
+  "provider": "fec",
+  "dataset": "federal-candidates",
+  "scope": {
+    "country": "US",
+    "state": "MA",
+    "electionCycle": 2026
+  },
+  "source": {
+    "name": "Federal Election Commission OpenFEC API",
+    "endpoint": "https://api.open.fec.gov/v1/candidates/",
+    "parameters": {
+      "state": "MA",
+      "electionYear": 2026,
+      "perPage": 100
+    }
+  },
+  "freshness": {
+    "checkedAt": "2026-09-01T14:10:58.748Z",
+    "contentChangedAt": "2026-09-01T14:10:58.748Z",
+    "sourceUpdatedAt": "2026-08-28T20:56:23"
+  },
+  "contentHash": "sha256:de561f635721f20be03a5ddde08260bb069aa3bbdaaf206d5bb3479e9d6cf058",
+  "recordCount": 57,
+  "records": [
+    {
+      "active_through": 2026,
+      "candidate_id": "H0MA04192",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04",
+        "04",
+        "04",
+        "04"
+      ],
+      "election_years": [
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2019-10-03",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-14",
+      "last_file_date": "2024-11-14",
+      "load_date": "2025-02-02T20:58:51",
+      "name": "AUCHINCLOSS, JAKE",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H0MA06098",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06",
+        "06"
+      ],
+      "election_years": [
+        2020,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2019-04-08",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2025-12-31",
+      "last_file_date": "2025-12-31",
+      "load_date": "2026-02-04T21:00:47",
+      "name": "BELSITO, JAMIE MARIE ZAHLAWAY",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H0MA10082",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "09",
+      "district_number": 9,
+      "election_districts": [
+        "10",
+        "09",
+        "09",
+        "09",
+        "09",
+        "09",
+        "09",
+        "09",
+        "09"
+      ],
+      "election_years": [
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2010-03-15",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-14",
+      "last_file_date": "2024-11-14",
+      "load_date": "2025-02-02T20:58:51",
+      "name": "KEATING, WILLIAM R",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H2MA08090",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2022,
+        2024,
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "08",
+        "08",
+        "08"
+      ],
+      "election_years": [
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2024-10-28",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": null,
+      "last_file_date": "2024-10-28",
+      "load_date": "2026-08-28T20:56:23",
+      "name": "BURKE, ROBERT G.",
+      "office": "H",
+      "office_full": "House",
+      "party": "08",
+      "party_full": null,
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H2MA09072",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2002,
+        2004,
+        2006,
+        2008,
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "09",
+        "09",
+        "09",
+        "09",
+        "09",
+        "08",
+        "08",
+        "08",
+        "08",
+        "08",
+        "08",
+        "08",
+        "08"
+      ],
+      "election_years": [
+        2002,
+        2004,
+        2006,
+        2008,
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2001-06-14",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-21",
+      "last_file_date": "2024-11-21",
+      "load_date": "2025-01-31T21:03:03",
+      "name": "LYNCH, STEPHEN",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H4MA01083",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2024,
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "01",
+        "01"
+      ],
+      "election_years": [
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2023-10-04",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-05-07",
+      "last_file_date": "2026-05-07",
+      "load_date": "2026-05-07T20:58:39",
+      "name": "CELATA, ANTHONY PATRICK MR.",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H4MA01091",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2024,
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "01",
+        "01"
+      ],
+      "election_years": [
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2024-02-02",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-12-12",
+      "last_file_date": "2025-12-12",
+      "load_date": "2026-02-05T21:01:18",
+      "name": "MILLERON, NADIA D",
+      "office": "H",
+      "office_full": "House",
+      "party": "NPA",
+      "party_full": "NO PARTY AFFILIATION",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H4MA03022",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        1994,
+        1996,
+        1998,
+        2000,
+        2002,
+        2004,
+        2006,
+        2008,
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "02",
+      "district_number": 2,
+      "election_districts": [
+        "03",
+        "03",
+        "03",
+        "03",
+        "03",
+        "03",
+        "03",
+        "03",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02"
+      ],
+      "election_years": [
+        1994,
+        1996,
+        1998,
+        2002,
+        2004,
+        2006,
+        2008,
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "1993-11-05",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-26",
+      "last_file_date": "2024-11-26",
+      "load_date": "2025-01-17T21:02:15",
+      "name": "MCGOVERN, JAMES P",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H4MA05084",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "05",
+      "district_number": 5,
+      "election_districts": [
+        "05",
+        "05",
+        "05",
+        "05",
+        "05",
+        "05",
+        "05"
+      ],
+      "election_years": [
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2013-02-19",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-14",
+      "last_file_date": "2024-11-14",
+      "load_date": "2025-02-03T21:02:03",
+      "name": "CLARK, KATHERINE",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H4MA06090",
+      "candidate_inactive": true,
+      "candidate_status": "C",
+      "cycles": [
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06",
+        "06",
+        "06",
+        "06",
+        "06",
+        "06",
+        "06"
+      ],
+      "election_years": [
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2013-07-18",
+      "has_raised_funds": true,
+      "inactive_election_years": [
+        2026
+      ],
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-13",
+      "last_file_date": "2024-11-13",
+      "load_date": "2025-02-03T21:02:03",
+      "name": "MOULTON, SETH",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA01104",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2024,
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "01"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2024-08-20",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2024-08-20",
+      "last_file_date": "2024-08-20",
+      "load_date": "2025-01-10T21:01:11",
+      "name": "DEWBERRY, JARRET EZEKIEL",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA01112",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2024,
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "01"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2024-11-24",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2024-11-24",
+      "last_file_date": "2024-12-11",
+      "load_date": "2025-01-10T21:01:11",
+      "name": "TRACY, NATHAN SHEA",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA01120",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "01"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-07-28",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-07-28",
+      "last_file_date": "2025-07-28",
+      "load_date": "2025-10-09T21:01:55",
+      "name": "WHALEN, JEROMIE PATRICK DR.",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA01146",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "01"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-08-25",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-08-25",
+      "last_file_date": "2026-08-25",
+      "load_date": "2026-08-28T20:56:23",
+      "name": "JOHNSON, CHRISTOPHER II",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA03084",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "03",
+      "district_number": 3,
+      "election_districts": [
+        "03"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-02-13",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-02-13",
+      "last_file_date": "2026-02-13",
+      "load_date": "2026-03-03T21:23:02",
+      "name": "ADES, KEVIN",
+      "office": "H",
+      "office_full": "House",
+      "party": "NPA",
+      "party_full": "NO PARTY AFFILIATION",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA03092",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "03",
+      "district_number": 3,
+      "election_districts": [
+        "03"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-02-24",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-02-24",
+      "last_file_date": "2026-02-24",
+      "load_date": "2026-03-03T21:23:02",
+      "name": "CLARK, GAIGE MS.",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA03100",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "03",
+      "district_number": 3,
+      "election_districts": [
+        "03"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-02-26",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-02-26",
+      "last_file_date": "2026-02-26",
+      "load_date": "2026-07-16T20:57:38",
+      "name": "GROSSI, GARY J.",
+      "office": "H",
+      "office_full": "House",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA04090",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-04-01",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-04-01",
+      "last_file_date": "2025-04-01",
+      "load_date": "2025-04-25T21:00:17",
+      "name": "CHASSE, STEVEN MICHAEL",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA04108",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-12-08",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-12-08",
+      "last_file_date": "2025-12-08",
+      "load_date": "2025-12-30T21:00:52",
+      "name": "COOK, MATTHEW PAUL MR.",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA04116",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-12-15",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-12-15",
+      "last_file_date": "2025-12-15",
+      "load_date": "2025-12-30T21:00:52",
+      "name": "BOYD, CHRISTOPHER SLATER",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA04124",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-01-28",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-01-28",
+      "last_file_date": "2026-01-28",
+      "load_date": "2026-04-20T21:16:40",
+      "name": "LECKEY, IHSSANE",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA04132",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-02-02",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-02-02",
+      "last_file_date": "2026-02-02",
+      "load_date": "2026-04-22T22:27:56",
+      "name": "POULOS, JASON",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA04140",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "04",
+      "district_number": 4,
+      "election_districts": [
+        "04"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-03-28",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-03-28",
+      "last_file_date": "2026-03-28",
+      "load_date": "2026-07-16T20:57:38",
+      "name": "STALCUP, THOMAS PHD",
+      "office": "H",
+      "office_full": "House",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA05071",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "05",
+      "district_number": 5,
+      "election_districts": [
+        "05"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-11-15",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-11-15",
+      "last_file_date": "2025-11-15",
+      "load_date": "2026-02-05T21:01:18",
+      "name": "SAMMAN, TARIK",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA05097",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "05",
+      "district_number": 5,
+      "election_districts": [
+        "05"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-05-26",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-05-26",
+      "last_file_date": "2026-05-26",
+      "load_date": "2026-06-01T20:57:55",
+      "name": "FLEMING, DEREK",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA05105",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "05",
+      "district_number": 5,
+      "election_districts": [
+        "05"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-07-27",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-07-27",
+      "last_file_date": "2026-07-27",
+      "load_date": "2026-08-28T20:56:23",
+      "name": "PAZ, JONATHAN",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06137",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2024,
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2024-11-08",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2024-11-08",
+      "last_file_date": "2025-05-15",
+      "load_date": "2025-12-30T21:00:52",
+      "name": "LARIVEE, KEVIN",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06145",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-07-03",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2025-07-03",
+      "last_file_date": "2025-07-03",
+      "load_date": "2025-12-30T21:00:52",
+      "name": "ANDRES-BECK, BETH",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06152",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-10-21",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2025-10-21",
+      "last_file_date": "2025-10-21",
+      "load_date": "2026-02-05T21:01:18",
+      "name": "BECCIA, JOHN",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06160",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-10-23",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2025-10-23",
+      "last_file_date": "2025-10-23",
+      "load_date": "2026-02-05T21:01:18",
+      "name": "NGUYEN, TRAM",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06178",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-10-28",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2025-10-28",
+      "last_file_date": "2025-10-28",
+      "load_date": "2026-02-05T21:01:18",
+      "name": "JAKIOUS, RICK",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06186",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-01-05",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2026-01-05",
+      "last_file_date": "2026-01-05",
+      "load_date": "2026-04-20T21:16:40",
+      "name": "LANCASTER, MARIAH DR",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06194",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-01-15",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2026-01-15",
+      "last_file_date": "2026-01-15",
+      "load_date": "2026-01-28T21:00:03",
+      "name": "FIELD, JOHN",
+      "office": "H",
+      "office_full": "House",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06202",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-02-05",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2026-02-05",
+      "last_file_date": "2026-02-05",
+      "load_date": "2026-04-20T21:16:40",
+      "name": "JONES, MICAH Q.",
+      "office": "H",
+      "office_full": "House",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA06210",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "06"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-02-17",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2026-02-17",
+      "last_file_date": "2026-02-17",
+      "load_date": "2026-03-03T21:23:02",
+      "name": "CREEMERS, RACHEL",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA08307",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "08"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-05-07",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-05-07",
+      "last_file_date": "2025-05-07",
+      "load_date": "2025-07-16T21:02:06",
+      "name": "ROATH, PATRICK THOMAS",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA08323",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "07",
+      "district_number": 7,
+      "election_districts": [
+        "07"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-11-06",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-11-25",
+      "last_file_date": "2025-11-25",
+      "load_date": "2025-11-25T21:05:07",
+      "name": "LINARDON, KELECHI",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA08331",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "08"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-11-26",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-03-01",
+      "last_file_date": "2026-03-01",
+      "load_date": "2026-03-01T21:25:10",
+      "name": "ZYLBERFINK, ANDREW 'AJ'",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA08349",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "08"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-12-18",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-12-18",
+      "last_file_date": "2025-12-18",
+      "load_date": "2025-12-30T21:00:52",
+      "name": "GROCHOWSKI, WALTER",
+      "office": "H",
+      "office_full": "House",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA08364",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "08"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-03-09",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-03-12",
+      "last_file_date": "2026-03-12",
+      "load_date": "2026-03-12T21:18:26",
+      "name": "HAMMOND, MICHAEL",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA08372",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "08",
+      "district_number": 8,
+      "election_districts": [
+        "08"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-06-30",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-07-05",
+      "last_file_date": "2026-07-05",
+      "load_date": "2026-07-21T20:58:46",
+      "name": "WALTERS, RASHEED NICHOLAS",
+      "office": "H",
+      "office_full": "House",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA09206",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "09",
+      "district_number": 9,
+      "election_districts": [
+        "09"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-07-07",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-07-07",
+      "last_file_date": "2025-07-07",
+      "load_date": "2025-10-18T21:00:34",
+      "name": "MACALLISTER, ROBERT TYLER",
+      "office": "H",
+      "office_full": "House",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H6MA09214",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "09",
+      "district_number": 9,
+      "election_districts": [
+        "09"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-01-28",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-01-28",
+      "last_file_date": "2026-01-28",
+      "load_date": "2026-04-20T21:16:40",
+      "name": "SWALLOW, CRAIG M MR",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H8MA02041",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        1988,
+        1990,
+        1992,
+        1994,
+        1996,
+        1998,
+        2000,
+        2002,
+        2004,
+        2006,
+        2008,
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "01",
+      "district_number": 1,
+      "election_districts": [
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "02",
+        "01",
+        "01",
+        "01",
+        "01",
+        "01",
+        "01",
+        "01",
+        "01"
+      ],
+      "election_years": [
+        1988,
+        1990,
+        1992,
+        1994,
+        1996,
+        1998,
+        2000,
+        2002,
+        2004,
+        2006,
+        2008,
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "1988-04-25",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2025-02-11",
+      "last_file_date": "2025-02-11",
+      "load_date": "2025-02-12T21:01:49",
+      "name": "NEAL, RICHARD E",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H8MA03072",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "06",
+      "district_number": 6,
+      "election_districts": [
+        "03",
+        "06"
+      ],
+      "election_years": [
+        2018,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2017-09-01",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "O",
+      "incumbent_challenge_full": "Open seat",
+      "last_f2_date": "2025-10-16",
+      "last_file_date": "2025-10-16",
+      "load_date": "2026-02-08T20:57:43",
+      "name": "KOH, DANIEL ARRIGG",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H8MA03106",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "03",
+      "district_number": 3,
+      "election_districts": [
+        "03",
+        "03",
+        "03",
+        "03",
+        "03"
+      ],
+      "election_years": [
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2017-09-21",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-21",
+      "last_file_date": "2024-11-21",
+      "load_date": "2025-02-06T22:28:35",
+      "name": "TRAHAN, LORI",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "H8MA07032",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "07",
+      "district_number": 7,
+      "election_districts": [
+        "07",
+        "07",
+        "07",
+        "07",
+        "07"
+      ],
+      "election_years": [
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2018-01-30",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2024-11-21",
+      "last_file_date": "2024-11-21",
+      "load_date": "2025-02-06T22:28:35",
+      "name": "PRESSLEY, AYANNA",
+      "office": "H",
+      "office_full": "House",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S4MA00028",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        1984,
+        1986,
+        1988,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00",
+        "00",
+        "00",
+        "00"
+      ],
+      "election_years": [
+        1984,
+        2014,
+        2020,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "1984-01-30",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "I",
+      "incumbent_challenge_full": "Incumbent",
+      "last_f2_date": "2026-03-31",
+      "last_file_date": "2026-03-31",
+      "load_date": "2026-03-31T21:14:58",
+      "name": "MARKEY, EDWARD SEN.",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00254",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-04-30",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-05-09",
+      "last_file_date": "2025-05-09",
+      "load_date": "2025-07-16T21:02:06",
+      "name": "RIKLEEN, ALEXANDER",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00262",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-07-01",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-07-01",
+      "last_file_date": "2025-07-01",
+      "load_date": "2025-10-11T21:01:09",
+      "name": "DAWICKI, MORGAN GIFFORD",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00270",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-08-20",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-08-20",
+      "last_file_date": "2025-08-20",
+      "load_date": "2025-10-16T21:01:04",
+      "name": "BECH, NATHAN ALEXANDER",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00288",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-09-24",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-09-24",
+      "last_file_date": "2025-09-24",
+      "load_date": "2026-01-28T21:00:03",
+      "name": "TACHE, JOSEPH",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "OTH",
+      "party_full": "OTHER",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00296",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-10-16",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-10-16",
+      "last_file_date": "2025-10-16",
+      "load_date": "2025-11-13T21:02:32",
+      "name": "MOULTON, SETH",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00304",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2025-11-10",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2025-11-10",
+      "last_file_date": "2025-11-10",
+      "load_date": "2026-02-09T20:58:28",
+      "name": "DEATON, JOHN",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00312",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-01-06",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-01-06",
+      "last_file_date": "2026-01-06",
+      "load_date": "2026-01-13T21:02:51",
+      "name": "GATES, WILLIAM FRANCIS MR.",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "DEM",
+      "party_full": "DEMOCRATIC PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S6MA00320",
+      "candidate_inactive": false,
+      "candidate_status": "N",
+      "cycles": [
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00"
+      ],
+      "election_years": [
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2026-07-05",
+      "has_raised_funds": false,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-07-05",
+      "last_file_date": "2026-07-10",
+      "load_date": "2026-07-21T20:58:46",
+      "name": "SOLOMON, GAVIN",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "REP",
+      "party_full": "REPUBLICAN PARTY",
+      "state": "MA"
+    },
+    {
+      "active_through": 2026,
+      "candidate_id": "S8MA00268",
+      "candidate_inactive": false,
+      "candidate_status": "C",
+      "cycles": [
+        2018,
+        2020,
+        2022,
+        2024,
+        2026
+      ],
+      "district": "00",
+      "district_number": 0,
+      "election_districts": [
+        "00",
+        "00",
+        "00",
+        "00"
+      ],
+      "election_years": [
+        2018,
+        2020,
+        2024,
+        2026
+      ],
+      "federal_funds_flag": false,
+      "first_file_date": "2017-03-17",
+      "has_raised_funds": true,
+      "inactive_election_years": null,
+      "incumbent_challenge": "C",
+      "incumbent_challenge_full": "Challenger",
+      "last_f2_date": "2026-01-30",
+      "last_file_date": "2026-01-30",
+      "load_date": "2026-04-14T21:14:42",
+      "name": "AYYADURAI, SHIVA DR",
+      "office": "S",
+      "office_full": "Senate",
+      "party": "IND",
+      "party_full": "INDEPENDENT",
+      "state": "MA"
+    }
+  ]
+}
