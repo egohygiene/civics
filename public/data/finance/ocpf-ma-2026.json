@@ -123,7 +123,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:15931:report:1036466",
         "url": "https://api.ocpf.us/filer/payload/15931",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:8463ae62e0faf1ff895137aa07d88054176ed8ec3b1078d50b452c7330b661c1"
       },
       "provenance": {
@@ -132,19 +132,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -264,7 +264,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:13045:report:1036443",
         "url": "https://api.ocpf.us/filer/payload/13045",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:c11a48943f4393a9a985487429f3554aff23059d2d9b5443357689169f7e3cf7"
       },
       "provenance": {
@@ -273,19 +273,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -405,7 +405,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:19172:report:1036782",
         "url": "https://api.ocpf.us/filer/payload/19172",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:ca2784c6fe09ec6a18fd02fe723527bfa1e54a0dbe0234fc5fa2024085787b97"
       },
       "provenance": {
@@ -414,19 +414,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -546,7 +546,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:17043:report:1035732",
         "url": "https://api.ocpf.us/filer/payload/17043",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:d166b2d26817c54128f850ef1ff1e828adc777ff4c61df9d3bd90541e2a8ab7d"
       },
       "provenance": {
@@ -555,19 +555,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -687,7 +687,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:19422:report:1037843",
         "url": "https://api.ocpf.us/filer/payload/19422",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:c29a72c425ea92825bf2d0f914c9d85620b614b34f218394d108670ce8b8176b"
       },
       "provenance": {
@@ -696,19 +696,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -828,7 +828,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:14385:report:1036475",
         "url": "https://api.ocpf.us/filer/payload/14385",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:0dfcf9dd32e471926156d75caacb7007445fa148af434f2bd6fbfbcbacd328c5"
       },
       "provenance": {
@@ -837,19 +837,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -969,7 +969,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:15465:report:1035399",
         "url": "https://api.ocpf.us/filer/payload/15465",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:6d48066799259dbdc111a4997e8d0b05a16bbd6a469980733286f035e4479adb"
       },
       "provenance": {
@@ -978,19 +978,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1110,7 +1110,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:19582:report:1037645",
         "url": "https://api.ocpf.us/filer/payload/19582",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:64a38564f5c0d774e1dfa1a6181a7824fab2bafc7e8699071f13237b6112654e"
       },
       "provenance": {
@@ -1119,19 +1119,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1251,7 +1251,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:17614:report:1037863",
         "url": "https://api.ocpf.us/filer/payload/17614",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:7d2d708d25b49a82121ea13408ce38dd2acda4970bd064df9538d9f04ae5c235"
       },
       "provenance": {
@@ -1260,19 +1260,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1392,7 +1392,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:15268:report:1036763",
         "url": "https://api.ocpf.us/filer/payload/15268",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:bfa3dfde64dbad3ece0837aa303526856b59ae1651694867c127e98489ad8190"
       },
       "provenance": {
@@ -1401,19 +1401,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1533,7 +1533,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:15632:report:1035006",
         "url": "https://api.ocpf.us/filer/payload/15632",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:787840a4847d5f0ed71612de0ec3a927d47caa60e7ed318069348c853d9d91b4"
       },
       "provenance": {
@@ -1542,19 +1542,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1674,7 +1674,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:15710:report:1036462",
         "url": "https://api.ocpf.us/filer/payload/15710",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:5fc34356f8a4a214581be357aa3d8d1a7c40739f3f86fe46f023e3f5dfb64e0f"
       },
       "provenance": {
@@ -1683,19 +1683,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1815,7 +1815,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:19431:report:1036743",
         "url": "https://api.ocpf.us/filer/payload/19431",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:760d9db185f7ec8c09052c6900958c77da1e5642cfaa0c2697c3276bb0151450"
       },
       "provenance": {
@@ -1824,19 +1824,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -1956,7 +1956,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:18059:report:1035109",
         "url": "https://api.ocpf.us/filer/payload/18059",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:546abea86372d94c089fe74e8789753c40b9a97ad4f66acc65e3ebd09f3696fb"
       },
       "provenance": {
@@ -1965,19 +1965,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -2097,7 +2097,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:18168:report:1035588",
         "url": "https://api.ocpf.us/filer/payload/18168",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:1029501435082340d2be0b60daf8dce9c0844543000119ede99343ab47bebffb"
       },
       "provenance": {
@@ -2106,19 +2106,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -2238,7 +2238,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:13675:report:1036282",
         "url": "https://api.ocpf.us/filer/payload/13675",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:4ce9259c3a30512cccb6bf994de2adc075dc5e57dfafe5289fde67492beb6b40"
       },
       "provenance": {
@@ -2247,19 +2247,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -2379,7 +2379,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:17269:report:1035374",
         "url": "https://api.ocpf.us/filer/payload/17269",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:e5bf5c89a956f227d2cfee75a104d31ffbcb24ef62ba0d048107b3e6515f2b6e"
       },
       "provenance": {
@@ -2388,19 +2388,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -2520,7 +2520,7 @@
         "sourceId": "source:ocpf-public-api",
         "recordId": "ocpf:10176:report:1036831",
         "url": "https://api.ocpf.us/filer/payload/10176",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
+        "retrievedAt": "2026-09-01T14:11:01.044Z",
         "contentHash": "sha256:8278a7a048bebb4d87c6924e6b4e515ee5440ce2c3045a82aef36955f22977e1"
       },
       "provenance": {
@@ -2529,19 +2529,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-09-01T14:11:01.044Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-09-01T14:11:01.044Z",
         "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
         "validThrough": null
       },
       "review": {
@@ -2565,7 +2565,7 @@
     "sourceId": "source:ocpf-public-api",
     "recordId": "massachusetts-candidate-finance-ytd",
     "url": "https://api.ocpf.us/developers/guide",
-    "retrievedAt": "2026-08-24T13:30:00.000Z",
+    "retrievedAt": "2026-09-01T14:11:01.044Z",
     "contentHash": "sha256:dcce7b1c9efb8fcfc48de0e38c0e69b3ee1d2d24d156bf481b3f09ab50e61efc"
   },
   "contentHash": "sha256:d2fcf9f1759179bac95c740af3f5fd9a0d53e0901c4d315d89e336f3b517b65a",
@@ -2575,19 +2575,19 @@
       "source:ocpf-public-api"
     ],
     "evidenceIds": [],
-    "producedAt": "2026-08-24T13:30:00.000Z",
+    "producedAt": "2026-09-01T14:11:01.044Z",
     "generator": {
       "kind": "script",
       "name": "scripts/materialize-finance-data.mjs",
       "version": "1.0.0"
     },
-    "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+    "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
   },
   "freshness": {
     "status": "current",
-    "checkedAt": "2026-08-24T13:30:00.000Z",
+    "checkedAt": "2026-09-01T14:11:01.044Z",
     "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-    "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+    "dataUpdatedAt": "2026-09-01T14:11:01.044Z",
     "validThrough": null
   },
   "review": {
