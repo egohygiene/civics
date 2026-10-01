@@ -12,8 +12,8 @@
   "period": {
     "cycle": 2026,
     "startDate": "2026-01-01",
-    "endDate": "2026-07-31",
-    "asOf": "2026-07-31"
+    "endDate": "2026-09-30",
+    "asOf": "2026-09-30"
   },
   "candidates": [
     {
@@ -32,37 +32,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036466"
+        "reportId": "1042324"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 576755.15,
+          "value": 607407.05,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15931:report:1036466"
+            "ocpf:15931:report:1042324"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 556446.11,
+          "value": 679542.09,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15931:report:1036466"
+            "ocpf:15931:report:1042324"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 866409.45,
+          "value": 773965.37,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15931:report:1036466"
+            "ocpf:15931:report:1042324"
           ],
           "note": null
         },
@@ -112,7 +112,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -121,10 +121,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:15931:report:1036466",
+        "recordId": "ocpf:15931:report:1042324",
         "url": "https://api.ocpf.us/filer/payload/15931",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:8463ae62e0faf1ff895137aa07d88054176ed8ec3b1078d50b452c7330b661c1"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:89f7b28e5dacf73a0bda6aea10033308ef2a9c072f17d58b59844f9c8ae336e5"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -132,19 +132,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -173,37 +173,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036443"
+        "reportId": "1042250"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 229191.78,
+          "value": 244333.92,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:13045:report:1036443"
+            "ocpf:13045:report:1042250"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 58879.87,
+          "value": 64643.49,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:13045:report:1036443"
+            "ocpf:13045:report:1042250"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 594377.49,
+          "value": 603756.01,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:13045:report:1036443"
+            "ocpf:13045:report:1042250"
           ],
           "note": null
         },
@@ -253,7 +253,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -262,10 +262,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:13045:report:1036443",
+        "recordId": "ocpf:13045:report:1042250",
         "url": "https://api.ocpf.us/filer/payload/13045",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:c11a48943f4393a9a985487429f3554aff23059d2d9b5443357689169f7e3cf7"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:c773d2a47cf6705acff37af6f1aea6a34e38905938e04834ea1e766ade9c29ca"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -273,19 +273,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -314,37 +314,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036782"
+        "reportId": "1042264"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 1642055.8,
+          "value": 2491569.51,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19172:report:1036782"
+            "ocpf:19172:report:1042264"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 1725146.74,
+          "value": 2948819.32,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19172:report:1036782"
+            "ocpf:19172:report:1042264"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 526805.6,
+          "value": 152646.73,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19172:report:1036782"
+            "ocpf:19172:report:1042264"
           ],
           "note": null
         },
@@ -394,7 +394,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -403,10 +403,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:19172:report:1036782",
+        "recordId": "ocpf:19172:report:1042264",
         "url": "https://api.ocpf.us/filer/payload/19172",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:ca2784c6fe09ec6a18fd02fe723527bfa1e54a0dbe0234fc5fa2024085787b97"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:537e052bb9af43c8f18e3672175eb0511ecdb2f84afc1d3a48267bc8ae3d08b4"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -414,19 +414,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -455,37 +455,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1035732"
+        "reportId": "1040708"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 500,
+          "value": 15500,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17043:report:1035732"
+            "ocpf:17043:report:1040708"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 749,
+          "value": 757,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17043:report:1035732"
+            "ocpf:17043:report:1040708"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 1572.21,
+          "value": 16564.21,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17043:report:1035732"
+            "ocpf:17043:report:1040708"
           ],
           "note": null
         },
@@ -535,7 +535,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -544,10 +544,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:17043:report:1035732",
+        "recordId": "ocpf:17043:report:1040708",
         "url": "https://api.ocpf.us/filer/payload/17043",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:d166b2d26817c54128f850ef1ff1e828adc777ff4c61df9d3bd90541e2a8ab7d"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:53675ee664a7eb26f84520d58a0ccc24d3256511f706720545f8dc0dfb818e27"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -555,19 +555,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -596,37 +596,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1037843"
+        "reportId": "1041436"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 140961.73,
+          "value": 179709.35,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19422:report:1037843"
+            "ocpf:19422:report:1041436"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 159335.26,
+          "value": 231395.02,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19422:report:1037843"
+            "ocpf:19422:report:1041436"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 82403.88,
+          "value": 49091.74,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19422:report:1037843"
+            "ocpf:19422:report:1041436"
           ],
           "note": null
         },
@@ -676,7 +676,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -685,10 +685,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:19422:report:1037843",
+        "recordId": "ocpf:19422:report:1041436",
         "url": "https://api.ocpf.us/filer/payload/19422",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:c29a72c425ea92825bf2d0f914c9d85620b614b34f218394d108670ce8b8176b"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:814cf92786021fa39ad03da0224a367a25d395cc85cd4caf00520e5ff5978b47"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -696,19 +696,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -737,37 +737,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036475"
+        "reportId": "1042335"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 154456.84,
+          "value": 180020.58,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:14385:report:1036475"
+            "ocpf:14385:report:1042335"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 69023.44,
+          "value": 76397.84,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:14385:report:1036475"
+            "ocpf:14385:report:1042335"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 455227.35,
+          "value": 473416.69,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:14385:report:1036475"
+            "ocpf:14385:report:1042335"
           ],
           "note": null
         },
@@ -817,7 +817,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -826,10 +826,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:14385:report:1036475",
+        "recordId": "ocpf:14385:report:1042335",
         "url": "https://api.ocpf.us/filer/payload/14385",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:0dfcf9dd32e471926156d75caacb7007445fa148af434f2bd6fbfbcbacd328c5"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:47e65b4d0e9b99368c2156ff2c8555507433109fe630721cb027da57e4ba8146"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -837,19 +837,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -878,37 +878,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1035399"
+        "reportId": "1040432"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 92454.36,
+          "value": 98702.09,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15465:report:1035399"
+            "ocpf:15465:report:1040432"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 13918.44,
+          "value": 14469.97,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15465:report:1035399"
+            "ocpf:15465:report:1040432"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 226089.89,
+          "value": 231851.41,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15465:report:1035399"
+            "ocpf:15465:report:1040432"
           ],
           "note": null
         },
@@ -958,7 +958,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -967,10 +967,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:15465:report:1035399",
+        "recordId": "ocpf:15465:report:1040432",
         "url": "https://api.ocpf.us/filer/payload/15465",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:6d48066799259dbdc111a4997e8d0b05a16bbd6a469980733286f035e4479adb"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:e1b9ff3e031b6881aacc247505572d9a87943feee0369f2da19226a0cc58eab6"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -978,19 +978,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1019,37 +1019,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1037645"
+        "reportId": "1041443"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 238956.88,
+          "value": 269815.66,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19582:report:1037645"
+            "ocpf:19582:report:1041443"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 188903.72,
+          "value": 200648.84,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19582:report:1037645"
+            "ocpf:19582:report:1041443"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 105200.78,
+          "value": 124314.44,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19582:report:1037645"
+            "ocpf:19582:report:1041443"
           ],
           "note": null
         },
@@ -1099,7 +1099,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1108,10 +1108,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:19582:report:1037645",
+        "recordId": "ocpf:19582:report:1041443",
         "url": "https://api.ocpf.us/filer/payload/19582",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:64a38564f5c0d774e1dfa1a6181a7824fab2bafc7e8699071f13237b6112654e"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:5d4df003777ed7322a44517e05c89c18774e692059b80af52da575c99c2c47f2"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1119,19 +1119,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1160,11 +1160,11 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1037863"
+        "reportId": "1041313"
       },
       "totals": {
         "receipts": {
@@ -1172,7 +1172,7 @@
           "value": 3627.7,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17614:report:1037863"
+            "ocpf:17614:report:1041313"
           ],
           "note": null
         },
@@ -1181,7 +1181,7 @@
           "value": 1798.08,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17614:report:1037863"
+            "ocpf:17614:report:1041313"
           ],
           "note": null
         },
@@ -1190,7 +1190,7 @@
           "value": 4498.69,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17614:report:1037863"
+            "ocpf:17614:report:1041313"
           ],
           "note": null
         },
@@ -1240,7 +1240,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1249,10 +1249,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:17614:report:1037863",
+        "recordId": "ocpf:17614:report:1041313",
         "url": "https://api.ocpf.us/filer/payload/17614",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:7d2d708d25b49a82121ea13408ce38dd2acda4970bd064df9538d9f04ae5c235"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:b217fd0daa4b03e7558208d2be41ffa1b72841df8b2e493abc20b0ae59cfed36"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1260,19 +1260,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1301,37 +1301,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036763"
+        "reportId": "1042225"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 1154128.52,
+          "value": 1306153.82,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15268:report:1036763"
+            "ocpf:15268:report:1042225"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 187067.7,
+          "value": 208181.33,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15268:report:1036763"
+            "ocpf:15268:report:1042225"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 2565791.79,
+          "value": 2696703.46,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15268:report:1036763"
+            "ocpf:15268:report:1042225"
           ],
           "note": null
         },
@@ -1381,7 +1381,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1390,10 +1390,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:15268:report:1036763",
+        "recordId": "ocpf:15268:report:1042225",
         "url": "https://api.ocpf.us/filer/payload/15268",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:bfa3dfde64dbad3ece0837aa303526856b59ae1651694867c127e98489ad8190"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:f0b4aa9727b0d39f003979bf8da00f2d84b78d723da3aa159ec7ccfc96f36628"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1401,19 +1401,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1442,37 +1442,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-09-30",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-09-30",
         "basis": "year_to_date",
-        "reportId": "1035006"
+        "reportId": "1044715"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 155392.75,
+          "value": 203115.31,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15632:report:1035006"
+            "ocpf:15632:report:1044715"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 21428.29,
+          "value": 452956.63,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15632:report:1035006"
+            "ocpf:15632:report:1044715"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 770733.46,
+          "value": 386927.68,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15632:report:1035006"
+            "ocpf:15632:report:1044715"
           ],
           "note": null
         },
@@ -1522,7 +1522,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-09-30",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1531,10 +1531,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:15632:report:1035006",
+        "recordId": "ocpf:15632:report:1044715",
         "url": "https://api.ocpf.us/filer/payload/15632",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:787840a4847d5f0ed71612de0ec3a927d47caa60e7ed318069348c853d9d91b4"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:56879c6c987faca562903b9ff12eafc59bc31152b52b5dd7cac901dd6a3386f1"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1542,19 +1542,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1583,37 +1583,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036462"
+        "reportId": "1042337"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 3049534.44,
+          "value": 3441805.29,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15710:report:1036462"
+            "ocpf:15710:report:1042337"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 1071288.16,
+          "value": 1209122.53,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15710:report:1036462"
+            "ocpf:15710:report:1042337"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 6602136.91,
+          "value": 6862529.82,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:15710:report:1036462"
+            "ocpf:15710:report:1042337"
           ],
           "note": null
         },
@@ -1663,7 +1663,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1672,10 +1672,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:15710:report:1036462",
+        "recordId": "ocpf:15710:report:1042337",
         "url": "https://api.ocpf.us/filer/payload/15710",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:5fc34356f8a4a214581be357aa3d8d1a7c40739f3f86fe46f023e3f5dfb64e0f"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:eb654819101fd8fd6e9d245efb3222246a0655d9c89fcc0d0f0698c99f4ade3a"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1683,19 +1683,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1724,37 +1724,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036743"
+        "reportId": "1042257"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 10903005.07,
+          "value": 11517584.1,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19431:report:1036743"
+            "ocpf:19431:report:1042257"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 6476381.85,
+          "value": 9446211,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19431:report:1036743"
+            "ocpf:19431:report:1042257"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 8141164.26,
+          "value": 5816461.75,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:19431:report:1036743"
+            "ocpf:19431:report:1042257"
           ],
           "note": null
         },
@@ -1804,7 +1804,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1813,10 +1813,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:19431:report:1036743",
+        "recordId": "ocpf:19431:report:1042257",
         "url": "https://api.ocpf.us/filer/payload/19431",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:760d9db185f7ec8c09052c6900958c77da1e5642cfaa0c2697c3276bb0151450"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:2a09ac2ca059701d46ecebac59b6f854ef190170e505388ef06319aa58f389a2"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1824,19 +1824,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -1865,37 +1865,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1035109"
+        "reportId": "1042688"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 55891.31,
+          "value": 66153.81,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:18059:report:1035109"
+            "ocpf:18059:report:1042688"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 51235.66,
+          "value": 57323.33,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:18059:report:1035109"
+            "ocpf:18059:report:1042688"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 4655.65,
+          "value": 8830.48,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:18059:report:1035109"
+            "ocpf:18059:report:1042688"
           ],
           "note": null
         },
@@ -1945,7 +1945,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -1954,10 +1954,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:18059:report:1035109",
+        "recordId": "ocpf:18059:report:1042688",
         "url": "https://api.ocpf.us/filer/payload/18059",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:546abea86372d94c089fe74e8789753c40b9a97ad4f66acc65e3ebd09f3696fb"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:5fb7efdb57201a43ebcad7918dc800bf68b5a9af852390d1316c0725f029464d"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -1965,19 +1965,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -2006,37 +2006,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1035588"
+        "reportId": "1041814"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 129709.26,
+          "value": 144617.05,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:18168:report:1035588"
+            "ocpf:18168:report:1041814"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 154849.19,
+          "value": 164849.19,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:18168:report:1035588"
+            "ocpf:18168:report:1041814"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 2870.79,
+          "value": 7778.58,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:18168:report:1035588"
+            "ocpf:18168:report:1041814"
           ],
           "note": null
         },
@@ -2086,7 +2086,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -2095,10 +2095,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:18168:report:1035588",
+        "recordId": "ocpf:18168:report:1041814",
         "url": "https://api.ocpf.us/filer/payload/18168",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:1029501435082340d2be0b60daf8dce9c0844543000119ede99343ab47bebffb"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:5460630016835c7dc282757f30415624366377c5a3a7e44cc9719d65bbdf5c7c"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -2106,19 +2106,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -2147,11 +2147,11 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036282"
+        "reportId": "1040799"
       },
       "totals": {
         "receipts": {
@@ -2159,25 +2159,25 @@
           "value": 0,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:13675:report:1036282"
+            "ocpf:13675:report:1040799"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 69.93,
+          "value": 79.92,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:13675:report:1036282"
+            "ocpf:13675:report:1040799"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 1254.62,
+          "value": 1244.63,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:13675:report:1036282"
+            "ocpf:13675:report:1040799"
           ],
           "note": null
         },
@@ -2227,7 +2227,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -2236,10 +2236,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:13675:report:1036282",
+        "recordId": "ocpf:13675:report:1040799",
         "url": "https://api.ocpf.us/filer/payload/13675",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:4ce9259c3a30512cccb6bf994de2adc075dc5e57dfafe5289fde67492beb6b40"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:38d07f5a6ce08628ab45a3995c76c19d6921e4f274ba3bb7fb9e04435652ef2a"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -2247,19 +2247,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -2288,37 +2288,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1035374"
+        "reportId": "1042546"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 5188.6,
+          "value": 5686.63,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17269:report:1035374"
+            "ocpf:17269:report:1042546"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 3926.5,
+          "value": 4804.11,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17269:report:1035374"
+            "ocpf:17269:report:1042546"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 4949.29,
+          "value": 4569.71,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:17269:report:1035374"
+            "ocpf:17269:report:1042546"
           ],
           "note": null
         },
@@ -2368,7 +2368,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -2377,10 +2377,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:17269:report:1035374",
+        "recordId": "ocpf:17269:report:1042546",
         "url": "https://api.ocpf.us/filer/payload/17269",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:e5bf5c89a956f227d2cfee75a104d31ffbcb24ef62ba0d048107b3e6515f2b6e"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:48010e8fb41b5051a1c65dae34b38c32123565974c541fff9145a6d88af529eb"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -2388,19 +2388,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -2429,37 +2429,37 @@
       },
       "period": {
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-08-31",
         "cycle": 2026,
-        "asOf": "2026-07-31",
+        "asOf": "2026-08-31",
         "basis": "year_to_date",
-        "reportId": "1036831"
+        "reportId": "1042162"
       },
       "totals": {
         "receipts": {
           "status": "known",
-          "value": 131312.1,
+          "value": 135962.1,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:10176:report:1036831"
+            "ocpf:10176:report:1042162"
           ],
           "note": null
         },
         "disbursements": {
           "status": "known",
-          "value": 51099.16,
+          "value": 51804.66,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:10176:report:1036831"
+            "ocpf:10176:report:1042162"
           ],
           "note": null
         },
         "cashOnHand": {
           "status": "known",
-          "value": 2028436,
+          "value": 2032880.5,
           "currency": "USD",
           "sourceRecordRefs": [
-            "ocpf:10176:report:1036831"
+            "ocpf:10176:report:1042162"
           ],
           "note": null
         },
@@ -2509,7 +2509,7 @@
       "comparability": {
         "status": "limited",
         "basis": "OCPF filer-specific year-to-date summary; compare only records with matching periods and account rules.",
-        "key": "ocpf:ytd:2026-01-01:2026-07-31",
+        "key": "ocpf:ytd:2026-01-01:2026-08-31",
         "caveats": [
           "Year-to-date totals are not lifetime or full election-cycle totals.",
           "Candidates may use different OCPF account types and reporting schedules.",
@@ -2518,10 +2518,10 @@
       },
       "source": {
         "sourceId": "source:ocpf-public-api",
-        "recordId": "ocpf:10176:report:1036831",
+        "recordId": "ocpf:10176:report:1042162",
         "url": "https://api.ocpf.us/filer/payload/10176",
-        "retrievedAt": "2026-08-24T13:30:00.000Z",
-        "contentHash": "sha256:8278a7a048bebb4d87c6924e6b4e515ee5440ce2c3045a82aef36955f22977e1"
+        "retrievedAt": "2026-10-01T16:29:54.483Z",
+        "contentHash": "sha256:97a9d63a2dbb7cac6e265fc3a4b96221ed783898169a9360a2cf8a7d5e77b97d"
       },
       "provenance": {
         "method": "deterministic_derivation",
@@ -2529,19 +2529,19 @@
           "source:ocpf-public-api"
         ],
         "evidenceIds": [],
-        "producedAt": "2026-08-24T13:30:00.000Z",
+        "producedAt": "2026-10-01T16:29:54.483Z",
         "generator": {
           "kind": "script",
           "name": "scripts/materialize-finance-data.mjs",
           "version": "1.0.0"
         },
-        "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+        "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
       },
       "freshness": {
         "status": "current",
-        "checkedAt": "2026-08-24T13:30:00.000Z",
-        "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-        "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+        "checkedAt": "2026-10-01T16:29:54.483Z",
+        "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+        "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
         "validThrough": null
       },
       "review": {
@@ -2565,29 +2565,29 @@
     "sourceId": "source:ocpf-public-api",
     "recordId": "massachusetts-candidate-finance-ytd",
     "url": "https://api.ocpf.us/developers/guide",
-    "retrievedAt": "2026-08-24T13:30:00.000Z",
-    "contentHash": "sha256:dcce7b1c9efb8fcfc48de0e38c0e69b3ee1d2d24d156bf481b3f09ab50e61efc"
+    "retrievedAt": "2026-10-01T16:29:54.483Z",
+    "contentHash": "sha256:df1345327b262d8696be4ff2db11da05ffaffe4da9b3640f382ca2a886d1eaa2"
   },
-  "contentHash": "sha256:d2fcf9f1759179bac95c740af3f5fd9a0d53e0901c4d315d89e336f3b517b65a",
+  "contentHash": "sha256:b1d96ad7c82ecec5d4432d4980a69b15fddca3f38a488a605325f4ccb7f1d87c",
   "provenance": {
     "method": "deterministic_derivation",
     "sourceIds": [
       "source:ocpf-public-api"
     ],
     "evidenceIds": [],
-    "producedAt": "2026-08-24T13:30:00.000Z",
+    "producedAt": "2026-10-01T16:29:54.483Z",
     "generator": {
       "kind": "script",
       "name": "scripts/materialize-finance-data.mjs",
       "version": "1.0.0"
     },
-    "codeRevision": "a72b34cfab9fdac4a90a6ce8e0872eea1a9cf91c"
+    "codeRevision": "c95596afc206e38b3c5b1f80a3ccbae46326daa8"
   },
   "freshness": {
     "status": "current",
-    "checkedAt": "2026-08-24T13:30:00.000Z",
-    "sourceChangedAt": "2026-08-24T13:30:00.000Z",
-    "dataUpdatedAt": "2026-08-24T13:30:00.000Z",
+    "checkedAt": "2026-10-01T16:29:54.483Z",
+    "sourceChangedAt": "2026-10-01T16:29:54.483Z",
+    "dataUpdatedAt": "2026-10-01T16:29:54.483Z",
     "validThrough": null
   },
   "review": {
