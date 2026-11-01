@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "mode": "refresh",
+  "scope": {
+    "country": "US",
+    "state": "MA",
+    "electionCycle": 2026
+  },
+  "checkedAt": "2026-11-01T16:05:30.327Z",
+  "contentChangedAt": "2026-11-01T16:05:30.327Z",
+  "datasetHash": "sha256:08da98a723ef14a583a2deb013a17735f680b52f03061159eb3409bd22e03a38",
+  "providers": {
+    "openstates": {
+      "status": "ok",
+      "file": "openstates/ma-people.json",
+      "dataset": "current-state-legislators",
+      "recordCount": 203,
+      "contentHash": "sha256:55cb6f3c6e3efce1cf1195e15e6cf0c0c87cc8bc15ebb733130c0b5e8b535822",
+      "checkedAt": "2026-11-01T16:05:30.327Z",
+      "contentChangedAt": "2026-11-01T16:05:30.327Z",
+      "sourceUpdatedAt": "2026-10-22T12:56:43.000282+00:00",
+      "requestsUsed": 5
+    },
+    "fec": {
+      "status": "ok",
+      "file": "fec/ma-federal-candidates-2026.json",
+      "dataset": "federal-candidates",
+      "recordCount": 59,
+      "contentHash": "sha256:0f9c275b6024ee43e1df7cf25011b2d250240708092e1f360cd26ad7b4823007",
+      "checkedAt": "2026-11-01T16:05:30.327Z",
+      "contentChangedAt": "2026-11-01T16:05:30.327Z",
+      "sourceUpdatedAt": "2026-10-23T20:59:05",
+      "requestsUsed": 1
+    }
+  }
+}

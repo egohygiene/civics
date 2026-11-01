@@ -35,11 +35,11 @@
     }
   },
   "freshness": {
-    "checkedAt": "2026-08-24T13:30:00.000Z",
-    "contentChangedAt": "2026-08-24T13:30:00.000Z",
+    "checkedAt": "2026-11-01T16:05:33.217Z",
+    "contentChangedAt": "2026-11-01T16:05:33.217Z",
     "sourceUpdatedAt": null
   },
-  "contentHash": "sha256:dcce7b1c9efb8fcfc48de0e38c0e69b3ee1d2d24d156bf481b3f09ab50e61efc",
+  "contentHash": "sha256:add7e5fb5533d9f670a4a0fbb592a274c855ac035ef433f5ec84fba864e5ceb3",
   "recordCount": 18,
   "records": [
     {
@@ -53,15 +53,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036466",
+        "reportId": "1046009",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 576755.15,
-        "disbursements": 556446.11,
-        "cashOnHand": 866409.45,
+        "endDate": "2026-09-30",
+        "receipts": 668806.43,
+        "disbursements": 745513.96,
+        "cashOnHand": 769392.88,
         "startingBalance": 796095.41
       },
-      "contentHash": "sha256:8463ae62e0faf1ff895137aa07d88054176ed8ec3b1078d50b452c7330b661c1"
+      "contentHash": "sha256:59bec4fb58091b343b90d370a56c8388851d49b145b6a8af101b6cc34fb2fa50"
     },
     {
       "candidateId": "barry-finegold",
@@ -74,15 +74,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036443",
+        "reportId": "1045469",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 229191.78,
-        "disbursements": 58879.87,
-        "cashOnHand": 594377.49,
+        "endDate": "2026-09-30",
+        "receipts": 264154.05,
+        "disbursements": 74117.69,
+        "cashOnHand": 614101.94,
         "startingBalance": 422344.34
       },
-      "contentHash": "sha256:c11a48943f4393a9a985487429f3554aff23059d2d9b5443357689169f7e3cf7"
+      "contentHash": "sha256:5e00c4a3fb450131d51e0a926d76a93bb104f5fd2169eea4711ea102dc3079f5"
     },
     {
       "candidateId": "brian-shortsleeve",
@@ -95,15 +95,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036782",
+        "reportId": "1045483",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 1642055.8,
-        "disbursements": 1725146.74,
-        "cashOnHand": 526805.6,
+        "endDate": "2026-09-30",
+        "receipts": 2502808.52,
+        "disbursements": 3053772.63,
+        "cashOnHand": 58932.43,
         "startingBalance": 608718.79
       },
-      "contentHash": "sha256:ca2784c6fe09ec6a18fd02fe723527bfa1e54a0dbe0234fc5fa2024085787b97"
+      "contentHash": "sha256:50e4ac7ed591b1d2c8b491cc8af29e12039b74158d4d7aacdbd0f51a112885f9"
     },
     {
       "candidateId": "david-robertson",
@@ -116,15 +116,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1035732",
+        "reportId": "1045189",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 500,
-        "disbursements": 749,
-        "cashOnHand": 1572.21,
+        "endDate": "2026-09-30",
+        "receipts": 16000,
+        "disbursements": 1262.25,
+        "cashOnHand": 16558.96,
         "startingBalance": 1821.21
       },
-      "contentHash": "sha256:d166b2d26817c54128f850ef1ff1e828adc777ff4c61df9d3bd90541e2a8ab7d"
+      "contentHash": "sha256:b426a11902f9c60a5d019cc27752956adcf6ffcd71ffb8de6651c80150c606dd"
     },
     {
       "candidateId": "david-solet",
@@ -137,15 +137,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1037843",
+        "reportId": "1046324",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 140961.73,
-        "disbursements": 159335.26,
-        "cashOnHand": 82403.88,
+        "endDate": "2026-09-30",
+        "receipts": 180622.78,
+        "disbursements": 259762.61,
+        "cashOnHand": 21637.58,
         "startingBalance": 95680.74
       },
-      "contentHash": "sha256:c29a72c425ea92825bf2d0f914c9d85620b614b34f218394d108670ce8b8176b"
+      "contentHash": "sha256:b69590e3549eb21eed2c27a51904151616f83c958d31ae1cb2de36cd43f6f8e6"
     },
     {
       "candidateId": "deborah-goldberg",
@@ -158,15 +158,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036475",
+        "reportId": "1046016",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 154456.84,
-        "disbursements": 69023.44,
-        "cashOnHand": 455227.35,
+        "endDate": "2026-09-30",
+        "receipts": 238985.56,
+        "disbursements": 189051.27,
+        "cashOnHand": 419728.24,
         "startingBalance": 369793.95
       },
-      "contentHash": "sha256:0dfcf9dd32e471926156d75caacb7007445fa148af434f2bd6fbfbcbacd328c5"
+      "contentHash": "sha256:e70c197cad30aba8b7f56110823dfd860fb6fd34e3376363cfc83dd8bd07b4fe"
     },
     {
       "candidateId": "diana-dizoglio",
@@ -179,15 +179,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1035399",
+        "reportId": "1045036",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 92454.36,
-        "disbursements": 13918.44,
-        "cashOnHand": 226089.89,
+        "endDate": "2026-09-30",
+        "receipts": 99202.09,
+        "disbursements": 15401.44,
+        "cashOnHand": 231419.94,
         "startingBalance": 147553.97
       },
-      "contentHash": "sha256:6d48066799259dbdc111a4997e8d0b05a16bbd6a469980733286f035e4479adb"
+      "contentHash": "sha256:c371eba1c0b3706443efc9ecb2756f938b5e29375257f18286e8eabcd5c1a8db"
     },
     {
       "candidateId": "elizabeth-dionne",
@@ -200,15 +200,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1037645",
+        "reportId": "1046504",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 238956.88,
-        "disbursements": 188903.72,
-        "cashOnHand": 105200.78,
+        "endDate": "2026-09-30",
+        "receipts": 382560.11,
+        "disbursements": 232444.41,
+        "cashOnHand": 205263.32,
         "startingBalance": 55147.62
       },
-      "contentHash": "sha256:64a38564f5c0d774e1dfa1a6181a7824fab2bafc7e8699071f13237b6112654e"
+      "contentHash": "sha256:6376b104f7aebbbb0a705b81a4753fd2bf3091b64c8bafd74338f8b79b0ebeb5"
     },
     {
       "candidateId": "eunice-zeigler",
@@ -221,15 +221,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1037863",
+        "reportId": "1046221",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 3627.7,
+        "endDate": "2026-09-30",
+        "receipts": 5284.54,
         "disbursements": 1798.08,
-        "cashOnHand": 4498.69,
+        "cashOnHand": 6155.53,
         "startingBalance": 2669.07
       },
-      "contentHash": "sha256:7d2d708d25b49a82121ea13408ce38dd2acda4970bd064df9538d9f04ae5c235"
+      "contentHash": "sha256:9181a8caef86d67e2e65bea366d9ef8aefbb493e8f42f67533816e4b6438626d"
     },
     {
       "candidateId": "kimberley-driscoll",
@@ -242,15 +242,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036763",
+        "reportId": "1046014",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 1154128.52,
-        "disbursements": 187067.7,
-        "cashOnHand": 2565791.79,
+        "endDate": "2026-09-30",
+        "receipts": 1655301.65,
+        "disbursements": 352304.03,
+        "cashOnHand": 2901728.59,
         "startingBalance": 1598163.56
       },
-      "contentHash": "sha256:bfa3dfde64dbad3ece0837aa303526856b59ae1651694867c127e98489ad8190"
+      "contentHash": "sha256:81d00c7d418b4e126656b3822d61bfd08364b9ea6cb9388666ad4caec138262f"
     },
     {
       "candidateId": "marian-ryan",
@@ -263,15 +263,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1035006",
+        "reportId": "1044715",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 155392.75,
-        "disbursements": 21428.29,
-        "cashOnHand": 770733.46,
+        "endDate": "2026-09-30",
+        "receipts": 203115.31,
+        "disbursements": 452956.63,
+        "cashOnHand": 386927.68,
         "startingBalance": 636769
       },
-      "contentHash": "sha256:787840a4847d5f0ed71612de0ec3a927d47caa60e7ed318069348c853d9d91b4"
+      "contentHash": "sha256:56879c6c987faca562903b9ff12eafc59bc31152b52b5dd7cac901dd6a3386f1"
     },
     {
       "candidateId": "maura-healey",
@@ -284,15 +284,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036462",
+        "reportId": "1046293",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 3049534.44,
-        "disbursements": 1071288.16,
-        "cashOnHand": 6602136.91,
+        "endDate": "2026-09-30",
+        "receipts": 4065702.59,
+        "disbursements": 5319799.06,
+        "cashOnHand": 3375750.59,
         "startingBalance": 2640397.35
       },
-      "contentHash": "sha256:5fc34356f8a4a214581be357aa3d8d1a7c40739f3f86fe46f023e3f5dfb64e0f"
+      "contentHash": "sha256:45e6d2cb96e6a4e71596eeb498a857f1fb9739368ac6ddfd8bdcb7218074446d"
     },
     {
       "candidateId": "michael-minogue",
@@ -305,15 +305,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036743",
+        "reportId": "1045477",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 10903005.07,
-        "disbursements": 6476381.85,
-        "cashOnHand": 8141164.26,
+        "endDate": "2026-09-30",
+        "receipts": 13353005.01,
+        "disbursements": 15574536.41,
+        "cashOnHand": 1523557.25,
         "startingBalance": 3711421.28
       },
-      "contentHash": "sha256:760d9db185f7ec8c09052c6900958c77da1e5642cfaa0c2697c3276bb0151450"
+      "contentHash": "sha256:a4fc7576b934487a61b7ea2dee7b2cbf6d02a125c94f1f1a9c8c1823a761dbcd"
     },
     {
       "candidateId": "michael-walsh",
@@ -326,15 +326,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1035109",
+        "reportId": "1045880",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 55891.31,
-        "disbursements": 51235.66,
-        "cashOnHand": 4655.65,
+        "endDate": "2026-09-30",
+        "receipts": 83066.49,
+        "disbursements": 66083.47,
+        "cashOnHand": 16983.02,
         "startingBalance": 0
       },
-      "contentHash": "sha256:546abea86372d94c089fe74e8789753c40b9a97ad4f66acc65e3ebd09f3696fb"
+      "contentHash": "sha256:909704b9f2928ea7d8548224cc361fe6330120317fbd0ee844e0da06f7712378"
     },
     {
       "candidateId": "shawn-oliver",
@@ -347,15 +347,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1035588",
+        "reportId": "1045224",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 129709.26,
-        "disbursements": 154849.19,
-        "cashOnHand": 2870.79,
+        "endDate": "2026-09-30",
+        "receipts": 148589.11,
+        "disbursements": 173849.19,
+        "cashOnHand": 2750.64,
         "startingBalance": 13519.56
       },
-      "contentHash": "sha256:1029501435082340d2be0b60daf8dce9c0844543000119ede99343ab47bebffb"
+      "contentHash": "sha256:10c97adbf54967d9305b1d521c631a6cece4aeb49c23c12b4890e03d6cb2dda5"
     },
     {
       "candidateId": "tara-decristofaro",
@@ -368,15 +368,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036282",
+        "reportId": "1045683",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
+        "endDate": "2026-09-30",
         "receipts": 0,
-        "disbursements": 69.93,
-        "cashOnHand": 1254.62,
+        "disbursements": 89.91,
+        "cashOnHand": 1234.64,
         "startingBalance": 1324.55
       },
-      "contentHash": "sha256:4ce9259c3a30512cccb6bf994de2adc075dc5e57dfafe5289fde67492beb6b40"
+      "contentHash": "sha256:467254bf986d42fdf9b74a7c7ed12036365158b86456d5a2fb12fead27891bc1"
     },
     {
       "candidateId": "theodore-semesnyei",
@@ -389,15 +389,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1035374",
+        "reportId": "1045212",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 5188.6,
-        "disbursements": 3926.5,
-        "cashOnHand": 4949.29,
+        "endDate": "2026-09-30",
+        "receipts": 12422.99,
+        "disbursements": 4922.01,
+        "cashOnHand": 11188.17,
         "startingBalance": 3682.19
       },
-      "contentHash": "sha256:e5bf5c89a956f227d2cfee75a104d31ffbcb24ef62ba0d048107b3e6515f2b6e"
+      "contentHash": "sha256:d3f76c7cb356b32f58e7903d19511575610842f6fd60cf9e53dac74a789a57e2"
     },
     {
       "candidateId": "william-galvin",
@@ -410,15 +410,15 @@
       "isActive": true,
       "matchStatus": "automated_checks_passed",
       "ytdReport": {
-        "reportId": "1036831",
+        "reportId": "1046619",
         "startDate": "2026-01-01",
-        "endDate": "2026-07-31",
-        "receipts": 131312.1,
-        "disbursements": 51099.16,
-        "cashOnHand": 2028436,
+        "endDate": "2026-09-30",
+        "receipts": 166412.1,
+        "disbursements": 52973.98,
+        "cashOnHand": 2062161.18,
         "startingBalance": 673473.14
       },
-      "contentHash": "sha256:8278a7a048bebb4d87c6924e6b4e515ee5440ce2c3045a82aef36955f22977e1"
+      "contentHash": "sha256:002f7884ed480e6dfc0fa5c82d23d5d7df4276e61269f16462dc9d3af507ecc6"
     }
   ]
 }
