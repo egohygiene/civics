@@ -41,6 +41,12 @@ Git holds versioned public knowledge, GitHub Actions provides periodic build-tim
 
 See [the data model](docs/data-model.md), [visualization contract](docs/visualization-contract.md), and [portrait publication contract](docs/portrait-data.md) for the inspectable data boundaries.
 
+The existing Pages workflow also composes shared [Repository Intelligence](https://civics.egohygiene.io/intelligence/)
+under `/intelligence/`. Its review plan selects no audit or architecture-review
+reports initially, so those views preserve unavailable evidence. This does not
+assess civic data quality or candidate suitability. See the
+[publication and review-feed contract](docs/repository-intelligence.md).
+
 ## Development
 
 Requires Node.js 22 or newer.

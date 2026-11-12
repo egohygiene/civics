@@ -1,0 +1,8 @@
+{
+  "schema": "egohygiene.relay.typed-review-plan/v1",
+  "contract_version": "1.0.0-alpha.1",
+  "visibility": "public",
+  "repository": "egohygiene/civics",
+  "audits": [],
+  "sanity": []
+}

@@ -976,6 +976,7 @@ function App() {
         <nav aria-label="Footer navigation">
           <a href={sources.ballot.url} target="_blank" rel="noreferrer">Official ballot source</a>
           <a href="https://github.com/egohygiene/civics" target="_blank" rel="noreferrer"><Code2 aria-hidden="true" /> Source</a>
+          <a href="/intelligence/"><Network aria-hidden="true" /> Repository intelligence</a>
           <a href="https://egohygiene.io" target="_blank" rel="noreferrer">Ego Hygiene</a>
         </nav>
         <p>Roster snapshot checked {formatDate(sources.ballot.checkedAt)} · built in public · no tracking</p>

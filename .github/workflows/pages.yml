@@ -26,7 +26,21 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          fetch-depth: 0
           persist-credentials: false
+
+      - name: Bind Repository Intelligence source and evaluation clock
+        id: intelligence_context
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_commit="$(git rev-parse --verify HEAD)"
+          [[ "$source_commit" =~ ^[0-9a-f]{40}$ ]]
+          as_of="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          verified_epoch="$(date -u --date="$as_of" +%s)"
+          printf 'source-commit=%s\n' "$source_commit" >> "$GITHUB_OUTPUT"
+          printf 'as-of=%s\n' "$as_of" >> "$GITHUB_OUTPUT"
+          printf 'verified-epoch=%s\n' "$verified_epoch" >> "$GITHUB_OUTPUT"
 
       - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -58,6 +72,73 @@ jobs:
 
       - name: Build portal
         run: npm run build
+
+      - name: Capture civic portal routes and assets before composition
+        uses: egohygiene/relay/actions/repository-intelligence-deployment-provenance@5d27be5ce1599df883e31f14cd894eb18622c18c
+        with:
+          operation: capture-baseline
+          consumer-repository: egohygiene/civics
+          consumer-revision: ${{ steps.intelligence_context.outputs.source-commit }}
+          site-directory: dist
+          intelligence-directory: dist/intelligence
+          evidence-directory: .cache/intelligence-composition
+
+      - name: Normalize explicitly selected public review evidence
+        id: intelligence_reviews
+        uses: egohygiene/relay/actions/repository-intelligence-review-feed@5d27be5ce1599df883e31f14cd894eb18622c18c
+        with:
+          source-root: .
+          plan: .github/intelligence-review-plan.json
+          repository: egohygiene/civics
+          represented-commit: ${{ steps.intelligence_context.outputs.source-commit }}
+          as-of: ${{ steps.intelligence_context.outputs.as-of }}
+          output-directory: .cache/intelligence-review-feed
+
+      - name: Build shared Repository Intelligence subtree
+        id: intelligence
+        uses: egohygiene/relay/actions/repository-intelligence@5d27be5ce1599df883e31f14cd894eb18622c18c
+        with:
+          repository: egohygiene/civics
+          repository-visibility: public
+          source-commit: ${{ steps.intelligence_context.outputs.source-commit }}
+          as-of: ${{ steps.intelligence_context.outputs.as-of }}
+          output-directory: dist/intelligence
+          work-directory: .cache/repository-intelligence
+          observatory-audits: ${{ steps.intelligence_reviews.outputs.repository-audits }}
+          observatory-sanity: ${{ steps.intelligence_reviews.outputs.repository-sanity }}
+          collect-adrs: "false"
+          collect-roadmap: "false"
+          collect-dependencies: "false"
+          collect-journey: "false"
+          require-full-history: "true"
+
+      - name: Verify Intelligence composition and preserve civic portal bytes
+        id: intelligence_composition
+        uses: egohygiene/relay/actions/repository-intelligence-deployment-provenance@5d27be5ce1599df883e31f14cd894eb18622c18c
+        with:
+          operation: verify-composition
+          consumer-repository: egohygiene/civics
+          consumer-revision: ${{ steps.intelligence_context.outputs.source-commit }}
+          relay-revision: 5d27be5ce1599df883e31f14cd894eb18622c18c
+          verified-epoch: ${{ steps.intelligence_context.outputs.verified-epoch }}
+          site-directory: dist
+          intelligence-directory: dist/intelligence
+          evidence-directory: .cache/intelligence-composition
+          required-routes: >-
+            ["/","/intelligence/","/intelligence/audits/","/intelligence/sanity/"]
+          aliases: "[]"
+
+      - name: Retain typed review and composition evidence separately from Pages
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: civics-intelligence-review-${{ steps.intelligence_context.outputs.source-commit }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ steps.intelligence_reviews.outputs.artifact-directory }}
+            .cache/intelligence-composition/consumer-route-baseline.json
+            .cache/intelligence-composition/composition-verification.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'
